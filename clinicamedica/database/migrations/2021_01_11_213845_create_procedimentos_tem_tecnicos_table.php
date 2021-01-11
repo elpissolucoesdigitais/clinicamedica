@@ -18,7 +18,7 @@ class CreateProcedimentosTemTecnicosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('fk_tecnico_saude');
             $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude');
-
+            
             $table->unsignedInteger('fk_procedimento');
             $table->foreign('fk_procedimento')->references('id')->on('procedimentos');
 

@@ -19,7 +19,6 @@ class CreateSecretariasTable extends Migration
             $table->string('cidade');
             $table->string('email');
             $table->string('complemento');
-            $table->double('salario');
             $table->string('cpf');
             $table->string('rg');
             $table->string('nome');
