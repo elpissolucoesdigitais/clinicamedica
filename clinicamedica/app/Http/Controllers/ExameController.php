@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Exame;
+use App\Models\Paciente;
+use App\Models\Consulta;
 class ExameController extends Controller
 {
     /**

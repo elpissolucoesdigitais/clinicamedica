@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\RelatorioFinanceiro;
+use App\Models\DespesaFinanceira;
+use App\Models\Administradora;
 class RelatorioFinanceiroController extends Controller
 {
     /**

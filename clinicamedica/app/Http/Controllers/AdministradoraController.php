@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Administradora;
 class AdministradoraController extends Controller
 {
     /**

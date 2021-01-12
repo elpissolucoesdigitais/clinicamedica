@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Estoque;
+use App\Models\Administradora;
 class EstoqueController extends Controller
 {
     /**

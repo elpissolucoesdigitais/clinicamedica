@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\ReceitaFinanceira;
+use App\Models\Consulta;
+use App\Models\Administradora;
 class ReceitaFinanceiraController extends Controller
 {
     /**
