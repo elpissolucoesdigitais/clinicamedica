@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Convenio;
 class ConvenioController extends Controller
 {
+
+    private $objConvenio;
+
+    public function __construct()
+    {
+        $this->objConvenio=new Convenio();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,7 @@ class ConvenioController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objConvenio->all());
     }
 
     /**
