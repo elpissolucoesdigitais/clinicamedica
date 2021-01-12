@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Clinica extends Model
 {
     //
-    protected $fillable=['responsaveltecnico'];
+    protected $fillable=['responsaveltecnico', 'nome', 'logradouro', 'numero', 'cep', 'cidade', 'email', 'contato', 'foto', 'complemento', 'bairro', 'cnpj', 'uf'];
+    
+
 }
