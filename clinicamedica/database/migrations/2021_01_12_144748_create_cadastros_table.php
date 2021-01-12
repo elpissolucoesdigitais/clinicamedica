@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCadastraTable extends Migration
+class CreateCadastrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateCadastraTable extends Migration
      */
     public function up()
     {
-        Schema::create('cadastra', function (Blueprint $table) {
+        Schema::create('cadastros', function (Blueprint $table) {
+            
             //4
             $table->increments('id');
 
@@ -27,6 +28,7 @@ class CreateCadastraTable extends Migration
             $table->foreign('fk_administradora')->references('id')->on('administradoras');
 
             $table->timestamps();
+
         });
     }
 
@@ -37,6 +39,6 @@ class CreateCadastraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cadastra');
+        Schema::dropIfExists('cadastros');
     }
 }
