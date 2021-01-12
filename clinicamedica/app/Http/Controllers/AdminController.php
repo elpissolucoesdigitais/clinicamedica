@@ -2,7 +2,27 @@
 
 namespace App\Http\Controllers;
 
+//20
 use Illuminate\Http\Request;
+use App\Models\Admin;
+use App\Models\Administradora;
+use App\Models\Clinica;
+use App\Models\Consulta;
+use App\Models\Convenio;
+use App\Models\DespesaFinanceira;
+use App\Models\Estoque;
+use App\Models\Exame;
+use App\Models\Medicamento;
+use App\Models\Medico;
+use App\Models\Paciente;
+use App\Models\Procedimento;
+use App\Models\ProcedimentoMedico;
+use App\Models\ProcedimentoTecnico;
+use App\Models\ReceitaFinanceira;
+use App\Models\Relatorio;
+use App\Models\RelatorioFinanceiro;
+use App\Models\Secretaria;
+use App\Models\TecnicoSaude;
 
 class AdminController extends Controller
 {

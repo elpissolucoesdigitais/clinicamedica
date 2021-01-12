@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Secretaria;
+use App\Models\Clinica;
 class SecretariaController extends Controller
 {
     /**
