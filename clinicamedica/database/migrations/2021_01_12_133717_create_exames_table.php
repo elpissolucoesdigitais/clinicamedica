@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConveniosTable extends Migration
+class CreateExamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,20 @@ class CreateConveniosTable extends Migration
      */
     public function up()
     {
-        Schema::create('convenios', function (Blueprint $table) {
+        Schema::create('exames', function (Blueprint $table) {
+            //5
             $table->increments('id');
-            $table->string('status');
-            $table->string('nome');
+
             $table->string('descricao');
-            $table->string('validade');
-            $table->string('cnpj');
-            $table->string('email');
-            $table->string('contato');
-            $table->double('valor',10,2);
+            $table->string('nome');
+
+            $table->unsignedinteger('fk_paciente');
+            $table->foreign('fk_paciente')->references('id')->on('pacientes');
+
+            $table->unsignedinteger('fk_consulta');
+            $table->foreign('fk_consulta')->references('id')->on('consultas');
+
+
             $table->timestamps();
         });
     }
@@ -34,6 +38,6 @@ class CreateConveniosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('convenios');
+        Schema::dropIfExists('exames');
     }
 }
