@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('procedimento', 'ProcedimentoController');
 Route::resource('admin', 'AdminController');
 Route::resource('administradora', 'AdministradoraController');
 Route::resource('cadastro', 'CadastroController');
