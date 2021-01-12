@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TecnicoSaude;
+use App\Models\Procedimento;
+use App\Models\ProcedimentoTecnico;
 
 class ProcedimentoTecnicoController extends Controller
 {

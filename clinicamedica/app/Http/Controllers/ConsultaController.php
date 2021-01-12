@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Consulta;
+use App\Models\Procedimento;
+use App\Models\Medico;
 
 class ConsultaController extends Controller
 {
