@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\RelatorioPaciente;
+use App\Models\Medicamento;
+use App\Models\Medico;
+use App\Models\TecnicoSaude;
+use App\Models\Exame;
 class RelatorioPacienteController extends Controller
 {
     /**

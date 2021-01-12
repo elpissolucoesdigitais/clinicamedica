@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Paciente;
+use App\Models\Convenio;
 class PacienteController extends Controller
 {
     /**

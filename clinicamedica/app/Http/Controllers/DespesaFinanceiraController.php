@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\DespesasFinanceira;
+use App\Models\Medico;
+use App\Models\TecnicoSaude;
+use App\Models\Clinica;
+use App\Models\Secretaria;
+use App\Models\Estoque;
 class DespesaFinanceiraController extends Controller
 {
     /**
