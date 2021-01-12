@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('admin', 'AdminController');
+Route::resource('administradora', 'AdministradoraController');
+Route::resource('cadastro', 'CadastroController');
+Route::resource('clinica', 'ClinicaController');
+Route::resource('consulta', 'ConsultaController');
+Route::resource('convenio', 'ConvenioController');
+Route::resource('despesafinanceira', 'DespesaFinanceiraController');
+Route::resource('estoque', 'EstoqueController');
+Route::resource('exame', 'ExameController');
+Route::resource('medicamento', 'MedicamentoController');
+Route::resource('medico', 'MedicoController');
+Route::resource('paciente', 'PacienteController');
+Route::resource('procedimentomedico', 'ProcedimentoMedicoController');
+Route::resource('procedimentotecnico', 'ProcedimentoTecnicoController');
+Route::resource('receitafinanceira', 'ReceitaFinanceiraController');
+Route::resource('relatoriofinanceiro', 'RelatorioFinanceiroController');
+Route::resource('relatoriopaciente', 'RelatorioPacienteController');
+Route::resource('paciente', 'PacienteController');
+Route::resource('secretaria', 'SecretariaController');
+Route::resource('tecnicosaude', 'TecnicoSaudeController');
