@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Clinica;
 class ClinicaController extends Controller
 {
+    private $objClinica;
+
+    public function __construct()
+    {
+        $this->objClinica=new Clinica();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,7 @@ class ClinicaController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objClinica->all());
     }
 
     /**
