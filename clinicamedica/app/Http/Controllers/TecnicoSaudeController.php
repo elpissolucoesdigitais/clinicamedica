@@ -7,6 +7,13 @@ use App\Models\TecnicoSaude;
 
 class TecnicoSaudeController extends Controller
 {
+    private $objTecnicoSaude;
+
+    public function __construct()
+    {
+        $this->objTecnicoSaude=new TecnicoSaude();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class TecnicoSaudeController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objTecnicoSaude->all());
     }
 
     /**

@@ -7,6 +7,14 @@ use App\Models\Secretaria;
 use App\Models\Clinica;
 class SecretariaController extends Controller
 {
+    private $objSecretaria;
+    private $objClinica;
+
+    public function __construct()
+    {
+        $this->objSecretaria=new Secretaria();
+        $this->objClinica=new Clinica();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objClinica->all());
+        dd($this->objSecretaria->all());
     }
 
     /**

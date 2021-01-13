@@ -10,6 +10,21 @@ use App\Models\TecnicoSaude;
 use App\Models\Exame;
 class RelatorioPacienteController extends Controller
 {
+    private $objRelatorioPaciente;
+    private $objMedicamento;
+    private $objMedico;
+    private $objTecnicoSaude;
+    private $objExame;
+
+    public function __construct()
+    {
+        $this->objRelatorioPaciente=new RelatorioPaciente();
+        $this->objMedicamento=new Medicamento();
+        $this->objMedico=new Medico();
+        $this->objTecnicoSaude=new TecnicoSaude();
+        $this->objExame=new Exame();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +32,12 @@ class RelatorioPacienteController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objRelatorioPaciente->all());
+        dd($this->objMedicamento->all());
+        dd($this->objMedico->all());
+        dd($this->objTecnicoSaude->all());
+        dd($this->objExame->all());
+
     }
 
     /**
