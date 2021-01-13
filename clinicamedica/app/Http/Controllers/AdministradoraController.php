@@ -19,7 +19,9 @@ class AdministradoraController extends Controller
      */
     public function index()
     {
-        dd($this->objAdministradora->all());
+        $administradora=$this->objAdministradora->all();
+        return view('administradora.index',compact('administradora'));
+        //dd($this->objAdministradora->all());
     }
 
     /**
