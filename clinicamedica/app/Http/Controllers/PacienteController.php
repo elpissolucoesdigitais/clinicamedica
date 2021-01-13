@@ -22,8 +22,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        dd($this->objConvenio->all());
-        dd($this->objPaciente->all());
+        $paciente=$this->objPaciente->all();
+        return view('paciente.index',compact('paciente'));
     }
 
     /**
