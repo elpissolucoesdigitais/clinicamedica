@@ -8,6 +8,14 @@ use App\Models\Secretaria;
 
 class ProcedimentoController extends Controller
 {
+    private $objProcedimento;
+    private $objSecretaria;
+
+    public function __construct()
+    {
+        $this->objProcedimento=new Procedimento();
+        $this->objSecretaria=new Secretaria();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,8 @@ class ProcedimentoController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objSecretaria->all());
+        dd($this->objProcedimento->all());
     }
 
     /**

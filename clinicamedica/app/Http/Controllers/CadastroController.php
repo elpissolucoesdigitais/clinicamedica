@@ -10,6 +10,19 @@ use App\Models\Administradora;
 
 class CadastroController extends Controller
 {
+    private $objCadastra;
+    private $objPaciente;
+    private $objSecretaria;
+    private $objAdministradora;
+
+    public function __construct()
+    {
+        $this->objCadastra=new Cadastra();
+        $this->objPaciente=new Paciente();
+        $this->objSecretaria=new Secretaria();
+        $this->objAdministradora=new Administradora();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +30,10 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objCadastra->all());
+        dd($this->objPaciente->all());
+        dd($this->objSecretaria->all());
+        dd($this->objAdministradora->all());
     }
 
     /**
