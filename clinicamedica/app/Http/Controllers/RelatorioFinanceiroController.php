@@ -25,9 +25,8 @@ class RelatorioFinanceiroController extends Controller
      */
     public function index()
     {
-        dd($this->objRelatorioFinanceiro->all());
-        dd($this->DespesaFinanceira->all());
-        dd($this->objAdministradora->all());
+        $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
+        return view('relatoriofinanceiro.index',compact('relatorioFinanceiro'));
     }
 
     /**

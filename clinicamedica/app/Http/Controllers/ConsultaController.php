@@ -25,9 +25,8 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        dd($this->objConsulta->all());
-        dd($this->objProcedimento->all());
-        dd($this->objMedico->all());
+        $consulta=$this->objConsulta->all();
+        return view('consulta.index',compact('consulta'));
     }
 
     /**

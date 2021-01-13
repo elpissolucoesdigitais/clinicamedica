@@ -22,8 +22,9 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        dd($this->objClinica->all());
-        dd($this->objSecretaria->all());
+        $secretaria=$this->objSecretaria->all();
+        return view('secretaria.index',compact('secretaria'));
+        
     }
 
     /**

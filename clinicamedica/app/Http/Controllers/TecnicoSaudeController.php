@@ -21,7 +21,8 @@ class TecnicoSaudeController extends Controller
      */
     public function index()
     {
-        dd($this->objTecnicoSaude->all());
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        return view('tecnicosaude.index',compact('tecnicoSaude'));
     }
 
     /**

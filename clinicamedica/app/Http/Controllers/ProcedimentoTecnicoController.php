@@ -26,9 +26,8 @@ class ProcedimentoTecnicoController extends Controller
      */
     public function index()
     {
-        dd($this->objTecnicoSaude->all());
-        dd($this->objProcedimento->all());
-        dd($this->objProcedimentoTecnico->all());
+        $procedimentoTecnico=$this->objProcedimentoTecnico->all();
+        return view('procedimentotecnico.index',compact('procedimentoTecnico'));
     }
 
     /**

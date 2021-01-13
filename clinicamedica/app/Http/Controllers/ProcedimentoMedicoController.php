@@ -26,9 +26,8 @@ class ProcedimentoMedicoController extends Controller
      */
     public function index()
     {
-        dd($this->objMedico->all());
-        dd($this->objProcedimento->all());
-        dd($this->objProcedimentoMedico->all());
+        $procedimentoMedico=$this->objProcedimentoMedico->all();
+        return view('procedimentomedico.index',compact('procedimentoMedico'));
     }
 
     /**

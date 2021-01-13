@@ -27,9 +27,8 @@ class ExameController extends Controller
      */
     public function index()
     {
-        dd($this->objExame->all());
-        dd($this->objPaciente->all());
-        dd($this->objConsulta->all());
+        $exame=$this->objExame->all();
+        return view('exame.index',compact('Exame'));
     }
 
     /**
