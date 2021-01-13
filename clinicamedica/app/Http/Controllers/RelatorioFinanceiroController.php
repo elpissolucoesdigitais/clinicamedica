@@ -8,6 +8,16 @@ use App\Models\DespesaFinanceira;
 use App\Models\Administradora;
 class RelatorioFinanceiroController extends Controller
 {
+    private $objRelatorioFinanceiro;
+    private $DespesaFinanceira;
+    private $Administradora;
+    
+    public function __construct()
+    {    
+        $this->objRelatorioFinanceiro = new RelatorioFinanceiro();
+        $this->objDespesaFinanceira = new DespesaFinanceira();
+        $this->objAdministradora = new Administradora();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,9 @@ class RelatorioFinanceiroController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objRelatorioFinanceiro->all());
+        dd($this->DespesaFinanceira->all());
+        dd($this->objAdministradora->all());
     }
 
     /**
