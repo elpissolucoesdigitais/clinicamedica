@@ -16,6 +16,14 @@ class DatabaseSeeder extends Seeder
         //$this->call(MedicoSeeder::class);
         //$this->call(AdministradoraSeeder::class);
         //$this->call(ConvenioSeeder::class);
-        //$this->call(TecnicoSaudeSeeder::class);
+        ///$this->call(TecnicoSaudeSeeder::class);
+        //$this->call(PacienteSeeder::class);
+        //$this->call(SecretariaSeeder::class);
+        //$this->call(CadastraSeeder::class);
+        //$this->call(ProcedimentoSeeder::class);
+        //$this->call(ConsultaSeeder::class);
+        //$this->call(EstoqueSeeder::class);
+        //$this->call(DespesaFinanceiraSeeder::class);
+
     }
 }
