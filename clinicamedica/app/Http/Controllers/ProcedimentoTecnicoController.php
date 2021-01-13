@@ -9,6 +9,16 @@ use App\Models\ProcedimentoTecnico;
 
 class ProcedimentoTecnicoController extends Controller
 {
+    private $objTecnicoSaude;
+    private $Procedimento;
+    private $ProcedimentoMedico;
+    
+    public function __construct()
+    {    
+        $this->objTecnicoSaude = new TecnicoSaude();
+        $this->objProcedimento = new Procedimento();
+        $this->objProcedimentoMedico = new ProcedimentoMedico();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,9 @@ class ProcedimentoTecnicoController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objTecnicoSaude->all());
+        dd($this->objProcedimento->all());
+        dd($this->objProcedimentoMedico->all());
     }
 
     /**

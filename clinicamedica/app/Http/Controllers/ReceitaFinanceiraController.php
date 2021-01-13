@@ -8,6 +8,16 @@ use App\Models\Consulta;
 use App\Models\Administradora;
 class ReceitaFinanceiraController extends Controller
 {
+    private $objReceitaFinanceira;
+    private $Consulta;
+    private $Administradora;
+    
+    public function __construct()
+    {    
+        $this->objReceitaFinanceira = new ReceitaFinanceira();
+        $this->objConsulta = new Consulta();
+        $this->objAdministradora = new Administradora();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,9 @@ class ReceitaFinanceiraController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objReceitaFinanceira->all());
+        dd($this->Consulta->all());
+        dd($this->objAdministradora->all());
     }
 
     /**
