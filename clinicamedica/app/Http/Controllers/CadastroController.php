@@ -30,10 +30,13 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        dd($this->objCadastra->all());
-        dd($this->objPaciente->all());
-        dd($this->objSecretaria->all());
-        dd($this->objAdministradora->all());
+        $cadastro=$this->objCadastra->all();
+        return view('cadastro.index',compact('cadastro'));
+
+        //dd($this->objCadastra->all());
+        //dd($this->objPaciente->all());
+        //dd($this->objSecretaria->all());
+        //dd($this->objAdministradora->all());
     }
 
     /**

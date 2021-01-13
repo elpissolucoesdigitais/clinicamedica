@@ -19,7 +19,9 @@ class ClinicaController extends Controller
      */
     public function index()
     {
-        dd($this->objClinica->all());
+        $clinica=$this->objClinica->all();
+        return view('clinica.index',compact('clinica'));
+        //dd($this->objClinica->all());
     }
 
     /**
