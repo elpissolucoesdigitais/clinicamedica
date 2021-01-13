@@ -34,12 +34,8 @@ class DespesaFinanceiraController extends Controller
      */
     public function index()
     {
-        dd($this->objDespesaFinanceira->all());
-        dd($this->objMedico->all());
-        dd($this->objTecnicoSaude->all());
-        dd($this->objClinica->all());
-        dd($this->objSecretaria->all());
-        dd($this->objEstoque->all());
+        $DespesaFinanceira=$this->objDespesaFinanceira->all();
+        return view('despesafinanceira.index',compact('DespesaFinanceira'));
     }
 
     /**

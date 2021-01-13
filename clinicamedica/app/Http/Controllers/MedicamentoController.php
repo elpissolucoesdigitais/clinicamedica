@@ -24,8 +24,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        dd($this->objMedicamento->all());
-        dd($this->objMedico->all());
+        $medicamento=$this->objMedicamento->all();
+        return view('medicamento.index',compact('medicamento'));
     }
 
     /**

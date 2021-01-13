@@ -25,9 +25,8 @@ class ReceitaFinanceiraController extends Controller
      */
     public function index()
     {
-        dd($this->objReceitaFinanceira->all());
-        dd($this->Consulta->all());
-        dd($this->objAdministradora->all());
+        $receitaFinanceira=$this->objReceitaFinanceira->all();
+        return view('receitafinanceira.index',compact('receitaFinanceira'));
     }
 
     /**

@@ -21,7 +21,8 @@ class ConvenioController extends Controller
      */
     public function index()
     {
-        dd($this->objConvenio->all());
+        $convenio=$this->objConvenio->all();
+        return view('convenio.index',compact('convenio'));
     }
 
     /**

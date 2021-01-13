@@ -22,8 +22,8 @@ class EstoqueController extends Controller
      */
     public function index()
     {
-        dd($this->objAdministradora->all());
-        dd($this->objEstoque->all());
+        $estoque=$this->objEstoque->all();
+        return view('estoque.index',compact('Estoque'));
     }
 
     /**

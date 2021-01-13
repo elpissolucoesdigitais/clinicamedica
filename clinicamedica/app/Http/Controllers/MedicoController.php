@@ -20,7 +20,8 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        dd($this->objMedico->all());
+        $medico=$this->objMedico->all();
+        return view('medico.index',compact('medico'));
     }
 
     /**

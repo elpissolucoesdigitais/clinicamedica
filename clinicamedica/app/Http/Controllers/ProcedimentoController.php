@@ -23,8 +23,8 @@ class ProcedimentoController extends Controller
      */
     public function index()
     {
-        dd($this->objSecretaria->all());
-        dd($this->objProcedimento->all());
+        $procedimento=$this->objProcedimento->all();
+        return view('procedimento.index',compact('procedimento'));
     }
 
     /**

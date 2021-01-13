@@ -32,11 +32,8 @@ class RelatorioPacienteController extends Controller
      */
     public function index()
     {
-        dd($this->objRelatorio->all());
-        dd($this->objMedicamento->all());
-        dd($this->objMedico->all());
-        dd($this->objTecnicoSaude->all());
-        dd($this->objExame->all());
+        $relatorioPaciente=$this->objRelatorioPaciente->all();
+        return view('relatoriopaciente.index',compact('relatorioPaciente'));
 
     }
 
