@@ -20,8 +20,7 @@ class DespesaFinanceiraSeeder extends Seeder
             'fk_estoque'=>2,
             'tipo'=>'estrutural'
 
-            ]
-        );
+        ]);
 
         $despesaFinanceira->create([
             'fk_medico'=>1,
@@ -31,8 +30,7 @@ class DespesaFinanceiraSeeder extends Seeder
             'fk_estoque'=>1,
             'tipo'=>'temporal'
 
-            ]
-        );
+        ]);
 
     }
 }
