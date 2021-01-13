@@ -11,13 +11,13 @@ class ProcedimentoTecnicoController extends Controller
 {
     private $objTecnicoSaude;
     private $Procedimento;
-    private $ProcedimentoMedico;
+    private $ProcedimentoTecnico;
     
     public function __construct()
     {    
         $this->objTecnicoSaude = new TecnicoSaude();
         $this->objProcedimento = new Procedimento();
-        $this->objProcedimentoMedico = new ProcedimentoMedico();
+        $this->objProcedimentoTecnico = new ProcedimentoTecnico();
     }
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class ProcedimentoTecnicoController extends Controller
     {
         dd($this->objTecnicoSaude->all());
         dd($this->objProcedimento->all());
-        dd($this->objProcedimentoMedico->all());
+        dd($this->objProcedimentoTecnico->all());
     }
 
     /**
