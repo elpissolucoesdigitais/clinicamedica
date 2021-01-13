@@ -7,6 +7,14 @@ use App\Models\Paciente;
 use App\Models\Convenio;
 class PacienteController extends Controller
 {
+    private $objPaciente;
+    private $objConvenio;
+
+    public function __construct()
+    {
+        $this->objPaciente=new Paciente();
+        $this->objConvenio=new Convenio();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objConvenio->all());
+        dd($this->objPaciente->all());
     }
 
     /**

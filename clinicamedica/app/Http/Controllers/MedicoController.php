@@ -11,7 +11,7 @@ class MedicoController extends Controller
 
     public function __construct()
     {
-        $this->objMedico=new Administradora();
+        $this->objMedico=new Medico();
     }
     /**
      * Display a listing of the resource.
