@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RelatorioPaciente;
+use App\Models\Relatorio;
 use App\Models\Medicamento;
 use App\Models\Medico;
 use App\Models\TecnicoSaude;
 use App\Models\Exame;
 class RelatorioPacienteController extends Controller
 {
-    private $objRelatorioPaciente;
+    private $objRelatorio;
     private $objMedicamento;
     private $objMedico;
     private $objTecnicoSaude;
@@ -18,7 +18,7 @@ class RelatorioPacienteController extends Controller
 
     public function __construct()
     {
-        $this->objRelatorioPaciente=new RelatorioPaciente();
+        $this->objRelatorio=new Relatorio();
         $this->objMedicamento=new Medicamento();
         $this->objMedico=new Medico();
         $this->objTecnicoSaude=new TecnicoSaude();
@@ -32,7 +32,7 @@ class RelatorioPacienteController extends Controller
      */
     public function index()
     {
-        dd($this->objRelatorioPaciente->all());
+        dd($this->objRelatorio->all());
         dd($this->objMedicamento->all());
         dd($this->objMedico->all());
         dd($this->objTecnicoSaude->all());
