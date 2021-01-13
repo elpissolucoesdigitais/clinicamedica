@@ -28,8 +28,7 @@ class AdministradoraSeeder extends Seeder
             'cep'=>'9944555',
             'datanascimento'=>'1996-08-20',
             'foto'=>'foto bruna'
-            ]
-        );
+        ]);
 
 
         $administradora->create([
@@ -48,9 +47,6 @@ class AdministradoraSeeder extends Seeder
             'cep'=>'99488654',
             'datanascimento'=>'1995-10-01',
             'foto'=>'foto marcos'
-            ]
-        );
-
-
+        ]);
     }
 }
