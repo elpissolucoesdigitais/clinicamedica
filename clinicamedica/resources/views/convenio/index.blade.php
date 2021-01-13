@@ -1,0 +1,56 @@
+@extends('templates.template')
+
+@section('content')
+    <h1 class="text-center">Lista de Convenios Cadastrados</h1><hr>
+
+    <div class="text-center">
+        <a href="{{'convenio/create'}}">
+            <button class="btn btn-success mt-3 mb-4">Cadastrar Convenio</button>
+        </a>
+    </div>
+
+    <div class="col-12 m-auto">
+        @csrf
+        <table class="table text-center">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th></th></th>
+                <th scope="col">Email</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                @foreach ($convenio as $convenios)
+                    @php
+                        //$paciente=$pacientes->find($pacientes->id)->relPacientes;
+                        
+                    @endphp
+                    <tr>
+                        
+                        <td>{{$convenios->id}}</td>
+                        <td>{{$convenios->email}}</td>
+                        <td>{{$convenios->nome}}</td>
+                        <td>{{$convenios->contato}}</td>
+                        <td>{{$convenios->valor}}</td>
+                        <td>
+                            <a href="{{url("convenio/$convenios->id")}}">
+                                <button class="btn btn-dark">Visualizar</button>
+                            </a>
+                            <a href="{{url("convenio/$convenios->id/edit")}}">
+                                <button class="btn btn-primary">Editar</button>
+                            </a>
+                            <a href="{{url("convenio/$convenios->id")}}" class="js-del">
+                                <button class="btn btn-danger">Deletar</button>
+                            </a>
+                        </td>
+                      </tr>
+                @endforeach
+                    
+            </tbody>
+          </table>
+          
+    </div>
+@endsection
