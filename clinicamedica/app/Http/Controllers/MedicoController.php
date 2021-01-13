@@ -7,6 +7,12 @@ use App\Models\Medico;
 
 class MedicoController extends Controller
 {
+    private $objMedico;
+
+    public function __construct()
+    {
+        $this->objMedico=new Administradora();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objMedico->all());
     }
 
     /**

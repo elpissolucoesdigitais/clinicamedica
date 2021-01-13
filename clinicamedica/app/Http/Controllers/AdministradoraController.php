@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Administradora;
 class AdministradoraController extends Controller
 {
+    private $objAdministradora;
+
+    public function __construct()
+    {
+        $this->objAdministradora=new Administradora();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,7 @@ class AdministradoraController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objAdministradora->all());
     }
 
     /**

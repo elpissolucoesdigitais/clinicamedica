@@ -7,6 +7,16 @@ use App\Models\Medicamento;
 use App\Models\Medico;
 class MedicamentoController extends Controller
 {
+
+    private $objMedicamento;
+    private $objMedico;
+
+
+    public function __construct()
+    {
+        $this->objMedicamento=new Medicamento();
+        $this->objMedico=new Medico();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objMedicamento->all());
+        dd($this->objMedico->all());
     }
 
     /**

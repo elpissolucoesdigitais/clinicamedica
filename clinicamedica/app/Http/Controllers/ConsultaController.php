@@ -9,6 +9,15 @@ use App\Models\Medico;
 
 class ConsultaController extends Controller
 {
+    private $objConsulta;
+    private $objProcedimento;
+    private $objMedico;
+    public function __construct()
+    {
+        $this->objConsulta=new Consulta();
+        $this->objProcedimento=new Procedimento();
+        $this->objMedico=new Medico();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +25,9 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objConsulta->all());
+        dd($this->objProcedimento->all());
+        dd($this->objMedico->all());
     }
 
     /**

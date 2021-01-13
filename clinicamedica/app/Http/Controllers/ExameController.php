@@ -8,6 +8,18 @@ use App\Models\Paciente;
 use App\Models\Consulta;
 class ExameController extends Controller
 {
+
+    private $objExame;
+    private $objPaciente;
+    private $objConsulta;
+
+
+    public function __construct()
+    {
+        $this->objExame=new Exame();
+        $this->objPaciente=new Paciente();
+        $this->objConsulta=new Consulta();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +27,9 @@ class ExameController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objExame->all());
+        dd($this->objPaciente->all());
+        dd($this->objConsulta->all());
     }
 
     /**

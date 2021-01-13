@@ -7,6 +7,14 @@ use App\Models\Estoque;
 use App\Models\Administradora;
 class EstoqueController extends Controller
 {
+    private $objEstoque;
+    private $objAdministradora;
+
+    public function __construct()
+    {
+        $this->objEstoque=new Estoque();
+        $this->objAdministradora=new Administradora();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class EstoqueController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objAdministradora->all());
+        dd($this->objEstoque->all());
     }
 
     /**

@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         //$this->call(ConsultaSeeder::class);
         //$this->call(EstoqueSeeder::class);
         //$this->call(DespesaFinanceiraSeeder::class);
-
+        $this->call(ConvenioSeeder::class);
+        $this->call(TecnicoSaudeSeeder::class);
     }
 }

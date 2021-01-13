@@ -11,6 +11,22 @@ use App\Models\Secretaria;
 use App\Models\Estoque;
 class DespesaFinanceiraController extends Controller
 {
+
+    private $objDespesasFinanceira;
+    private $objMedico;
+    private $objTecnicoSaude;
+    private $objClinica;
+    private $objSecretaria;
+    private $objEstoque;
+    public function __construct()
+    {
+        $this->objDespesasFinanceira=new DespesasFinanceira();
+        $this->objMedico=new Medico();
+        $this->objTecnicoSaude=new TecnicoSaude();
+        $this->objClinica=new Clinica();
+        $this->objSecretaria=new Secretaria();
+        $this->objEstoque=new Estoque();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +34,12 @@ class DespesaFinanceiraController extends Controller
      */
     public function index()
     {
-        //
+        dd($this->objDespesasFinanceira->all());
+        dd($this->objMedico->all());
+        dd($this->objTecnicoSaude->all());
+        dd($this->objClinica->all());
+        dd($this->objSecretaria->all());
+        dd($this->objEstoque->all());
     }
 
     /**
