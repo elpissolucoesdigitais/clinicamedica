@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DespesasFinanceira;
+use App\Models\DespesaFinanceira;
 use App\Models\Medico;
 use App\Models\TecnicoSaude;
 use App\Models\Clinica;
@@ -12,7 +12,7 @@ use App\Models\Estoque;
 class DespesaFinanceiraController extends Controller
 {
 
-    private $objDespesasFinanceira;
+    private $objDespesaFinanceira;
     private $objMedico;
     private $objTecnicoSaude;
     private $objClinica;
@@ -20,7 +20,7 @@ class DespesaFinanceiraController extends Controller
     private $objEstoque;
     public function __construct()
     {
-        $this->objDespesasFinanceira=new DespesasFinanceira();
+        $this->objDespesaFinanceira=new DespesaFinanceira();
         $this->objMedico=new Medico();
         $this->objTecnicoSaude=new TecnicoSaude();
         $this->objClinica=new Clinica();
@@ -34,7 +34,7 @@ class DespesaFinanceiraController extends Controller
      */
     public function index()
     {
-        dd($this->objDespesasFinanceira->all());
+        dd($this->objDespesaFinanceira->all());
         dd($this->objMedico->all());
         dd($this->objTecnicoSaude->all());
         dd($this->objClinica->all());
