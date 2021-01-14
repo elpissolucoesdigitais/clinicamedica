@@ -24,6 +24,7 @@ class PacienteController extends Controller
     {
         $paciente=$this->objPaciente->all();
         return view('paciente.index',compact('paciente'));
+        //return view('paciente.sidebar');
     }
 
     /**
