@@ -56,7 +56,9 @@ class ProcedimentoController extends Controller
      */
     public function show($id)
     {
-        //
+        $procedimento= $this->objProcedimento->find($id);
+        return view('procedimento.show',compact('procedimento'));
+
     }
 
     /**
