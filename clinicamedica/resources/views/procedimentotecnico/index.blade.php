@@ -57,8 +57,8 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Fk_Procedimento</th></th></th>
-                <th scope="col">Fk_Tecnico_Saude</th>
+                <th scope="col">Procedimento</th></th></th>
+                <th scope="col">Tecnico Saude</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
@@ -75,13 +75,13 @@
                         <td>{{$procedimentoTecnicos->fk_procedimento}}</td>
                         <td>{{$procedimentoTecnicos->fk_tecnico_saude}}</td>
                         <td>
-                            <a href="{{url("procedimentoTecnico/$procedimentoTecnicos->id")}}">
+                            <a href="{{url("procedimentotecnico/$procedimentoTecnicos->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>
                             </a>
-                            <a href="{{url("procedimentoTecnico/$procedimentoTecnicos->id/edit")}}">
+                            <a href="{{url("procedimentotecnico/$procedimentoTecnicos->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("procedimentoTecnico/$procedimentoTecnicos->id")}}" class="js-del">
+                            <a href="{{url("procedimentotecnico/$procedimentoTecnicos->id")}}" class="js-del">
                                 <button class="btn btn-danger">Deletar</button>
                             </a>
                         </td>
