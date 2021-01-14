@@ -32,7 +32,7 @@ class RelatorioPacienteController extends Controller
      */
     public function index()
     {
-        $relatorioPaciente=$this->objRelatorioPaciente->all();
+        $relatorioPaciente=$this->objRelatorio->all();
         return view('relatoriopaciente.index',compact('relatorioPaciente'));
 
     }
