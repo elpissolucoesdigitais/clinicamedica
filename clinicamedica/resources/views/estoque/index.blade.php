@@ -60,7 +60,7 @@
                 <th scope="col">Nome</th></th></th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Valor</th>
-                <th scope="col">Fk_Administradora</th>
+                <th scope="col">Administradora</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>

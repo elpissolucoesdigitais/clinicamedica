@@ -7,15 +7,15 @@
       <button type="button" id="sidebarCollapse" class="btn btn-primary">
       </button>
     </div>
-    <div class="img bg-wrap text-center py-4" style="background-image: url(aseets/images/bg_1.jpg);">
+    <div class="img bg-wrap text-center py-4" style="background-image: url(../assets/images/bg_1.jpg);">
       <div class="user-logo">
-        <div class="img" style="background-image: url(assets/images/logo.jpg);"></div>
+        <div class="img" style="background-image: url(../assets/images/logo.jpg);"></div>
         <h3>Admin</h3>
       </div>
     </div>
     <ul class="list-unstyled components mb-5">
       <li class="active">
-        <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+        <a href="#"><span class="fa fa-home mr-3"></span>Home</a>
       </li>
       <li>
           <a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span>Cadastro</a>
@@ -42,7 +42,7 @@
 
 <!-- Página do crud  -->
 <div id="content" class="p-4 p-md-5 pt-5">
-  <h1 class="text-center">showpaciente</h1><hr>
+  <h1 class="text-center">Paciente {{$paciente->nome}} </h1><hr>
   @php
       //$paciente=$agenda->find($agenda->id)->relPacientes;
   @endphp

@@ -8,9 +8,9 @@
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	        </button>
         </div>
-	  		<div class="img bg-wrap text-center py-4" style="background-image: url(aseets/images/bg_1.jpg);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(../assets/images/bg_1.jpg);">
 	  			<div class="user-logo">
-	  				<div class="img" style="background-image: url(assets/images/logo.jpg);"></div>
+	  				<div class="img" style="background-image: url(../assets/images/logo.jpg);"></div>
 	  				<h3>Admin</h3>
 	  			</div>
 	  		</div>
@@ -88,33 +88,7 @@
                             </a>
                         </td>
                       </tr>
-                @endforeach
-                    
-                    @foreach ($paciente as $pacientes)
-                        @php
-                            //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                            
-                        @endphp
-                        <tr>
-                            <th scope="row">{{$pacientes->id}}</th>
-                            <td>{{$pacientes->nome}}</td>
-                            <td>{{$pacientes->cpf}}</td>
-                            <td>{{$pacientes->rg}}</td>
-                            <td>{{$pacientes->email}}</td>
-                            <td>
-                                <a href="{{url("paciente/$pacientes->id")}}">
-                                    <button class="btn btn-dark">Visualizar</button>
-                                </a>
-                                <a href="{{url("paciente/$pacientes->id/edit")}}">
-                                    <button class="btn btn-primary">Editar</button>
-                                </a>
-                                <a href="{{url("paciente/$pacientes->id")}}" class="js-del">
-                                    <button class="btn btn-danger">Deletar</button>
-                                </a>
-                            </td>
-                          </tr>
-                    @endforeach
-                        
+                @endforeach         
                 </tbody>
               </table>
           
