@@ -58,7 +58,9 @@ class RelatorioFinanceiroController extends Controller
      */
     public function show($id)
     {
-        //
+        $relatorioFinanceiro= $this->objRelatorioFinanceiro->find($id);
+        return view('relatorioFinanceiro.show',compact('relatorioFinanceiro'));
+
     }
 
     /**

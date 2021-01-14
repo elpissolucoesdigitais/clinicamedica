@@ -53,7 +53,9 @@ class ClinicaController extends Controller
      */
     public function show($id)
     {
-        //
+        $clinica= $this->objClinica->find($id);
+        return view('clinica.show',compact('clinica'));
+
     }
 
     /**

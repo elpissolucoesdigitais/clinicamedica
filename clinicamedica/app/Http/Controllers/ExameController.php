@@ -60,7 +60,9 @@ class ExameController extends Controller
      */
     public function show($id)
     {
-        //
+        $exame= $this->objExame->find($id);
+        return view('exame.show',compact('exame'));
+
     }
 
     /**

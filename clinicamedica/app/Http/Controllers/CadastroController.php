@@ -68,7 +68,9 @@ class CadastroController extends Controller
      */
     public function show($id)
     {
-        //
+        $cadastro= $this->objCadastra->find($id);
+        return view('cadastro.show',compact('cadastro'));
+
     }
 
     /**

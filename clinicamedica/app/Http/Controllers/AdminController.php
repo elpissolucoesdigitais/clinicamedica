@@ -65,7 +65,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        //$admin= $this->objTecnicoSaude->find($id);
+        //return view('tecnicoSaude.show',compact('tecnicoSaude'));
+
     }
 
     /**

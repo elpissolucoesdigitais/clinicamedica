@@ -56,7 +56,9 @@ class SecretariaController extends Controller
      */
     public function show($id)
     {
-        //
+        $secretaria= $this->objSecretaria->find($id);
+        return view('secretaria.show',compact('secretaria'));
+
     }
 
     /**

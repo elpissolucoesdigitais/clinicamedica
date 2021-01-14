@@ -54,7 +54,9 @@ class TecnicoSaudeController extends Controller
      */
     public function show($id)
     {
-        //
+        $tecnicoSaude= $this->objTecnicoSaude->find($id);
+        return view('tecnicoSaude.show',compact('tecnicoSaude'));
+
     }
 
     /**
