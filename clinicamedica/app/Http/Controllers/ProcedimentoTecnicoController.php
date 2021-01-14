@@ -60,8 +60,8 @@ class ProcedimentoTecnicoController extends Controller
     public function show($id)
     {
         
-        $procedimentoTecnico= $this->objProcedimentoTecnico->find($id);
-        return view('procedimentoTecnico.show',compact('procedimentoTecnico'));
+        $procedimentotecnico= $this->objProcedimentoTecnico->find($id);
+        return view('procedimentotecnico.show',compact('procedimentotecnico'));
     }
 
     /**

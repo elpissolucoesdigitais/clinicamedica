@@ -66,7 +66,7 @@ class RelatorioPacienteController extends Controller
      */
     public function show($id)
     {
-        $relatorioPaciente= $this->objRelatorioPaciente->find($id);
+        $relatorioPaciente= $this->objRelatorio->find($id);
         return view('relatorioPaciente.show',compact('relatorioPaciente'));
 
     }
