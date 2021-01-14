@@ -59,8 +59,8 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th></th></th>
                 <th scope="col">Descrição</th>
-                <th scope="col">Fk_Paciente</th>
-                <th scope="col">Fk_Consulta</th>
+                <th scope="col">Paciente</th>
+                <th scope="col">Consulta</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
