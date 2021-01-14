@@ -28,7 +28,7 @@ class ExameController extends Controller
     public function index()
     {
         $exame=$this->objExame->all();
-        return view('exame.index',compact('Exame'));
+        return view('exame.index',compact('exame'));
     }
 
     /**

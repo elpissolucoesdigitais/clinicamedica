@@ -23,7 +23,7 @@ class EstoqueController extends Controller
     public function index()
     {
         $estoque=$this->objEstoque->all();
-        return view('estoque.index',compact('Estoque'));
+        return view('estoque.index',compact('estoque'));
     }
 
     /**

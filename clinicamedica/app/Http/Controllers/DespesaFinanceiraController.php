@@ -34,8 +34,8 @@ class DespesaFinanceiraController extends Controller
      */
     public function index()
     {
-        $DespesaFinanceira=$this->objDespesaFinanceira->all();
-        return view('despesafinanceira.index',compact('DespesaFinanceira'));
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        return view('despesafinanceira.index',compact('despesaFinanceira'));
     }
 
     /**
