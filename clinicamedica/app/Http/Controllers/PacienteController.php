@@ -56,7 +56,8 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $paciente= $this->objPaciente->find($id);
+        return view('paciente.show',compact('paciente'));
     }
 
     /**
