@@ -58,7 +58,9 @@ class ReceitaFinanceiraController extends Controller
      */
     public function show($id)
     {
-        //
+        $receitaFinanceira= $this->objReceitaFinanceira->find($id);
+        return view('receitaFinanceira.show',compact('receitaFinanceira'));
+
     }
 
     /**

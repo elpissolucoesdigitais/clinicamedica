@@ -58,7 +58,9 @@ class ConsultaController extends Controller
      */
     public function show($id)
     {
-        //
+        $consulta= $this->objConsulta->find($id);
+        return view('consulta.show',compact('consulta'));
+
     }
 
     /**

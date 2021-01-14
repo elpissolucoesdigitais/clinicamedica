@@ -55,7 +55,9 @@ class EstoqueController extends Controller
      */
     public function show($id)
     {
-        //
+        $estoque= $this->objEstoque->find($id);
+        return view('estoque.show',compact('estoque'));
+
     }
 
     /**

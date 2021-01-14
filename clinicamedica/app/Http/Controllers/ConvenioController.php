@@ -54,7 +54,9 @@ class ConvenioController extends Controller
      */
     public function show($id)
     {
-        //
+        $convenio= $this->objConvenio->find($id);
+        return view('convenio.show',compact('convenio'));
+
     }
 
     /**

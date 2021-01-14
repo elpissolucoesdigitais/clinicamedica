@@ -67,7 +67,9 @@ class DespesaFinanceiraController extends Controller
      */
     public function show($id)
     {
-        //
+        $despesaFinanceira= $this->objDespesaFinanceira->find($id);
+        return view('despesaFinanceira.show',compact('despesaFinanceira'));
+
     }
 
     /**

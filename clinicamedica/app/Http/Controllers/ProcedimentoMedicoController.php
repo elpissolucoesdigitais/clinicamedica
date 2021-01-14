@@ -59,7 +59,9 @@ class ProcedimentoMedicoController extends Controller
      */
     public function show($id)
     {
-        //
+        $procedimentoMedico= $this->objProcedimentoMedico->find($id);
+        return view('procedimentoMedico.show',compact('procedimentoMedico'));
+
     }
 
     /**

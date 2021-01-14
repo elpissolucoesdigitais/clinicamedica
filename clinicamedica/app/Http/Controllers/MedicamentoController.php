@@ -57,7 +57,9 @@ class MedicamentoController extends Controller
      */
     public function show($id)
     {
-        //
+        $medicamento= $this->objMedicamento->find($id);
+        return view('medicamento.show',compact('medicamento'));
+
     }
 
     /**
