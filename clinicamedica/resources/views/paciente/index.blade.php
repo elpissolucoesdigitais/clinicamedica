@@ -55,12 +55,12 @@
         <table class="table text-center">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Id</th>
                 <th scope="col">Paciente</th></th></th>
                 <th scope="col">CPF</th>
                 <th scope="col">RG</th>
                 <th scope="col">E-mail</th>
-                <th scope="col">Action</th>
+                <th scope="col">Ação</th>
               </tr>
             </thead>
             <tbody>
