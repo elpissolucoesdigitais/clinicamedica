@@ -101,11 +101,52 @@
               <label for="criado">Criado</label>
               <input type="text" class="form-control" id="criado" name="criado" value="{{$medico->created_at}}">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="sexo">sexo</label>
                 <input type="text" class="form-control" id="sexo" name="sexo" value="{{$medico->sexo}}">
               </div>
           </div>  
+
+          <div class="form-group col-md-8">
+            <label for="complemento">Complemento</label>
+            <input type="text" class="form-control" id="complemento" name="complemento" value="{{$medico->complemento}}">
+          </div>
+
+          <div class="form-group col-md-5">
+            <label for="contato">Contato</label>
+            <input type="text" class="form-control" id="contato" name="contato" value="{{$medico->contato}}">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="uf">UF</label>
+            <input type="text" class="form-control" id="uf" name="uf" value="{{$medico->uf}}">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control" id="cep" name="cep" value="{{$medico->cep}}">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="datanascimento">Data de Nascimento</label>
+            <input type="text" class="form-control" id="datanascimento" name="datanascimento" value="{{$medico->datanascimento}}">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="foto">Foto do Medico</label>
+            <input type="text" class="form-control" id="foto" name="foto" value="{{$medico->foto}}">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="salario">Salario</label>
+            <input type="text" class="form-control" id="salario" name="salario" value="{{$medico->salario}}">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="updated_at">Ultima Atualização</label>
+            <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$medico->updated_at}}">
+          </div>
+
         </fieldset>  
         </form>
   </div> 

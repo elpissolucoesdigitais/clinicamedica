@@ -96,7 +96,73 @@
               <label for="criado">Criado</label>
               <input type="text" class="form-control" id="criado" name="criado" value="{{$paciente->created_at}}">
             </div>
-          </div>  
+            <div class="form-group col-md-3">
+              <label for="altura">Altura</label>
+              <input type="text" class="form-control" id="altura" name="altura" value="{{$paciente->altura}}">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="pressao">Pressão Arterial</label>
+              <input type="text" class="form-control" id="pressao" name="pressao" value="{{$paciente->pressao}}">
+            </div>
+            
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="numero">Numero</label>
+              <input type="text" class="form-control" id="numero" name="numero" value="{{$paciente->numero}}">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="uf">UF</label>
+              <input type="text" class="form-control" id="uf" name="uf" value="{{$paciente->uf}}">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="peso">Peso</label>
+              <input type="text" class="form-control" id="peso" name="peso" value="{{$paciente->peso}}">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="longradouro">Longradouro</label>
+            <input type="text" class="form-control" id="longradouro" name="longradouro" value="{{$paciente->longradouro}}">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" value="{{$paciente->email}}">
+          </div>
+
+          <div class="form-group">
+            <label for="foto">Foto do Paciente</label>
+            <input type="text" class="form-control" id="foto" name="foto" value="{{$paciente->foto}}">
+          </div>
+
+          <div class="form-group">
+            <label for="nomepai">Nome do Pai</label>
+            <input type="text" class="form-control" id="nomepai" name="nomepai" value="{{$paciente->nomepai}}">
+          </div>
+
+          <div class="form-group">
+            <label for="nomemae">Nome da Mãe</label>
+            <input type="text" class="form-control" id="nomemae" name="nomemae" value="{{$paciente->nomemae}}">
+          </div>
+
+          <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input type="text" class="form-control" id="complemento" name="complemento" value="{{$paciente->complemento}}">
+          </div>
+
+          <div class="form-group">
+            <label for="fk_convenio">Convenio</label>
+            <input type="text" class="form-control" id="fk_convenio" name="fk_convenio" value="{{$paciente->fk_convenio}}">
+          </div>
+
+          <div class="form-group">
+            <label for="updated_at">Ultima Atualização</label>
+            <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$paciente->updated_at}}">
+          </div>
+
         </fieldset>  
         </form>
   </div> 
