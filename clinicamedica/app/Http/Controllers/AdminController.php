@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//20
+//19
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Administradora;
@@ -26,6 +26,49 @@ use App\Models\TecnicoSaude;
 
 class AdminController extends Controller
 {
+    private $objAdmin;
+    private $objAdministradora;
+    private $objClinica;
+    private $objConsulta;
+    private $objConvenio;
+    private $objDespesaFinanceira;
+    private $objEstoque;
+    private $objExame;
+    private $objMedicamento;
+    private $objMedico;
+    private $objPaciente;
+    private $objProcedimento;
+    private $objProcedimentoMedico;
+    private $objProcedimentoTecnico;
+    private $objReceitaFinanceira;
+    private $objRelatorio;
+    private $objRelatorioFinanceiro;
+    private $objSecretaria;
+    private $objTecnicoSaude;
+
+    public function __construct()
+    {
+        $this->objAdmin=new Admin();
+        $this->objAdministradora=new Administradora();
+        $this->objClinica=new Clinica();
+        $this->objConsulta=new Consulta();
+        $this->objConvenio=new Convenio();
+        $this->objDespesaFinanceira=new DespesaFinanceira();
+        $this->objEstoque=new Estoque();
+        $this->objExame=new Exame();
+        $this->objMedicamento=new Medicamento();
+        $this->objMedico=new Medico();
+        $this->objPaciente=new Paciente();
+        $this->objProcedimento=new Procedimento();
+        $this->objProcedimentoMedico=new ProcedimentoMedico();
+        $this->objProcedimentoTecnico=new ProcedimentoTecnico();
+        $this->objReceitaFinanceira=new ReceitaFinanceira();
+        $this->objRelatorio=new Relatorio();
+        $this->objRelatorioFinanceiro=new RelatorioFinanceiro();
+        $this->objSecretaria=new Secretaria();
+        $this->objTecnicoSaude=new TecnicoSaude();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +76,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        //return view('admin.index');
+
+        $admin=$this->objAdmin->all();
+        return view('admin.index',compact('admin'));
+
     }
 
     /**
@@ -65,8 +112,8 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //$admin= $this->objTecnicoSaude->find($id);
-        //return view('tecnicoSaude.show',compact('tecnicoSaude'));
+        $admin= $this->objAdmin->find($id);
+        return view('admin.show',compact('admin'));
 
     }
 

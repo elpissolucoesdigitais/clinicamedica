@@ -94,6 +94,12 @@
               <input type="text" class="form-control" id="criado" name="criado" value="{{$convenio->created_at}}">
             </div>
           </div>  
+
+          <div class="form-group">
+            <label for="updated_at">Ultima Atualização</label>
+            <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$convenio->updated_at}}">
+          </div>
+
         </fieldset>  
         </form>
   </div> 

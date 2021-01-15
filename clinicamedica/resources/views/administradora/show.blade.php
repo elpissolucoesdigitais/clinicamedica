@@ -127,10 +127,17 @@
               </div>
         </div>
 
+        <div class="form-row">
         <div class="form-group">
             <label for="updated_at">Ultima Atualização</label>
             <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$administradora->updated_at}}">
           </div>
+
+          <div class="form-group col-md-5">
+            <label for="foto">Foto da Administradora</label>
+            <input type="text" class="form-control" id="foto" name="foto" value="{{$administradora->foto}}">
+          </div>
+        </div>
           
 
         </fieldset>  
@@ -138,4 +145,3 @@
   </div> 
   @endsection
 
-  <!---Atributo Faltando: foto, id--->

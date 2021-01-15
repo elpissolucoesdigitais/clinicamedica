@@ -78,6 +78,10 @@
               <label for="criado">Criado</label>
               <input type="text" class="form-control" id="criado" name="criado" value="{{$medicamento->created_at}}">
             </div>
+            <div class="form-group">
+              <label for="updated_at">Ultima Atualização</label>
+              <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$medicamento->updated_at}}">
+            </div>
           </div>  
         </fieldset>  
         </form>
