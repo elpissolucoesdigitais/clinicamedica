@@ -31,7 +31,8 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        //
+        $medico=$this->objMedico->all();
+        return view('medico.index',compact('medico'));
     }
 
     /**
@@ -42,8 +43,35 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objMedico->create([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'bairro'=>$request->bairro,
+            'salario'=>$request->salario,
+            'complemento'=>$request->especialidade,
+            'cep'=>$request->cep,
+            'contato'=>$request->contato,
+            'email'=>$request->email,
+            'foto'=>$request->foto,
+            'nome'=>$request->nome,
+            'rg'=>$request->rg,
+            'cpf'=>$request->cpf,
+            'longradouro'=>$request->longradouro,
+            'uf	'=>$request->uf	,
+            'datanascimento'=>$request->datanascimento,
+            'crm'=>$request->crm,
+            'crmuf'=>$request->crmuf,
+            'especialidade'=>$request->especialidade,
+            
+            
+            
+        ]);
+        if($cad){
+            return redirect('clinica');
+        }
     }
+    
 
     /**
      * Display the specified resource.
