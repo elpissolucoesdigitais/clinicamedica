@@ -50,7 +50,7 @@ class ClinicaController extends Controller
             'email'=>$request->email,
             'complemento'=>$request->complemento,
             'nome'=>$request->nome,
-            'logradouro'=>$request->logradouro,
+            'logradouro'=>$request->longradouro,
             'contato'=>$request->contato,
             'bairro'=>$request->bairro,
             'uf'=>$request->uf,

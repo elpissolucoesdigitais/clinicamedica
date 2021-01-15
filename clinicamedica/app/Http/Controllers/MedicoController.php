@@ -68,7 +68,7 @@ class MedicoController extends Controller
             
         ]);
         if($cad){
-            return redirect('clinica');
+            return redirect('medico');
         }
     }
     
