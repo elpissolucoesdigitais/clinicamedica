@@ -90,7 +90,10 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $admin=$this->objAdmin->all();
+        return view('admin.create', compact('admin'));
+
+        //return view('admin.create');
     }
 
     /**
@@ -101,7 +104,29 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objAdmin->create([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'crm'=>$request->crm,
+            'salario'=>$request->salario
+            
+        ]);
+        if($cad){
+            return redirect('admin');
+        }
+
     }
 
     /**

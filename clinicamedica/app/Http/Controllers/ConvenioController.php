@@ -32,7 +32,9 @@ class ConvenioController extends Controller
      */
     public function create()
     {
-        //
+        $convenio=$this->objConvenio->all();
+        return view('convenio.create', compact('convenio'));
+
     }
 
     /**
@@ -43,7 +45,21 @@ class ConvenioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objConvenio->create([
+            'status'=>$request->status,
+            'email'=>$request->email,
+            'nome'=>$request->nome,
+            'contato'=>$request->contato,
+            'descricao'=>$request->descricao,
+            'validade'=>$request->validade,
+            'cnpj'=>$request->cnpj,
+            'valor'=>$request->valor,
+            //8
+        ]);
+        if($cad){
+            return redirect('convenio');
+        }
+
     }
 
     /**
