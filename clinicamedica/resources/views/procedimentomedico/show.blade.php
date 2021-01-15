@@ -1,7 +1,5 @@
 @extends('templates.template')
-
 @section('content')
-
 <div class="wrapper d-flex align-items-stretch">
   <nav id="sidebar">
     <div class="custom-menu">
