@@ -43,10 +43,21 @@ class ClinicaController extends Controller
      */
     public function store(Request $request)
     {
-        $cad=$this->objClinica->create([
+        $cad=$this->objclinica->create([
+            'responsaveltecnico'=>$request->responsaveltecnico,
+            'numero'=>$request->numero,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
             'nome'=>$request->nome,
             'logradouro'=>$request->logradouro,
-            
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'foto'=>$request->foto,
+            'cnpj'=>$request->cnpj
+            //13
         ]);
         if($cad){
             return redirect('clinica');
