@@ -32,7 +32,8 @@ class TecnicoSaudeController extends Controller
      */
     public function create()
     {
-        //
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        return view('tecnicosaude.index',compact('tecnicoSaude'));
     }
 
     /**
@@ -43,7 +44,27 @@ class TecnicoSaudeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objTecnicoSaude->create([
+            'cpf'=>$request->nome,
+            'uf'=>$request->logradouro,
+            'longradouro'=>$request->longradouro,
+            'bairro'=>$request->bairro,
+            'salario'=>$request->salario,
+            'cidade'=>$request->cidade,
+            'especialidade'=>$request->especialidade,
+            'cep'=>$request->cep,
+            'contato'=>$request->contato,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'nome'=>$request->nome,
+            'rg'=>$request->rg,
+            'foto'=>$request->foto,
+            
+            
+        ]);
+        if($cad){
+            return redirect('tecnicosaude');
+        }
     }
 
     /**
