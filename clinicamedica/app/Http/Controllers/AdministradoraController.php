@@ -31,7 +31,9 @@ class AdministradoraController extends Controller
      */
     public function create()
     {
-        //
+        
+        $administradora=$this->objAdministradora->all();
+        return view('administradora.create', compact('administradora'));
     }
 
     /**
@@ -42,7 +44,28 @@ class AdministradoraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objAdministradora->create([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'salario'=>$request->salario
+            //15
+        ]);
+        if($cad){
+            return redirect('administradora');
+        }
+
     }
 
     /**
