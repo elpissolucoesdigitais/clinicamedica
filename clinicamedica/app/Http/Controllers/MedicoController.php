@@ -32,7 +32,7 @@ class MedicoController extends Controller
     public function create()
     {
         $medico=$this->objMedico->all();
-        return view('medico.index',compact('medico'));
+        return view('medico.create',compact('medico'));
     }
 
     /**

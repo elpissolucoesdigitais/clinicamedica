@@ -44,20 +44,12 @@ class RelatorioPacienteController extends Controller
      */
     public function create()
     {
-        $relatoriopaciente=$this->objRelatorio->all();
-        return view('relatoriopaciente.create', compact('relatoriopaciente'));
-
+        $relatorioPaciente=$this->objRelatorio->all();
         $medicamento=$this->objMedicamento->all();
-        return view('medicamento.create', compact('medicamento'));
-
         $medico=$this->objMedico->all();
-        return view('medico.create', compact('medico'));
-
         $tecnicosaude=$this->objTecnicoSaude->all();
-        return view('tecnicosaude.create', compact('tecnicosaude'));
-
         $exame=$this->objExame->all();
-        return view('exame.create', compact('exame'));
+        return view('relatoriopaciente.create', compact('relatorioPaciente'));     
 
     }
 

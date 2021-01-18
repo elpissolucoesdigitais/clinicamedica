@@ -36,10 +36,8 @@ class MedicamentoController extends Controller
     public function create()
     {
         $medicamento=$this->objMedicamento->all();
-        return view('medicamento.create', compact('medicamento'));
-
         $medico=$this->objMedico->all();
-        return view('medico.create', compact('medico'));
+        return view('medicamento.create', compact('medicamento'));
 
     }
 

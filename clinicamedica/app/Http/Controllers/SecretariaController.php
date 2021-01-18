@@ -34,7 +34,10 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        //
+        $secretaria=$this->objSecretaria->all();
+        $clinica=$this->objClinica->all();
+        return view('secretaria.create', compact('secretaria'));
+
     }
 
     /**
@@ -45,7 +48,29 @@ class SecretariaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objSecretaria->create([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'salario'=>$request->salario,
+            'fk_clinica'=>$request->fk_clinica
+            
+        ]);
+        if($cad){
+            return redirect('secretaria');
+        }
+
     }
 
     /**

@@ -37,13 +37,9 @@ class RelatorioFinanceiroController extends Controller
     public function create()
     {
         $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
-        return view('relatorioFinanceiro.create', compact('relatorioFinanceiro'));
-
         $despesaFinanceira=$this->objDespesaFinanceira->all();
-        return view('despesaFinanceira.create', compact('despesaFinanceira'));
-
         $administradora=$this->objAdministradora->all();
-        return view('administradora.create', compact('administradora'));
+        return view('relatoriofinanceiro.create', compact('relatorioFinanceiro'));
 
     }
 

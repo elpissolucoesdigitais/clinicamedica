@@ -33,7 +33,7 @@ class TecnicoSaudeController extends Controller
     public function create()
     {
         $tecnicoSaude=$this->objTecnicoSaude->all();
-        return view('tecnicosaude.index',compact('tecnicoSaude'));
+        return view('tecnicosaude.create',compact('tecnicoSaude'));
     }
 
     /**

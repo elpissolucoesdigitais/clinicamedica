@@ -35,10 +35,8 @@ class ProcedimentoController extends Controller
     public function create()
     {
         $procedimento=$this->objProcedimento->all();
-        return view('procedimento.create', compact('procedimento'));
-
         $secretaria=$this->objSecretaria->all();
-        return view('secretaria.create', compact('secretaria'));
+        return view('procedimento.create', compact('procedimento'));
 
     }
 

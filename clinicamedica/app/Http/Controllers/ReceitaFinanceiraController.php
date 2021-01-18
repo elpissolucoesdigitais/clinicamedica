@@ -37,13 +37,9 @@ class ReceitaFinanceiraController extends Controller
     public function create()
     {
         $receitaFinanceira=$this->objReceitaFinanceira->all();
-        return view('receitaFinanceira.create', compact('receitaFinanceira'));
-
         $consulta=$this->objConsulta->all();
-        return view('consulta.create', compact('consulta'));
-
         $administradora=$this->objAdministradora->all();
-        return view('administradora.create', compact('administradora'));
+        return view('receitafinanceira.create', compact('receitaFinanceira'));
 
     }
 

@@ -46,22 +46,12 @@ class DespesaFinanceiraController extends Controller
     public function create()
     {
         $despesaFinanceira=$this->objDespesaFinanceira->all();
-        return view('despesaFinanceira.create', compact('despesaFinanceira'));
-
         $medico=$this->objMedico->all();
-        return view('medico.create', compact('medico'));
-
         $tecnicoSaude=$this->objTecnicoSaude->all();
-        return view('tecnicoSaude.create', compact('tecnicoSaude'));
-
         $clinica=$this->objClinica->all();
-        return view('clinica.create', compact('clinica'));
-
         $secretaria=$this->objSecretaria->all();
-        return view('secretaria.create', compact('secretaria'));
-
         $estoque=$this->objEstoque->all();
-        return view('estoque.create', compact('estoque'));
+        return view('despesafinanceira.create', compact('despesaFinanceira'));
 
     }
 
