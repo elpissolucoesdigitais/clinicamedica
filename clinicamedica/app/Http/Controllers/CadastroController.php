@@ -46,7 +46,18 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        //
+        $cadastro=$this->objCadastra->all();
+        return view('cadastro.create', compact('cadastro'));
+
+        $paciente=$this->objPaciente->all();
+        return view('paciente.create', compact('paciente'));
+
+        $secretaria=$this->objSecretaria->all();
+        return view('secretaria.create', compact('secretaria'));
+
+        $administradora=$this->objAdministradora->all();
+        return view('administradora.create', compact('administradora'));
+
     }
 
     /**
@@ -57,7 +68,16 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objCadastra->create([
+            'fk_paciente'=>$request->fk_paciente,
+            'fk_secretaria'=>$request->fk_secretaria,
+            'fk_administradora'=>$request->fk_administradora
+            
+        ]);
+        if($cad){
+            return redirect('cadastro');
+        }
+
     }
 
     /**

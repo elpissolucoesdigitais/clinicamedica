@@ -36,7 +36,15 @@ class RelatorioFinanceiroController extends Controller
      */
     public function create()
     {
-        //
+        $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
+        return view('relatorioFinanceiro.create', compact('relatorioFinanceiro'));
+
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        return view('despesaFinanceira.create', compact('despesaFinanceira'));
+
+        $administradora=$this->objAdministradora->all();
+        return view('administradora.create', compact('administradora'));
+
     }
 
     /**
@@ -47,7 +55,15 @@ class RelatorioFinanceiroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objRelatorioFinanceiro->create([
+            'fk_despesa'=>$request->fk_despesa,
+            'fk_administradora'=>$request->fk_administradora
+            
+        ]);
+        if($cad){
+            return redirect('relatorioFinanceiro');
+        }
+
     }
 
     /**

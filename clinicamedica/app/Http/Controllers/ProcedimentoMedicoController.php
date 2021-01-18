@@ -37,7 +37,15 @@ class ProcedimentoMedicoController extends Controller
      */
     public function create()
     {
-        //
+        $procedimentoMedico=$this->objProcedimentoMedico->all();
+        return view('procedimentoMedico.create', compact('procedimentoMedico'));
+
+        $medico=$this->objMedico->all();
+        return view('medico.create', compact('medico'));
+
+        $procedimento=$this->objProcedimento->all();
+        return view('procedimento.create', compact('procedimento'));
+
     }
 
     /**
@@ -48,7 +56,15 @@ class ProcedimentoMedicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objProcedimentoMedico->create([
+            'fk_procedimento'=>$request->fk_procedimento,
+            'fk_medico'=>$request->fk_medico
+            
+        ]);
+        if($cad){
+            return redirect('procedimentoMedico');
+        }
+
     }
 
     /**

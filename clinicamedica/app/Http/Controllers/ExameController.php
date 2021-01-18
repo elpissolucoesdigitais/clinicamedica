@@ -38,7 +38,15 @@ class ExameController extends Controller
      */
     public function create()
     {
-        //
+        $exame=$this->objExame->all();
+        return view('exame.create', compact('exame'));
+
+        $paciente=$this->objPaciente->all();
+        return view('paciente.create', compact('paciente'));
+
+        $consulta=$this->objConsulta->all();
+        return view('consulta.create', compact('consulta'));
+
     }
 
     /**
@@ -49,7 +57,17 @@ class ExameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objExame->create([
+            'descricao'=>$request->descricao,
+            'nome'=>$request->nome,
+            'fk_paciente'=>$request->fk_paciente,
+            'fk_consulta'=>$request->fk_consulta
+            
+        ]);
+        if($cad){
+            return redirect('exame');
+        }
+
     }
 
     /**

@@ -45,7 +45,24 @@ class DespesaFinanceiraController extends Controller
      */
     public function create()
     {
-        //
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        return view('despesaFinanceira.create', compact('despesaFinanceira'));
+
+        $medico=$this->objMedico->all();
+        return view('medico.create', compact('medico'));
+
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        return view('tecnicoSaude.create', compact('tecnicoSaude'));
+
+        $clinica=$this->objClinica->all();
+        return view('clinica.create', compact('clinica'));
+
+        $secretaria=$this->objSecretaria->all();
+        return view('secretaria.create', compact('secretaria'));
+
+        $estoque=$this->objEstoque->all();
+        return view('estoque.create', compact('estoque'));
+
     }
 
     /**
@@ -56,7 +73,19 @@ class DespesaFinanceiraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objDespesaFinanceira->create([
+            'fk_medico'=>$request->fk_medico,
+            'fk_tecnico_saude'=>$request->fk_tecnico_saude,
+            'fk_clinica'=>$request->fk_clinica,
+            'fk_secretaria'=>$request->fk_secretaria,
+            'fk_estoque'=>$request->fk_estoque,
+            'tipo'=>$request->tipo
+            
+        ]);
+        if($cad){
+            return redirect('despesaFinanceira');
+        }
+
     }
 
     /**

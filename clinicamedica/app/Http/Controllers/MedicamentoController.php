@@ -35,7 +35,12 @@ class MedicamentoController extends Controller
      */
     public function create()
     {
-        //
+        $medicamento=$this->objMedicamento->all();
+        return view('medicamento.create', compact('medicamento'));
+
+        $medico=$this->objMedico->all();
+        return view('medico.create', compact('medico'));
+
     }
 
     /**
@@ -46,7 +51,17 @@ class MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objMedicamento->create([
+            'nome'=>$request->nome,
+            'dose'=>$request->dose,
+            'descricao'=>$request->descricao,
+            'fk_medico'=>$request->fk_medico
+            
+        ]);
+        if($cad){
+            return redirect('medicamento');
+        }
+
     }
 
     /**
