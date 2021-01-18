@@ -39,13 +39,9 @@ class ExameController extends Controller
     public function create()
     {
         $exame=$this->objExame->all();
-        return view('exame.create', compact('exame'));
-
         $paciente=$this->objPaciente->all();
-        return view('paciente.create', compact('paciente'));
-
         $consulta=$this->objConsulta->all();
-        return view('consulta.create', compact('consulta'));
+        return view('exame.create', compact('exame'));
 
     }
 

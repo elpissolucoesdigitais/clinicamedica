@@ -38,13 +38,9 @@ class ProcedimentoTecnicoController extends Controller
     public function create()
     {
         $tecnicoSaude=$this->objTecnicoSaude->all();
-        return view('tecnicoSaude.create', compact('tecnicoSaude'));
-
         $procedimento=$this->objProcedimento->all();
-        return view('procedimento.create', compact('procedimento'));
-
         $procedimentoTecnico=$this->objProcedimentoTecnico->all();
-        return view('procedimentoTecnico.create', compact('procedimentoTecnico'));
+        return view('procedimentotecnico.create', compact('procedimentoTecnico'));
 
     }
 

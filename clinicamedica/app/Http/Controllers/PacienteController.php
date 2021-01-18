@@ -35,10 +35,8 @@ class PacienteController extends Controller
     public function create()
     {
         $paciente=$this->objPaciente->all();
-        return view('paciente.create', compact('paciente'));
-
         $convenio=$this->objConvenio->all();
-        return view('convenio.create', compact('convenio'));
+        return view('paciente.create', compact('paciente'));
 
     }
 

@@ -34,10 +34,8 @@ class EstoqueController extends Controller
     public function create()
     {
         $estoque=$this->objEstoque->all();
-        return view('estoque.create', compact('estoque'));
-
         $administradora=$this->objAdministradora->all();
-        return view('administradora.create', compact('administradora'));
+        return view('estoque.create', compact('estoque'));
 
     }
 

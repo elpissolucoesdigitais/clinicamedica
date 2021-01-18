@@ -37,14 +37,9 @@ class ConsultaController extends Controller
     public function create()
     {
         $consulta=$this->objConsulta->all();
-        return view('consulta.create', compact('consulta'));
-
         $procedimento=$this->objProcedimento->all();
-        return view('procedimento.create', compact('procedimento'));
-
         $medico=$this->objMedico->all();
-        return view('medico.create', compact('medico'));
-
+        return view('consulta.create', compact('consulta'));
     }
 
     /**
