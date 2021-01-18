@@ -39,7 +39,8 @@ class RelatorioFinanceiroController extends Controller
         $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
         $despesaFinanceira=$this->objDespesaFinanceira->all();
         $administradora=$this->objAdministradora->all();
-        return view('relatoriofinanceiro.create', compact('relatorioFinanceiro'));
+        return view('relatoriofinanceiro.create', compact('relatorioFinanceiro',
+        'despesaFinanceira', 'administradora'));
 
     }
 
@@ -83,7 +84,12 @@ class RelatorioFinanceiroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $relatorioFinanceiro=$this->objRelatorioFinanceiro->find($id);
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        $administradora=$this->objAdministradora->all();
+        return view('relatoriofinanceiro.create', compact('relatorioFinanceiro',
+    'despesaFinanceira', 'administradora'));
+
     }
 
     /**

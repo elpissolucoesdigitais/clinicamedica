@@ -36,7 +36,7 @@ class SecretariaController extends Controller
     {
         $secretaria=$this->objSecretaria->all();
         $clinica=$this->objClinica->all();
-        return view('secretaria.create', compact('secretaria'));
+        return view('secretaria.create', compact('secretaria', 'clinica'));
 
     }
 
@@ -94,7 +94,10 @@ class SecretariaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $secretaria=$this->objSecretaria->find($id);
+        $clinica=$this->objClinica->all();
+        return view('secretaria.create', compact('secretaria', 'clinica'));
+
     }
 
     /**

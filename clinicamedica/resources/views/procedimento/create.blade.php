@@ -22,12 +22,15 @@
 
         @endif
         @csrf
-        <input class="form-control" type="text" name="id" id="id" placeholder="id" value="{{$procedimento->id ?? ''}}" require>
+        <input class="form-control" type="text" name="id" id="id" placeholder="id" 
+        value="{{$procedimento->id ?? ''}}" require>
 
        
         <input class="form-control" type="text" name="nome" id="nome" placeholder="nome do procedimento" value="{{$procedimento->nome ?? ''}}" require>
+        <input class="form-control" type="text" name="fk_secretaria" id="fk_secretaria" placeholder="" value="{{$procedimento->fk_secretaria ?? ''}}" require>
         <input class="form-control" type="text" name="Valor" id="Valor" placeholder="Valor" value="{{$procedimento->valor ?? ''}}" require>
-        <input class="btn btn-primary" type="submit" value="@if(isset($procedimento))Editar @else Cadastrar @endif">
+        <input class="btn btn-primary" type="submit" value="@if(isset($procedimento))
+        Editar @else Cadastrar @endif">
 
     </form>
 </div>

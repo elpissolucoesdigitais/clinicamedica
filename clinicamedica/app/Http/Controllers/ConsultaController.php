@@ -39,7 +39,7 @@ class ConsultaController extends Controller
         $consulta=$this->objConsulta->all();
         $procedimento=$this->objProcedimento->all();
         $medico=$this->objMedico->all();
-        return view('consulta.create', compact('consulta'));
+        return view('consulta.create', compact('consulta', 'procedimento', 'medico'));
     }
 
     /**
@@ -86,7 +86,12 @@ class ConsultaController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $consulta=$this->objConsulta->find($id);
+        $procedimento=$this->objProcedimento->all();
+        $medico=$this->objMedico->all();
+        return view('consulta.create', compact('consulta', 'procedimento', 'medico'));
+
     }
 
     /**

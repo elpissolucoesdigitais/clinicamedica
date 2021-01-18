@@ -90,8 +90,30 @@ class AdminController extends Controller
      */
     public function create()
     {
+        //19
         $admin=$this->objAdmin->all();
-        return view('admin.create', compact('admin'));
+        $administradora=$this->objAdministradora->all();
+        $clinica=$this->objClinica->all();
+        $consulta=$this->objConsulta->all();
+        $convenio=$this->objConvenio->all();
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        $estoque=$this->objEstoque->all();
+        $exame=$this->objExame->all();
+        $medicamento=$this->objMedicamento->all();
+        $medico=$this->objMedico->all();
+        $paciente=$this->objPaciente->all();
+        $procedimento=$this->objProcedimento->all();
+        $procedimentoMedico=$this->objProcedimentoMedico->all();
+        $procedimentoTecnico=$this->objProcedimentoTecnico->all();
+        $receitaFinanceira=$this->objReceitaFinanceira->all();
+        $relatorio=$this->objRelatorio->all();
+        $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
+        $secretaria=$this->objSecretaria->all();
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        return view('admin.create', compact('admin', 'administradora', 'clinica',
+    'consulta', 'convenio', 'despesaFinanceira', 'estoque', 'exame', 'medicamento',
+    'medico', 'paciente', 'procedimento', 'procedimentoMedico', 'procedimentoTecnico',
+    'receitaFinanceira', 'relatorio', 'relatorioFinanceiro', 'secretaria', 'tecnicoSaude'));
 
         //return view('admin.create');
     }
@@ -150,7 +172,31 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        //19
+        $admin=$this->objAdmin->find($id);
+        $administradora=$this->objAdministradora->all();
+        $clinica=$this->objClinica->all();
+        $consulta=$this->objConsulta->all();
+        $convenio=$this->objConvenio->all();
+        $despesaFinanceira=$this->objDespesaFinanceira->all();
+        $estoque=$this->objEstoque->all();
+        $exame=$this->objExame->all();
+        $medicamento=$this->objMedicamento->all();
+        $medico=$this->objMedico->all();
+        $paciente=$this->objPaciente->all();
+        $procedimento=$this->objProcedimento->all();
+        $procedimentoMedico=$this->objProcedimentoMedico->all();
+        $procedimentoTecnico=$this->objProcedimentoTecnico->all();
+        $receitaFinanceira=$this->objReceitaFinanceira->all();
+        $relatorio=$this->objRelatorio->all();
+        $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
+        $secretaria=$this->objSecretaria->all();
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        return view('admin.create', compact('admin', 'administradora', 'clinica',
+    'consulta', 'convenio', 'despesaFinanceira', 'estoque', 'exame', 'medicamento',
+    'medico', 'paciente', 'procedimento', 'procedimentoMedico', 'procedimentoTecnico',
+    'receitaFinanceira', 'relatorio', 'relatorioFinanceiro', 'secretaria', 'tecnicoSaude'));
+
     }
 
     /**

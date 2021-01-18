@@ -41,7 +41,7 @@ class ExameController extends Controller
         $exame=$this->objExame->all();
         $paciente=$this->objPaciente->all();
         $consulta=$this->objConsulta->all();
-        return view('exame.create', compact('exame'));
+        return view('exame.create', compact('exame', 'paciente', 'consulta'));
 
     }
 
@@ -87,7 +87,11 @@ class ExameController extends Controller
      */
     public function edit($id)
     {
-        //
+        $exame=$this->objExame->find($id);
+        $paciente=$this->objPaciente->all();
+        $consulta=$this->objConsulta->all();
+        return view('exame.create', compact('exame', 'paciente', 'consulta'));
+
     }
 
     /**

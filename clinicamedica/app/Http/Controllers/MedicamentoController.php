@@ -37,7 +37,7 @@ class MedicamentoController extends Controller
     {
         $medicamento=$this->objMedicamento->all();
         $medico=$this->objMedico->all();
-        return view('medicamento.create', compact('medicamento'));
+        return view('medicamento.create', compact('medicamento', 'medico'));
 
     }
 
@@ -83,7 +83,10 @@ class MedicamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medicamento=$this->objMedicamento->find($id);
+        $medico=$this->objMedico->all();
+        return view('medicamento.create', compact('medicamento', 'medico'));
+
     }
 
     /**

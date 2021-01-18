@@ -40,7 +40,8 @@ class ProcedimentoTecnicoController extends Controller
         $tecnicoSaude=$this->objTecnicoSaude->all();
         $procedimento=$this->objProcedimento->all();
         $procedimentoTecnico=$this->objProcedimentoTecnico->all();
-        return view('procedimentotecnico.create', compact('procedimentoTecnico'));
+        return view('procedimentotecnico.create', compact('procedimentoTecnico',
+        'tecnicoSaude', 'procedimento'));
 
     }
 
@@ -84,7 +85,12 @@ class ProcedimentoTecnicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        $procedimento=$this->objProcedimento->all();
+        $procedimentoTecnico=$this->objProcedimentoTecnico->find($id);
+        return view('procedimentotecnico.create', compact('procedimentoTecnico',
+    'tecnicoSaude', 'procedimento'));
+
     }
 
     /**

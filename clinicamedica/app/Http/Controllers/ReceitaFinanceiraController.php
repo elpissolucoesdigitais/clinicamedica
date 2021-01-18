@@ -39,7 +39,8 @@ class ReceitaFinanceiraController extends Controller
         $receitaFinanceira=$this->objReceitaFinanceira->all();
         $consulta=$this->objConsulta->all();
         $administradora=$this->objAdministradora->all();
-        return view('receitafinanceira.create', compact('receitaFinanceira'));
+        return view('receitafinanceira.create', compact('receitaFinanceira',
+        'consulta', 'administradora'));
 
     }
 
@@ -83,7 +84,12 @@ class ReceitaFinanceiraController extends Controller
      */
     public function edit($id)
     {
-        //
+        $receitaFinanceira=$this->objReceitaFinanceira->find($id);
+        $consulta=$this->objConsulta->all();
+        $administradora=$this->objAdministradora->all();
+        return view('receitafinanceira.create', compact('receitaFinanceira',
+    'consulta', 'administradora'));
+
     }
 
     /**

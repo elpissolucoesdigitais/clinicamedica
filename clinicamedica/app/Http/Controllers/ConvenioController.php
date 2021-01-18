@@ -83,7 +83,9 @@ class ConvenioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $convenio=$this->objConvenio->find($id);
+        return view('convenio.create', compact('convenio'));
+
     }
 
     /**
