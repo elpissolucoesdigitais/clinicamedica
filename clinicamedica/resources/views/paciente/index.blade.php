@@ -1,6 +1,6 @@
-@extends('templates.sidebar')
+@extends('templates.template')
 
-@section('cad')
+@section('content')
 		
 
         <!-- Página do crud  -->

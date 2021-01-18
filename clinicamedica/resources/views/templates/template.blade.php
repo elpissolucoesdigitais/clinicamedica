@@ -55,7 +55,7 @@
             </ul>
     
             </nav>
-    @yield('cad')
+    @yield('content')
 
     <script src="{{url("assets/js/javascript.js")}}"></script>
     <script src="{{url("assets/js/jquery.min.js")}}"></script>
