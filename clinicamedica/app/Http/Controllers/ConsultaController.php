@@ -36,7 +36,15 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
+        $consulta=$this->objConsulta->all();
+        return view('consulta.create', compact('consulta'));
+
+        $procedimento=$this->objProcedimento->all();
+        return view('procedimento.create', compact('procedimento'));
+
+        $medico=$this->objMedico->all();
+        return view('medico.create', compact('medico'));
+
     }
 
     /**
@@ -47,7 +55,19 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objConsulta->create([
+            'hora'=>$request->hora,
+            'data'=>$request->data,
+            'status'=>$request->status,
+            'valor'=>$request->valor,
+            'fk_procedimento'=>$request->fk_procedimento,
+            'fk_medico'=>$request->fk_medico
+            
+        ]);
+        if($cad){
+            return redirect('consulta');
+        }
+
     }
 
     /**

@@ -34,7 +34,12 @@ class ProcedimentoController extends Controller
      */
     public function create()
     {
-        //
+        $procedimento=$this->objProcedimento->all();
+        return view('procedimento.create', compact('procedimento'));
+
+        $secretaria=$this->objSecretaria->all();
+        return view('secretaria.create', compact('secretaria'));
+
     }
 
     /**
@@ -45,7 +50,17 @@ class ProcedimentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objProcedimento->create([
+            'descricao'=>$request->descricao,
+            'valor'=>$request->valor,
+            'nome'=>$request->nome,
+            'fk_secretaria'=>$request->fk_secretaria
+            
+        ]);
+        if($cad){
+            return redirect('procedimento');
+        }
+
     }
 
     /**
