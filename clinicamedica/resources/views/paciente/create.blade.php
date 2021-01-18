@@ -1,61 +1,52 @@
 @extends('templates.template')
+@extends('templates.sidebar')
+@section('sidebar')
 @section('content')
 
 
-<main>
-    <header>
-      <a href="dashboard.html"><i class="fas fa-home"></i> DashBoard</a>
-      <a href="../index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
-    </header>
-    <div class="main-content">
-      <div class="main-content-title">
-        <h2>Perfil</h2>
-      </div>
-      <div class="perfil-parent">
-        <div class="perfil">
-          <div class="perfil-img">
-              <div class="img">
-
-              </div>
-          </div>
-          <div class="perfil-form">
-            <form>
-              <div class="form-group">
-                <label for="nome">Nome completo</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome completo">
-              
-              </div>
-              <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email">
-              </div>
-              <div class="form-group">
-                <label for="idade">Idade</label>
-                <input type="number" class="form-control" id="idade">
-              </div>
-              <div class="form-group">
-                <label for="genero">Gênero</label>
-                <select class="form-control" id="genero">
-                  <option value="masculino">Masculino</option>
-                  <option value="feminino">Feminino</option>
-                 
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="senha">
-              </div>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
-              </div>
-              <button type="submit" class="btn">Salvar</button>
-            </form>
-          </div>
-        </div>
+<form class="row g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
       </div>
     </div>
-  </main>
-</div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
 
 @endsection
