@@ -37,14 +37,10 @@ class ProcedimentoMedicoController extends Controller
      */
     public function create()
     {
+        $procedimento=$this->objProcedimento->all();
+        $medico=$this->objMedico->all();
         $procedimentoMedico=$this->objProcedimentoMedico->all();
         return view('procedimentomedico.create', compact('procedimentoMedico'));
-
-        $medico=$this->objMedico->all();
-        return view('medico.create', compact('medico'));
-
-        $procedimento=$this->objProcedimento->all();
-        return view('procedimento.create', compact('procedimento'));
 
     }
 

@@ -1,0 +1,55 @@
+div.perfil{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 1rem rgba(0, 0,0,0.1);
+ 
+  padding: 20px;
+}
+div.perfil-parent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.perfil-parent{
+  display: flex;
+  
+}
+div.perfil-img{
+  width: 40%;
+}
+div.perfil-form{
+  width: 60%;
+  padding-left: 20px;
+}
+div.perfil-form button{
+  margin-top: 25px;
+  background:linear-gradient(135deg,#6e8efb,#a777e3);
+  color: white;
+}
+div.perfil-form button{
+  transform: scale(1.10);
+  transition: .2s;
+}
+div.perfil label{
+  font-size: 14px;
+   color: #72777a
+}
+div.perfil-form input,div.perfil-form select{
+  font-size: 14px;
+  color: #72777a
+}
+div.img{
+  height: 400px;
+  width: 300px;
+  box-shadow: 0 0 2rem rgba(0, 0,0,0.1);
+  background-image: url('/img/girl.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+}
