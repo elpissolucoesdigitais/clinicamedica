@@ -8299,8 +8299,8 @@ h1, h2, h3, h4, h5,
     background: #000;
     opacity: .3; }
   .bg-wrap .user-logo .img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 10px; }
