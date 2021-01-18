@@ -34,9 +34,9 @@ class ProcedimentoController extends Controller
      */
     public function create()
     {
-        $procedimento=$this->objProcedimento->all();
+        $procedimentos=$this->objProcedimento->all();
         $secretaria=$this->objSecretaria->all();
-        return view('procedimento.create', compact('procedimento'));
+        return view('procedimento.create', compact('procedimentos','secretaria'));
 
     }
 
@@ -82,7 +82,9 @@ class ProcedimentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $procedimento=$this->objProcedimento->find($id);
+        $secretaria=$this->objSecretaria->all();
+        return view('procedimento.create',compact('secretaria','procedimento'));
     }
 
     /**
