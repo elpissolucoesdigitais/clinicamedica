@@ -1,34 +1,58 @@
 @extends('templates.template')
 
 @section('content')
-<h1 class="text-center">@if(isset($procedimento))Editar @else Cadastrar @endif</h1><hr>
-<a href="{{url('procedimento')}}">
+
+<form class="col-6 m-auto">
+  <h1 class="text-center">@if(isset($procedimento))Editar @else Cadastrar @endif</h1><hr>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+  <a href="{{url('procedimento')}}">
     <button class="btn btn-primary">Voltar</button>
-</a>
-<div class="col-8 m-auto">
+  </a>
+</form>
 
-        @if(isset($errors) && count($errors)>0)
-            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach ($errors->all() as $erro)
-                   {{$erro}}<br>
-                @endforeach
-            </div>
-        @endif
-        @if (isset($procedimento))
-        <form action="{{url("procedimento/$procedimento->id")}}" name="formEdit" id="formEdit" method="POST">
-            @method('PUT')
-        @else
-        <form action="{{url('procedimento')}}" name="formCad" id="formCad" method="POST">
 
-        @endif
-        @csrf
-        <input class="form-control" type="text" name="id" id="id" placeholder="id" value="{{$procedimento->id ?? ''}}" require>
-
-       
-        <input class="form-control" type="text" name="nome" id="nome" placeholder="nome do procedimento" value="{{$procedimento->nome ?? ''}}" require>
-        <input class="form-control" type="text" name="Valor" id="Valor" placeholder="Valor" value="{{$procedimento->valor ?? ''}}" require>
-        <input class="btn btn-primary" type="submit" value="@if(isset($procedimento))Editar @else Cadastrar @endif">
-
-    </form>
-</div>
 @endsection
