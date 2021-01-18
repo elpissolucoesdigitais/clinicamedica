@@ -88,7 +88,9 @@ class TecnicoSaudeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tecnicoSaude=$this->objTecnicoSaude->find($id);
+        return view('tecnicosaude.create',compact('tecnicoSaude'));
+
     }
 
     /**

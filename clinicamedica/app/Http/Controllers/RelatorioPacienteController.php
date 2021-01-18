@@ -47,9 +47,10 @@ class RelatorioPacienteController extends Controller
         $relatorioPaciente=$this->objRelatorio->all();
         $medicamento=$this->objMedicamento->all();
         $medico=$this->objMedico->all();
-        $tecnicosaude=$this->objTecnicoSaude->all();
+        $tecnicoSaude=$this->objTecnicoSaude->all();
         $exame=$this->objExame->all();
-        return view('relatoriopaciente.create', compact('relatorioPaciente'));     
+        return view('relatoriopaciente.create', compact('relatorioPaciente',
+        'medicamento', 'medico', 'tecnicoSaude', 'exame'));     
 
     }
 
@@ -97,7 +98,14 @@ class RelatorioPacienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $relatorioPaciente=$this->objRelatorio->find($id);
+        $medicamento=$this->objMedicamento->all();
+        $medico=$this->objMedico->all();
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        $exame=$this->objExame->all();
+        return view('relatoriopaciente.create', compact('relatorioPaciente',
+    'medicamento', 'medico', 'tecnicoSaude', 'exame')); 
+
     }
 
     /**

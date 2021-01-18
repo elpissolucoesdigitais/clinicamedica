@@ -89,7 +89,9 @@ class AdministradoraController extends Controller
      */
     public function edit($id)
     {
-        //
+        $administradora=$this->objAdministradora->find($id);
+        return view('administradora.create',compact('administradora'));
+
     }
 
     /**

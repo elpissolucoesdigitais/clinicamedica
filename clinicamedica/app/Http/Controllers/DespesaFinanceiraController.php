@@ -51,7 +51,8 @@ class DespesaFinanceiraController extends Controller
         $clinica=$this->objClinica->all();
         $secretaria=$this->objSecretaria->all();
         $estoque=$this->objEstoque->all();
-        return view('despesafinanceira.create', compact('despesaFinanceira'));
+        return view('despesafinanceira.create', compact('despesaFinanceira', 'medico',
+        'tecnicoSaude', 'clinica', 'secretaria', 'estoque'));
 
     }
 
@@ -99,7 +100,15 @@ class DespesaFinanceiraController extends Controller
      */
     public function edit($id)
     {
-        //
+        $despesaFinanceira=$this->objDespesaFinanceira->find($id);
+        $medico=$this->objMedico->all();
+        $tecnicoSaude=$this->objTecnicoSaude->all();
+        $clinica=$this->objClinica->all();
+        $secretaria=$this->objSecretaria->all();
+        $estoque=$this->objEstoque->all();
+        return view('despesafinanceira.create', compact('despesaFinanceira', 'medico',
+    'tecnicoSaude', 'clinica', 'secretaria', 'estoque'));
+
     }
 
     /**

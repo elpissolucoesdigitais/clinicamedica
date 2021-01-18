@@ -40,7 +40,8 @@ class ProcedimentoMedicoController extends Controller
         $procedimento=$this->objProcedimento->all();
         $medico=$this->objMedico->all();
         $procedimentoMedico=$this->objProcedimentoMedico->all();
-        return view('procedimentomedico.create', compact('procedimentoMedico'));
+        return view('procedimentomedico.create', compact('procedimentoMedico',
+        'procedimento', 'medico'));
 
     }
 
@@ -84,7 +85,12 @@ class ProcedimentoMedicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $procedimento=$this->objProcedimento->all();
+        $medico=$this->objMedico->all();
+        $procedimentoMedico=$this->objProcedimentoMedico->find($id);
+        return view('procedimentomedico.create', compact('procedimentoMedico',
+    'procedimento', 'medico'));
+
     }
 
     /**

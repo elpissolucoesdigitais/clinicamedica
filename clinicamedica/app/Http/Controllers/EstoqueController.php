@@ -35,7 +35,7 @@ class EstoqueController extends Controller
     {
         $estoque=$this->objEstoque->all();
         $administradora=$this->objAdministradora->all();
-        return view('estoque.create', compact('estoque'));
+        return view('estoque.create', compact('estoque', 'administradora'));
 
     }
 
@@ -83,7 +83,10 @@ class EstoqueController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estoque=$this->objEstoque->find($id);
+        $administradora=$this->objAdministradora->all();
+        return view('estoque.create', compact('estoque', 'administradora'));
+
     }
 
     /**
