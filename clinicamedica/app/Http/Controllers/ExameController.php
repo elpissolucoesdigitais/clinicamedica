@@ -38,10 +38,10 @@ class ExameController extends Controller
      */
     public function create()
     {
-        $exame=$this->objExame->all();
+        $exames=$this->objExame->all();
         $paciente=$this->objPaciente->all();
         $consulta=$this->objConsulta->all();
-        return view('exame.create', compact('exame', 'paciente', 'consulta'));
+        return view('exame.create', compact('exames', 'paciente', 'consulta'));
 
     }
 
@@ -103,7 +103,15 @@ class ExameController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objExame->where(['id'=>$id])->update([
+            'descricao'=>$request->descricao,
+            'nome'=>$request->nome,
+            'fk_paciente'=>$request->fk_paciente,
+            'fk_consulta'=>$request->fk_consulta
+            
+        ]);
+            return redirect('exame');
+
     }
 
     /**

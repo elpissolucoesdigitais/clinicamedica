@@ -120,7 +120,17 @@ class DespesaFinanceiraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objDespesaFinanceira->where(['id'=>$id])->update([
+            'fk_medico'=>$request->fk_medico,
+            'fk_tecnico_saude'=>$request->fk_tecnico_saude,
+            'fk_clinica'=>$request->fk_clinica,
+            'fk_secretaria'=>$request->fk_secretaria,
+            'fk_estoque'=>$request->fk_estoque,
+            'tipo'=>$request->tipo
+            
+        ]);
+            return redirect('despesafinanceira');
+
     }
 
     /**

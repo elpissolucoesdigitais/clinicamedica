@@ -44,12 +44,12 @@ class RelatorioPacienteController extends Controller
      */
     public function create()
     {
-        $relatorioPaciente=$this->objRelatorio->all();
+        $relatorioPacientes=$this->objRelatorio->all();
         $medicamento=$this->objMedicamento->all();
         $medico=$this->objMedico->all();
         $tecnicoSaude=$this->objTecnicoSaude->all();
         $exame=$this->objExame->all();
-        return view('relatoriopaciente.create', compact('relatorioPaciente',
+        return view('relatoriopaciente.create', compact('relatorioPacientes',
         'medicamento', 'medico', 'tecnicoSaude', 'exame'));     
 
     }
@@ -86,7 +86,7 @@ class RelatorioPacienteController extends Controller
     public function show($id)
     {
         $relatorioPaciente= $this->objRelatorio->find($id);
-        return view('relatorioPaciente.show',compact('relatorioPaciente'));
+        return view('relatoriopaciente.show',compact('relatorioPaciente'));
 
     }
 
@@ -117,7 +117,17 @@ class RelatorioPacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objRelatorio->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'descricao'=>$request->descricao,
+            'fk_medicamento'=>$request->fk_medicamento,
+            'fk_medico'=>$request->fk_medico,
+            'fk_tecnico_saude'=>$request->fk_tecnico_saude,
+            'fk_exame'=>$request->fk_exame
+            
+        ]);
+            return redirect('relatoriopaciente');
+
     }
 
     /**
