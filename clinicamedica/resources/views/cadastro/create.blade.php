@@ -8,16 +8,19 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="Paciente">Paciente</label>
-      <input type="text" class="form-control" id="Paciente" placeholder="Paciente">
+      <input type="integer" class="form-control" id="Paciente" placeholder="Paciente"
+      value="{{$cadastros->fk_paciente ?? ''}}">
     </div>
     <div class="form-group col-md-6">
       <label for="Secretaria">Secretaria</label>
-      <input type="text" class="form-control" id="Secretaria" placeholder="Secretaria">
+      <input type="integer" class="form-control" id="Secretaria" placeholder="Secretaria"
+      value="{{$cadastros->fk_secretaria ?? ''}}">
     </div>
   </div>
   <div class="form-group">
     <label for="Administradora">Administradora</label>
-    <input type="text" class="form-control" id="Administradora" placeholder="Administradora">
+    <input type="integer" class="form-control" id="Administradora" placeholder="Administradora"
+    value="{{$cadastros->fk_administradora ?? ''}}">
   </div>
   
 

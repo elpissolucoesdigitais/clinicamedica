@@ -31,8 +31,8 @@ class ClinicaController extends Controller
      */
     public function create()
     {
-        $clinica=$this->objclinica->all();
-        return view('clinica.create', compact('clinica'));
+        $clinicas=$this->objClinica->all();
+        return view('clinica.create', compact('clinicas'));
     }
 
     /**
@@ -43,7 +43,7 @@ class ClinicaController extends Controller
      */
     public function store(Request $request)
     {
-        $cad=$this->objclinica->create([
+        $cad=$this->objClinica->create([
             'responsaveltecnico'=>$request->responsaveltecnico,
             'numero'=>$request->numero,
             'cidade'=>$request->cidade,
@@ -85,7 +85,7 @@ class ClinicaController extends Controller
      */
     public function edit($id)
     {
-        $clinica=$this->objclinica->find($id);
+        $clinica=$this->objClinica->find($id);
         return view('clinica.create', compact('clinica'));
 
     }

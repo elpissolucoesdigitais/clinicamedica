@@ -1,10 +1,3 @@
-<!--<div class="input-group is-invalid">
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
-    <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
-  </div>
-
--->
 @extends('templates.template')
 
 @section('content')
@@ -40,7 +33,7 @@
           <input type="text" class="form-control" id="descricao" name="descricao" value="{{$procedimento->descricao ?? ''}}">
         </div>
         <div class="form-group col-md-6">
-          <label for="k_secretaria">Secretaria</label>
+          <label for="fk_secretaria">Secretaria</label>
           <input type="text" class="form-control" id="fk_secretaria" name="fk_secretaria" value="{{$procedimento->fk_secretaria ?? ''}}">
         </div>
       </div>
