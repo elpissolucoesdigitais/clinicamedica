@@ -39,20 +39,20 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="valor">Valor</label>
-      <input type="double" class="form-control" id="valor" placeholder="Valor" name="valor"
+      <input type="text" class="form-control" id="valor" placeholder="Valor" name="valor"
       value="{{$consulta->valor ?? ''}}">
     </div>
 
-    <!---ERRO: fk_procedimento--->
+   
     <div class="form-group col-md-6">
         <label for="fk_procedimento">Procedimento</label>
-        <input type="integer" class="form-control" id="fk_procedimento" placeholder="Procedimento" name="fk_procedimento" value="{{$consulta->fk_procedimento ?? ''}}">
+        <input type="text" class="form-control" id="fk_procedimento" placeholder="Procedimento" name="fk_procedimento" value="{{$consulta->fk_procedimento ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-6">
         <label for="fk_medico">Medico</label>
-        <input type="integer" class="form-control" id="fk_medico" placeholder="Medico" name="fk_medico" value="{{$consulta->fk_medico ?? ''}}">
+        <input type="text" class="form-control" id="fk_medico" placeholder="Medico" name="fk_medico" value="{{$consulta->fk_medico ?? ''}}">
       </div>
 
     <div class="form-group col-md-4">

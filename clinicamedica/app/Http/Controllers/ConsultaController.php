@@ -56,7 +56,7 @@ class ConsultaController extends Controller
             'status'=>$request->status,
             'valor'=>$request->valor,
             'fk_procedimento'=>$request->fk_procedimento,
-            'fk_medico'=>$request->fk_medico
+            'fk_medico'=>$request->fk_medico,
             
         ]);
         if($cad){
@@ -103,7 +103,16 @@ class ConsultaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objConsulta->where(['id'=>$id])->update([
+            'hora'=>$request->hora,
+            'data'=>$request->data,
+            'status'=>$request->status,
+            'valor'=>$request->valor,
+            'fk_procedimento'=>$request->fk_procedimento,
+            'fk_medico'=>$request->fk_medico,
+            
+        ]);
+            return redirect('consulta');
     }
 
     /**
