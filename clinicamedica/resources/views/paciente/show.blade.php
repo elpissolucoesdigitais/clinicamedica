@@ -1,11 +1,8 @@
 @extends('templates.template')
 
 @section('content')
-<<<<<<< Updated upstream
 
 
-=======
->>>>>>> Stashed changes
 
 <!-- Página do crud  -->
 <div id="content" class="p-4 p-md-5 pt-5">
