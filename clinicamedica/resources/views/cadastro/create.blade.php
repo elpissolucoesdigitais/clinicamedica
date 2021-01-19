@@ -7,17 +7,17 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputPaciente">Paciente</label>
-      <input type="text" class="form-control" id="inputPaciente" placeholder="Paciente">
+      <label for="Paciente">Paciente</label>
+      <input type="text" class="form-control" id="Paciente" placeholder="Paciente">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputSecretaria">Secretaria</label>
-      <input type="text" class="form-control" id="inputSecretaria" placeholder="Secretaria">
+      <label for="Secretaria">Secretaria</label>
+      <input type="text" class="form-control" id="Secretaria" placeholder="Secretaria">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAdministradora">Administradora</label>
-    <input type="text" class="form-control" id="inputAdministradora" placeholder="Administradora">
+    <label for="Administradora">Administradora</label>
+    <input type="text" class="form-control" id="Administradora" placeholder="Administradora">
   </div>
   
 
