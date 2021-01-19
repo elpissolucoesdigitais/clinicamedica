@@ -3,12 +3,27 @@
 @section('content')
 
 <form class="col-6 m-auto">
-  <h1 class="text-center">@if(isset($paciente))Editar @else Cadastrar @endif</h1><hr>
+  <h1 class="text-center">@if(isset($pacientes))Editar @else Cadastrar @endif</h1><hr>
+  @if(isset($errors) && count($errors)>0)
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach ($errors->all() as $erro)
+          {{$erro}}<br>
+        @endforeach
+    </div>
+  @endif
+  @if (isset($pacientes))
+  <form action="{{url("paciente/$pacientes->id")}}" name="formEdit" id="formEdit" method="POST">
+      @method('PUT')
+  @else
+  <form action="{{url('paciente')}}" name="formCad" id="formCad" method="POST">
 
+  @endif
+  @csrf
   <div class="form-row">
+    <input class="form-control" type="text" name="nome" id="nome" placeholder="nome do paciente" value="{{$pacientes->nome ?? ''}}" require>
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <label for="inputEmail4">Convênio</label>
+      <input class="form-control" type="text" name="fk_convenio" id="fk_onvenio" placeholder="" value="{{$pacientes->fk_convenio ?? ''}}" require>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
@@ -51,8 +66,6 @@
   <button type="submit" class="btn btn-primary">Cadastrar</button>
   <a href="{{url('paciente')}}">
     <button class="btn btn-primary">Voltar</button>
-  </a>
+</a>
 </form>
-
-
 @endsection
