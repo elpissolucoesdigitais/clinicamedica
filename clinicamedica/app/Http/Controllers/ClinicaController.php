@@ -99,7 +99,24 @@ class ClinicaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objClinica->where(['id'=>$id])->update([
+            'responsaveltecnico'=>$request->responsaveltecnico,
+            'numero'=>$request->numero,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'nome'=>$request->nome,
+            'logradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'foto'=>$request->foto,
+            'cnpj'=>$request->cnpj
+            
+        ]);
+            return redirect('clinica');
+
     }
 
     /**

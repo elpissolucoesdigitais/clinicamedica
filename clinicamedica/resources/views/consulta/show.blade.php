@@ -18,7 +18,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                         <label for="procedimento ">Procedimento</label>
-                        <input type="text" class="form-control" id="procedimento " name="procedimento " value="{{$consulta->fk_procedimento}}">
+                        <input type="text" class="form-control" id="procedimento " name="procedimento" value="{{$consulta->fk_procedimento}}">
                     </div>
                 
         </div>
