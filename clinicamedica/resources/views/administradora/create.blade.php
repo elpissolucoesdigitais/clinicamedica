@@ -2,19 +2,35 @@
 
 @section('content')
 
+@if(isset($errors) && count($errors)>0)
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach ($errors->all() as $erro)
+          {{$erro}}<br>
+        @endforeach
+    </div>
+  @endif
+  @if (isset($administradora))
+  <form class="col-6 m-auto" action="{{url("administradora/$administradora->id")}}" name="formEdit" id="formEdit" method="POST">
+      @method('PUT')
+  @else
+  <form class="col-6 m-auto" action="{{url('administradora')}}" name="formCad" id="formCad" method="POST">
+
+  @endif
+  @csrf
+
 <form class="col-6 m-auto">
-  <h1 class="text-center">@if(isset($administradoras))Editar @else Cadastrar @endif</h1><hr>
+  <h1 class="text-center">@if(isset($administradora))Editar @else Cadastrar @endif</h1><hr>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-        <label for="Email">Email</label>
-        <input type="email" class="form-control" id="Email" placeholder="Email"
-        value="{{$administradoras->email ?? ''}}">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+        value="{{$administradora->email ?? ''}}">
       </div>
     <div class="form-group col-md-6">
-      <label for="Senha">Senha</label>
-      <input type="password" class="form-control" id="Senha" placeholder="Senha"
-      value="{{$administradoras->senha ?? ''}}">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
+      value="{{$administradora->senha ?? ''}}">
     </div>
   </div>
   
@@ -22,150 +38,160 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="Longradouro">Longradouro</label>
-      <input type="text" class="form-control" id="Longradouro" placeholder="Longradouro"
-      value="{{$administradoras->longradouro ?? ''}}">
+      <label for="longradouro">Longradouro</label>
+      <input type="text" class="form-control" id="longradouro" placeholder="Longradouro"
+      name="longradouro" value="{{$administradora->longradouro ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">
-        <label for="Bairro">Bairro</label>
-        <input type="text" class="form-control" id="Bairro" placeholder="Bairro"
-        value="{{$administradoras->bairro ?? ''}}">
+        <label for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro" placeholder="Bairro"
+        name="bairro" value="{{$administradora->bairro ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-6">
-        <label for="CEP">CEP</label>
-        <input type="integer" class="form-control" id="CEP" placeholder="CEP"
-        value="{{$administradoras->cep ?? ''}}">
+        <label for="cep">CEP</label>
+        <input type="integer" class="form-control" id="cep" placeholder="CEP"
+        name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
 
-    <div class="form-group col-md-4">
-      <label for="UF">UF</label>
-      <select id="UF" class="form-control">
-        <option selected>RO</option>
-        <option>AC</option>
-        <option>AM</option>
-        <option>RR</option>
-        <option>PA</option>
-        <option>AP</option>
-        <option>TO</option>
-        <option>MA</option>
-        <option>PI</option>
-        <option>CE</option>
-        <option>RN</option>
-        <option>PB</option>
-        <option>PE</option>
-        <option>AL</option>
-        <option>SE</option>
-        <option>BA</option>
-        <option>MG</option>
-        <option>ES</option>
-        <option>RJ</option>
-        <option>SP</option>
-        <option>PR</option>
-        <option>SC</option>
-        <option>RS</option>
-        <option>MS</option>
-        <option>MT</option>
-        <option>GO</option>
-        <option>DF</option>
-      </select>
-      
-    </div>
+      <div class="form-group col-md-4">
+        <label for="uf">UF</label>
+        <select id="uf" name="uf" class="form-control">
+          <option selected value="RO">RO</option>
+          <option value="AC">AC</option>
+          <option value="AM">AM</option>
+          <option value="RR">RR</option>
+          <option value="PA">PA</option>
+          <option value="AP">AP</option>
+          <option value="TO">TO</option>
+          <option value="MA">MA</option>
+          <option value="PI">PI</option>
+          <option value="CE">CE</option>
+          <option value="RN">RN</option>
+          <option value="PB">PB</option>
+          <option value="PE">PE</option>
+          <option value="AL">AL</option>
+          <option value="SE">SE</option>
+          <option value="BA">BA</option>
+          <option value="MG">MG</option>
+          <option value="ES">ES</option>
+          <option value="RJ">RJ</option>
+          <option value="SP">SP</option>
+          <option value="PR">PR</option>
+          <option value="SC">SC</option>
+          <option value="RS">RS</option>
+          <option value="MS">MS</option>
+          <option value="MT">MT</option>
+          <option value="GO">GO</option>
+          <option value="DF">DF</option>
+        </select>
+        
+      </div>
 
     <div class="form-group col-md-12">
-        <label for="Nome">Nome</label>
-        <input type="text" class="form-control" id="Nome" placeholder="Nome"
-        value="{{$administradoras->nome ?? ''}}">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome"
+        name="nome" value="{{$administradora->nome ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-4">
-        <label for="Sexo">Sexo</label>
-        <select id="Sexo" class="form-control">
-          <option selected>Masculino</option>
-          <option>Feminino</option>
+        <label for="sexo">Sexo</label>
+        <select id="sexo" name="sexo" class="form-control">
+          <option selected value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
         </select>
       </div>
 
       <div class="form-group col-md-7">
-        <label for="CPF">CPF</label>
-        <input type="text" class="form-control" id="CPF" placeholder="CPF"
-        value="{{$administradoras->cpf ?? ''}}">
+        <label for="cpf">CPF</label>
+        <input type="text" class="form-control" id="cpf" placeholder="CPF"
+        name="cpf" value="{{$administradora->cpf ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
-        <label for="RG">RG</label>
-        <input type="text" class="form-control" id="RG" placeholder="RG"
-        value="{{$administradoras->rg ?? ''}}">
+        <label for="rg">RG</label>
+        <input type="text" class="form-control" id="rg" placeholder="RG"
+        name="rg" value="{{$administradora->rg ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
-        <label for="DataNascimento">Data de Nascimento</label>
-        <input type="text" class="form-control" id="DataNascimento" placeholder="Data de Nascimento"
-        value="{{$administradoras->datanascimento ?? ''}}">
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input type="text" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
+        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}">
       </div>
 
       <div class="form-group col-md-4">
-        <label for="Cidade">Cidade</label>
-        <select id="Cidade" class="form-control">
-          <option selected>Rio Branco</option>
-          <option>Maceió</option>
-          <option>Macapá</option>
-          <option>Manaus</option>
-          <option>Salvador</option>
-          <option>Fortaleza</option>
-          <option>Brasília</option>
-          <option>Vitória</option>
-          <option>Goiânia</option>
-          <option>São Luís</option>
-          <option>Cuiabá</option>
-          <option>Campo Grande</option>
-          <option>Belo Horizonte</option>
-          <option>Belém</option>
-          <option>João Pessoa</option>
-          <option>Curitiba</option>
-          <option>Recife</option>
-          <option>Teresina</option>
-          <option>Rio de Janeiro</option>
-          <option>Natal</option>
-          <option>Porto Alegre</option>
-          <option>Porto Velho</option>
-          <option>Boa Vista</option>
-          <option>Florianópolis</option>
-          <option>São Paulo</option>
-          <option>Aracaju</option>
-          <option>Palmas</option>
+        <label for="cidade">Cidade</label>
+        <select id="cidade" name="cidade" class="form-control">
+          <option selected value="Rio Branco">Rio Branco</option>
+          <option value="Maceió">Maceió</option>
+          <option value="Macapá">Macapá</option>
+          <option value="Manaus">Manaus</option>
+          <option value="Salvador">Salvador</option>
+          <option value="Fortaleza">Fortaleza</option>
+          <option value="Brasília">Brasília</option>
+          <option value="Vitória">Vitória</option>
+          <option value="Goiânia">Goiânia</option>
+          <option value="São Luís">São Luís</option>
+          <option value="Cuiabá">Cuiabá</option>
+          <option value="Campo Grande">Campo Grande</option>
+          <option value="Belo Horizonte">Belo Horizonte</option>
+          <option value="Belém">Belém</option>
+          <option value="João Pessoa">João Pessoa</option>
+          <option value="Curitiba">Curitiba</option>
+          <option value="Recife">Recife</option>
+          <option value="Teresina">Teresina</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Natal">Natal</option>
+          <option value="Porto Alegre">Porto Alegre</option>
+          <option value="Porto Velho">Porto Velho</option>
+          <option value="Boa Vista">Boa Vista</option>
+          <option value="Florianópolis">Florianópolis</option>
+          <option value="São Paulo">São Paulo</option>
+          <option value="Aracaju">Aracaju</option>
+          <option value="Palmas">Palmas</option>
         </select>
       </div>
       
       <div class="form-group col-md-8">
-        <label for="Contato">Contato</label>
-        <input type="text" class="form-control" id="Contato" placeholder="Contato"
-        value="{{$administradoras->contato ?? ''}}">
+        <label for="contato">Contato</label>
+        <input type="text" class="form-control" id="contato" placeholder="Contato"
+        name="contato" value="{{$administradora->contato ?? ''}}">
       </div>
 
       <div class="form-group col-md-12">
-        <label for="Complemento">Complemento</label>
-        <input type="text" class="form-control" id="Complemento" placeholder="Complemento"
-        value="{{$administradoras->complemento ?? ''}}">
+        <label for="complemento">Complemento</label>
+        <input type="text" class="form-control" id="complemento" placeholder="Complemento"
+        name="complemento" value="{{$administradora->complemento ?? ''}}">
+      </div>
+
+      <div class="form-group col-md-12">
+        <label for="salario">Salario</label>
+        <input type="double" class="form-control" id="salario" placeholder="Salario"
+        name="salario" value="{{$administradora->salario ?? ''}}">
       </div>
 
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
+  
+  <div class="input-group is-invalid">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto" required>
+      <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
-  <a href="{{url('administradora')}}">
-    <button class="btn btn-primary">Voltar</button>
-  </a>
+
+</div>
+
+<input class="btn btn-primary" type="submit" value="@if(isset($administradora))Editar @else Cadastrar @endif">
+
+
+
 </form>
 
+<a href="{{url('administradora')}}">
+  <button class="btn btn-primary">Voltar</button>
+</a>
 
 @endsection
