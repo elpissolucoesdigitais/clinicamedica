@@ -3,7 +3,7 @@
 @section('content')
 
 <form class="col-6 m-auto">
-  <h1 class="text-center">@if(isset($procedimento))Editar @else Cadastrar @endif</h1><hr>
+  <h1 class="text-center">@if(isset($paciente))Editar @else Cadastrar @endif</h1><hr>
 
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -49,7 +49,7 @@
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Cadastrar</button>
-  <a href="{{url('procedimento')}}">
+  <a href="{{url('paciente')}}">
     <button class="btn btn-primary">Voltar</button>
   </a>
 </form>
