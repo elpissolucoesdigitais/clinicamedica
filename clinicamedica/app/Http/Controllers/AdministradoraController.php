@@ -32,8 +32,8 @@ class AdministradoraController extends Controller
     public function create()
     {
         
-        $administradora=$this->objAdministradora->all();
-        return view('administradora.create', compact('administradora'));
+        $administradoras=$this->objAdministradora->all();
+        return view('administradora.create', compact('administradoras'));
     }
 
     /**
@@ -89,8 +89,8 @@ class AdministradoraController extends Controller
      */
     public function edit($id)
     {
-        $administradoras=$this->objAdministradora->find($id);
-        return view('administradora.create',compact('administradoras'));
+        $administradora=$this->objAdministradora->find($id);
+        return view('administradora.create',compact('administradora'));
 
     }
 

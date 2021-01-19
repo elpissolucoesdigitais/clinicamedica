@@ -9,7 +9,7 @@
         @endforeach
     </div>
   @endif
-  @if (isset($procedimento))
+  @if (isset($clinica))
   <form class="col-6 m-auto" action="{{url("clinica/$clinica->id")}}" name="formEdit" id="formEdit" method="POST">
       @method('PUT')
   @else
@@ -59,7 +59,7 @@
     <div class="form-group col-md-4">
       <label for="uf">UF</label>
       <select id="uf"  name="uf" class="form-control">
-        <option selected>RO</option>
+        <option selected value="RO">RO</option>
         <option value="AC">AC</option>
         <option value="AM">AM</option>
         <option value="RR">RR</option>
@@ -117,7 +117,7 @@
       <div class="form-group col-md-4">
         <label for="cidade">Cidade</label>
         <select id="cidade" name="cidade" class="form-control">
-          <option selected>Rio Branco</option>
+          <option selected value="Rio Branco">Rio Branco</option>
           <option value="Maceió">Maceió</option>
           <option value="Macapá">Macapá</option>
           <option value="Manaus">Manaus</option>
@@ -168,11 +168,11 @@
   </div>
   
   
-  
+  <input class="btn btn-primary" type="submit" value="@if(isset($clinica))Editar @else Cadastrar @endif">
 
 </form>
 
-<input class="btn btn-primary" type="submit" value="@if(isset($clinica))Editar @else Cadastrar @endif">
+
 
 <a href="{{url('clinica')}}">
   <button class="btn btn-primary">Voltar</button>

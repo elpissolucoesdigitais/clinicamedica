@@ -46,11 +46,11 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        $cadastro=$this->objCadastra->all();
+        $cadastros=$this->objCadastra->all();
         $paciente=$this->objPaciente->all();
         $secretaria=$this->objSecretaria->all();
         $administradora=$this->objAdministradora->all();
-        return view('cadastro.create', compact('cadastro', 'paciente', 'secretaria', 'administradora'));
+        return view('cadastro.create', compact('cadastros', 'paciente', 'secretaria', 'administradora'));
 
     }
 
@@ -95,11 +95,11 @@ class CadastroController extends Controller
      */
     public function edit($id)
     {
-        $cadastros=$this->objCadastra->find($id);
+        $cadastro=$this->objCadastra->find($id);
         $paciente=$this->objPaciente->all();
         $secretaria=$this->objSecretaria->all();
         $administradora=$this->objAdministradora->all();
-        return view('cadastro.create', compact('cadastros', 'paciente', 'secretaria', 'administradora'));
+        return view('cadastro.create', compact('cadastro', 'paciente', 'secretaria', 'administradora'));
 
     }
 
