@@ -82,8 +82,8 @@
 
 
       <div class="form-group col-md-4">
-        <label for="inputSexo">Sexo</label>
-        <select id="inputSexo" class="form-control">
+        <label for="Sexo">Sexo</label>
+        <select id="Sexo" class="form-control">
           <option selected>Masculino</option>
           <option>Feminino</option>
         </select>
@@ -108,8 +108,8 @@
       </div>
 
       <div class="form-group col-md-4">
-        <label for="inputCidade">Cidade</label>
-        <select id="inputCidade" class="form-control">
+        <label for="Cidade">Cidade</label>
+        <select id="Cidade" class="form-control">
           <option selected>Rio Branco</option>
           <option>Maceió</option>
           <option>Macapá</option>

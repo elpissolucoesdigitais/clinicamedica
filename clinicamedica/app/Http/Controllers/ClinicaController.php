@@ -31,7 +31,7 @@ class ClinicaController extends Controller
      */
     public function create()
     {
-        $clinica=$this->objclinica->all();
+        $clinica=$this->objClinica->all();
         return view('clinica.create', compact('clinica'));
     }
 
@@ -85,8 +85,8 @@ class ClinicaController extends Controller
      */
     public function edit($id)
     {
-        $clinica=$this->objclinica->find($id);
-        return view('clinica.create', compact('clinica'));
+        $clinicas=$this->objClinica->find($id);
+        return view('clinica.create', compact('clinicas'));
 
     }
 
