@@ -103,7 +103,26 @@ class AdministradoraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objAdministradora->where(['id'=>$id])->update([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'salario'=>$request->salario
+            
+        ]);
+            return redirect('administradora');
+
     }
 
     /**

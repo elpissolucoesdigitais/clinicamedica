@@ -32,8 +32,8 @@ class ConvenioController extends Controller
      */
     public function create()
     {
-        $convenio=$this->objConvenio->all();
-        return view('convenio.create', compact('convenio'));
+        $convenios=$this->objConvenio->all();
+        return view('convenio.create', compact('convenios'));
 
     }
 
@@ -97,7 +97,19 @@ class ConvenioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objConvenio->where(['id'=>$id])->update([
+            'status'=>$request->status,
+            'email'=>$request->email,
+            'nome'=>$request->nome,
+            'contato'=>$request->contato,
+            'descricao'=>$request->descricao,
+            'validade'=>$request->validade,
+            'cnpj'=>$request->cnpj,
+            'valor'=>$request->valor,
+            
+        ]);
+            return redirect('convenio');
+
     }
 
     /**
