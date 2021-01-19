@@ -21,7 +21,7 @@
                 <th scope="col">Hora</th>
                 <th scope="col">Data</th>
                 <th scope="col">Valor</th>
-                <th scope="col">Fk_Procedimento</th>
+                <th scope="col">Procedimento</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>

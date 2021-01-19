@@ -59,7 +59,7 @@ class ProcedimentoMedicoController extends Controller
             
         ]);
         if($cad){
-            return redirect('procedimentoMedico');
+            return redirect('procedimentomedico');
         }
 
     }
@@ -102,7 +102,12 @@ class ProcedimentoMedicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objProcedimentoMedico->where(['id'=>$id])->update([
+            'fk_procedimento'=>$request->fk_procedimento,
+            'fk_medico'=>$request->fk_medico,
+            
+        ]);
+            return redirect('procedimentomedico');
     }
 
     /**

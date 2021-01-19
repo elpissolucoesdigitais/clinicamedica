@@ -24,7 +24,7 @@ class SecretariaController extends Controller
     {
         $secretaria=$this->objSecretaria->all();
         return view('secretaria.index',compact('secretaria'));
-        
+        //dd($this->objSecretaria->all());
     }
 
     /**
@@ -34,9 +34,9 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        $secretaria=$this->objSecretaria->all();
+        $secretarias=$this->objSecretaria->all();
         $clinica=$this->objClinica->all();
-        return view('secretaria.create', compact('secretaria', 'clinica'));
+        return view('secretaria.create', compact('secretarias', 'clinica'));
 
     }
 
@@ -109,7 +109,27 @@ class SecretariaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objSecretaria->where(['id'=>$id])->update([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'salario'=>$request->salario,
+            'fk_clinica'=>$request->fk_clinica,
+            
+        ]);
+            return redirect('secretaria');
+        
     }
 
     /**
