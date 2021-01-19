@@ -8,7 +8,6 @@
 @extends('templates.template')
 
 @section('content')
-<form class="col-6 m-auto">
   <h1 class="text-center">@if(isset($procedimento))Editar @else Cadastrar @endif</h1><hr>
   @if(isset($errors) && count($errors)>0)
     <div class="text-center mt-4 mb-4 p-2 alert-danger">
@@ -28,45 +27,29 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" id="nome" value="{{$procedimento->nome ?? ''}}">
+        <input type="text" class="form-control" id="nome" name="nome" value="{{$procedimento->nome ?? ''}}">
       </div>
       <div class="form-group col-md-6">
         <label for="valor">valor</label>
-        <input type="text" class="form-control" id="valor" value="{{$procedimento->valor ?? ''}}">
+        <input type="text" class="form-control" id="valor" name="valor" value="{{$procedimento->valor ?? ''}}">
     </div>
     <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="descricao">Descrição</label>
-        <input type="text" class="form-control" id="descricao" value="{{$procedimento->descricao ?? ''}}">
+        <div class="form-group col-md-6">
+          <label for="descricao">Descrição</label>
+          <input type="text" class="form-control" id="descricao" name="descricao" value="{{$procedimento->descricao ?? ''}}">
+        </div>
+      <div class="form-group">
+        <div class="form-group col-md-6">
+          <label for="k_secretaria">Secretaria</label>
+          <input type="text" class="form-control" id="k_secretaria" name="fk_secretaria" value="{{$procedimento->fk_secretaria ?? ''}}">
+        </div>
       </div>
-    <div class="form-group">
-      <div class="form-group col-md-6">
-        <label for="secretaria">Secretaria</label>
-        <input type="text" class="form-control" id="secretaria" value="{{$procedimento->fk_secretaria ?? ''}}">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="criado">Criado em</label>
-        <input type="text" class="form-control" id="criado" value="{{$procedimento->created_at ?? ''}}">
-        
-      </div>
-      <div class="form-group col-md-6">
-        <label for="atualizado">Atualizado</label>
-        <input type="text" class="form-control" id="atualizado" value="{{$procedimento->updated_at ?? ''}}">
+    
     </div>
       
   
     <input class="btn btn-primary" type="submit" value="@if(isset($procedimento))Editar @else Cadastrar @endif">
     
   </form>
-
-       
-        <input class="form-control" type="text" name="nome" id="nome" placeholder="nome do procedimento"
-         value="{{$procedimento->nome ?? ''}}" require>
-        <input class="form-control" type="text" name="fk_secretaria" id="fk_secretaria" placeholder="" value="{{$procedimento->fk_secretaria ?? ''}}" require>
-        <input class="form-control" type="text" name="Valor" id="Valor" placeholder="Valor" value="{{$procedimento->valor ?? ''}}" require>
-        <input class="btn btn-primary" type="submit" value="@if(isset($procedimento))
-        Editar @else Cadastrar @endif">
 
   @endsection

@@ -52,7 +52,7 @@ class ProcedimentoController extends Controller
             'descricao'=>$request->descricao,
             'valor'=>$request->valor,
             'nome'=>$request->nome,
-            'fk_secretaria'=>$request->fk_secretaria
+            'fk_secretaria'=>$request->fk_secretaria,
             
         ]);
         if($cad){
@@ -96,7 +96,15 @@ class ProcedimentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objProcedimento->where(['id'=>$id])->update([
+            'descricao'=>$request->descricao,
+            'valor'=>$request->valor,
+            'nome'=>$request->nome,
+            'fk_secretaria'=>$request->fk_secretaria,
+            
+        ]);
+            return redirect('procedimento');
+        
     }
 
     /**
