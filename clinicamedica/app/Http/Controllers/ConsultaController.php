@@ -109,10 +109,18 @@ class ConsultaController extends Controller
             'status'=>$request->status,
             'valor'=>$request->valor,
             'fk_procedimento'=>$request->fk_procedimento,
+<<<<<<< Updated upstream
             'fk_medico'=>$request->fk_medico,
             
         ]);
             return redirect('consulta');
+=======
+            'fk_medico'=>$request->fk_medico
+            
+        ]);
+            return redirect('consulta');
+
+>>>>>>> Stashed changes
     }
 
     /**

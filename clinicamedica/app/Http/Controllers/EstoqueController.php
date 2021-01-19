@@ -33,9 +33,9 @@ class EstoqueController extends Controller
      */
     public function create()
     {
-        $estoque=$this->objEstoque->all();
+        $estoques=$this->objEstoque->all();
         $administradora=$this->objAdministradora->all();
-        return view('estoque.create', compact('estoque', 'administradora'));
+        return view('estoque.create', compact('estoques', 'administradora'));
 
     }
 
@@ -98,7 +98,17 @@ class EstoqueController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objEstoque->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'descricao'=>$request->descricao,
+            'quantidade'=>$request->quantidade,
+            'tipo'=>$request->tipo,
+            'valor'=>$request->valor,
+            'fk_administradora'=>$request->fk_administradora
+            
+        ]);
+            return redirect('estoque');
+
     }
 
     /**
