@@ -104,6 +104,11 @@
 
         </fieldset>  
         </form>
+        <form action="{{route('administradora.destroy', $administradora->id)}}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">Deletar</button>
+          </form>
   </div> 
   @endsection
 

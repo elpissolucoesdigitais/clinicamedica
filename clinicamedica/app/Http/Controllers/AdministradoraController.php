@@ -133,6 +133,11 @@ class AdministradoraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$administradora = $this->objAdministradora->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $administradora->delete();
+          return redirect('administradora');
+       //dd("deletando a consulta $id");
     }
 }

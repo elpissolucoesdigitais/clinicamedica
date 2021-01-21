@@ -46,9 +46,11 @@
                             <a href="{{url("administradora/$administradoras->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("administradora/$administradoras->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('administradora.destroy', $administradoras->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
                         </td>
                       </tr>
                 @endforeach

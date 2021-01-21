@@ -57,4 +57,9 @@
         </fieldset>  
         </form>
   </div> 
+  <form action="{{route('consulta.destroy', $consulta->id)}}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Deletar a Consulta: {{$consulta->fk_medico}}</button>
+    </form>
   @endsection

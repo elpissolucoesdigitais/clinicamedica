@@ -25,6 +25,7 @@ class ConsultaController extends Controller
      */
     public function index()
     {
+        
         $consulta=$this->objConsulta->all();
         return view('consulta.index',compact('consulta'));
     }
@@ -109,18 +110,11 @@ class ConsultaController extends Controller
             'status'=>$request->status,
             'valor'=>$request->valor,
             'fk_procedimento'=>$request->fk_procedimento,
-<<<<<<< Updated upstream
             'fk_medico'=>$request->fk_medico,
             
         ]);
             return redirect('consulta');
-=======
-            'fk_medico'=>$request->fk_medico
-            
-        ]);
-            return redirect('consulta');
 
->>>>>>> Stashed changes
     }
 
     /**
@@ -131,6 +125,11 @@ class ConsultaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$consulta = $this->objConsulta->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $consulta->delete();
+          return redirect('consulta');
+       //dd("deletando a consulta $id");
     }
 }
