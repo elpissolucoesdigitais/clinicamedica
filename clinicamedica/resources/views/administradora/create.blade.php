@@ -43,18 +43,31 @@
       name="longradouro" value="{{$administradora->longradouro ?? ''}}">
     </div>
 
+    
+
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro" placeholder="Bairro"
         name="bairro" value="{{$administradora->bairro ?? ''}}">
       </div>
 
+      
+      
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
-        <input type="integer" class="form-control" id="cep" placeholder="CEP"
-        name="cep" value="{{$administradora->cep ?? ''}}">
+        <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
+
+      @section('scripts')
+    <script>
+        $(document).ready(function(){
+          $('#cep').mask('00000-000');
+        });
+    </script>
+@endsection
+      
+      
 
       <div class="form-group col-md-4">
         <label for="uf">UF</label>
@@ -189,6 +202,8 @@
 
 
 </form>
+
+
 
 <a href="{{url('administradora')}}">
   <button class="btn btn-primary">Voltar</button>
