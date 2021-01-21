@@ -46,7 +46,7 @@
                             <a href="{{url("consulta/$consultas->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("consulta/$consultas->id")}}" class="js-del">
+                            <a href="{{url("consulta/$consultas->id")}}">
                                 <button class="btn btn-danger">Deletar</button>
                             </a>
                         </td>

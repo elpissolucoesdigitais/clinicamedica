@@ -14,6 +14,7 @@
 		
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{url('assets/style.css')}}">
+       
 </head>
 <body>
     @section('sidebar')
@@ -59,9 +60,11 @@
 
     <script src="{{url("assets/js/javascript.js")}}"></script>
     <script src="{{url("assets/js/jquery.min.js")}}"></script>
+    <script src="{{url("assets/js/jquery-3.3.1.min.js")}}"></script>
+    <script src="{{url("assets/js/jquery.mask.min.js")}}"></script>
     <script src="{{url("assets/js/popper.js")}}"></script>
     <script src="{{url("assets/js/bootstrap.min.js")}}"></script>
     <script src="{{url("assets/js/main.js")}}"></script>
-    <script src="assets/fontawesome/js/all.min.js"></script>
+    <script src="{{url("assets/fontawesome/js/all.min.js")}}"></script>
 </body>
 </html>
