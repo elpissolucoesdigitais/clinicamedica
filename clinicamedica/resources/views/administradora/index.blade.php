@@ -50,7 +50,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Deletar</button>
-                                </form>
+                            </form>
                         </td>
                       </tr>
                 @endforeach
