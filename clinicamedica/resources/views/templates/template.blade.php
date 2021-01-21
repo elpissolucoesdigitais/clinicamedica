@@ -62,6 +62,18 @@
     <script src="{{url("assets/js/popper.js")}}"></script>
     <script src="{{url("assets/js/bootstrap.min.js")}}"></script>
     <script src="{{url("assets/js/main.js")}}"></script>
-    <script src="assets/fontawesome/js/all.min.js"></script>
+    <script src="{{url("assets/fontawesome/js/all.min.js")}}"></script>
+
+    <script type="text/javascript" src="{{url("js/jquery-1.7.7.min.js")}}"></script>
+    <script type="text/javascript" src="{{url("js/>jquery.mask.min.js")}}"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.cep').mask('00000-000');
+      });
+  </script>
+
 </body>
 </html>
+
+
