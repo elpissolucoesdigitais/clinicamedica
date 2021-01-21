@@ -118,6 +118,12 @@ class ProcedimentoMedicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$procedimentoMedico = $this->objProcedimentoMedico->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $procedimentoMedico->delete();
+          return redirect('procedimentomedico');
+       //dd("deletando a consulta $id");
+
     }
 }

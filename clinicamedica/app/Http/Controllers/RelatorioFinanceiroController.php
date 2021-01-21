@@ -112,6 +112,12 @@ class RelatorioFinanceiroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$relatorioFinanceiro = $this->objRelatorioFinanceiro->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $relatorioFinanceiro->delete();
+          return redirect('relatoriofinanceiro');
+       //dd("deletando a consulta $id");
+
     }
 }

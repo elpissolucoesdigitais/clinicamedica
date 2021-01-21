@@ -113,6 +113,12 @@ class ProcedimentoTecnicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$procedimentoTecnico = $this->objProcedimentoTecnico->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $procedimentoTecnico->delete();
+          return redirect('procedimentotecnico');
+       //dd("deletando a consulta $id");
+
     }
 }

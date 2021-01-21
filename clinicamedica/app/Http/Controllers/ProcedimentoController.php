@@ -115,6 +115,12 @@ class ProcedimentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$procedimento = $this->objProcedimento->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $procedimento->delete();
+          return redirect('procedimento');
+       //dd("deletando a consulta $id");
+
     }
 }

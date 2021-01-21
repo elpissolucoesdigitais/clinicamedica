@@ -120,6 +120,12 @@ class ConvenioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$convenio = $this->objConvenio->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $convenio->delete();
+          return redirect('convenio');
+       //dd("deletando a consulta $id");
+
     }
 }

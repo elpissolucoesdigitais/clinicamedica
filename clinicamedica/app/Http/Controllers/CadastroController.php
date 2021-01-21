@@ -123,6 +123,11 @@ class CadastroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$cadastro = $this->objCadastro->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $cadastro->delete();
+          return redirect('cadastro');
+       //dd("deletando a consulta $id");
     }
 }

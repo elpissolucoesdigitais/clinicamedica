@@ -119,6 +119,12 @@ class EstoqueController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$estoque = $this->objEstoque->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $estoque->delete();
+          return redirect('estoque');
+       //dd("deletando a consulta $id");
+
     }
 }

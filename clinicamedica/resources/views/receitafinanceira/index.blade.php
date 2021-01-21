@@ -75,15 +75,17 @@
                         <td>{{$receitaFinanceiras->fk_consulta}}</td>
                         <td>{{$receitaFinanceiras->fk_administradora}}</td>
                         <td>
-                            <a href="{{url("receitaFinanceira/$receitaFinanceiras->id")}}">
+                            <a href="{{url("receitafinanceira/$receitaFinanceiras->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>
                             </a>
-                            <a href="{{url("receitaFinanceira/$receitaFinanceiras->id/edit")}}">
+                            <a href="{{url("receitafinanceira/$receitaFinanceiras->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("receitaFinanceira/$receitaFinanceiras->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('receitafinanceira.destroy', $receitaFinanceiras->id)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">Deletar</button>
+                          </form>
                         </td>
                       </tr>
                 @endforeach

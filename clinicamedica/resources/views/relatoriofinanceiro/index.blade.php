@@ -75,15 +75,17 @@
                         <td>{{$relatorioFinanceiros->fk_despesa}}</td>
                         <td>{{$relatorioFinanceiros->fk_administradora}}</td>
                         <td>
-                            <a href="{{url("relatorioFinanceiro/$relatorioFinanceiros->id")}}">
+                            <a href="{{url("relatoriofinanceiro/$relatorioFinanceiros->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>
                             </a>
-                            <a href="{{url("relatorioFinanceiro/$relatorioFinanceiros->id/edit")}}">
+                            <a href="{{url("relatoriofinanceiro/$relatorioFinanceiros->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("relatorioFinanceiro/$relatorioFinanceiros->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('relatoriofinanceiro.destroy', $relatorioFinanceiros->id)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">Deletar</button>
+                          </form>
                         </td>
                       </tr>
                 @endforeach

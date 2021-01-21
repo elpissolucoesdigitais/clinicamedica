@@ -46,9 +46,11 @@
                             <a href="{{url("convenio/$convenios->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("convenio/$convenios->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('convenio.destroy', $convenios->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
                         </td>
                       </tr>
                 @endforeach

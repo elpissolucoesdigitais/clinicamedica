@@ -144,6 +144,12 @@ class MedicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$medico = $this->objMedico->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $medico->delete();
+          return redirect('medico');
+       //dd("deletando a consulta $id");
+
     }
 }

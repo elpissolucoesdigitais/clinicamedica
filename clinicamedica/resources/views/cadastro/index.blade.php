@@ -44,9 +44,11 @@
                             <a href="{{url("cadastro/$cadastros->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("cadastro/$cadastros->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('cadastro.destroy', $cadastros->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
                         </td>
                       </tr>
                 @endforeach

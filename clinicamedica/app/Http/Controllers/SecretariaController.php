@@ -140,6 +140,12 @@ class SecretariaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$secretaria = $this->objSecretaria->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $secretaria->delete();
+          return redirect('secretaria');
+       //dd("deletando a consulta $id");
+
     }
 }
