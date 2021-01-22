@@ -125,6 +125,12 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$paciente = $this->objPaciente->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $paciente->delete();
+          return redirect('paciente');
+       //dd("deletando a consulta $id");
+
     }
 }

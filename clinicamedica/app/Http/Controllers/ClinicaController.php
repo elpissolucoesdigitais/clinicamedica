@@ -127,6 +127,12 @@ class ClinicaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$clinica = $this->objClinica->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $clinica->delete();
+          return redirect('clinica');
+       //dd("deletando a consulta $id");
+
     }
 }

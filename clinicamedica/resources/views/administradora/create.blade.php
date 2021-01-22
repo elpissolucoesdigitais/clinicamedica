@@ -61,13 +61,6 @@
         <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
 
-      @section('scripts')
-    <script>
-        $(document).ready(function(){
-          $('#cep').mask('00000-000');
-        });
-    </script>
-@endsection
       
       
 
@@ -120,9 +113,10 @@
         </select>
       </div>
 
+
       <div class="form-group col-md-7">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" id="cpf" placeholder="CPF"
+        <input type="cpf" class="form-control" id="cpf" placeholder="CPF"
         name="cpf" value="{{$administradora->cpf ?? ''}}">
       </div>
 

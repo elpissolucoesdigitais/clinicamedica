@@ -219,6 +219,11 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$admin = $this->objAdmin->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $admin->delete();
+          return redirect('admin');
+
     }
 }

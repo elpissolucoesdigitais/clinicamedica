@@ -45,9 +45,11 @@
                             <a href="{{url("relatoriopaciente/$relatorioPacientes->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("relatoriopaciente/$relatorioPacientes->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('relatoriopaciente.destroy', $relatorioPacientes->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
                         </td>
                       </tr>
                 @endforeach

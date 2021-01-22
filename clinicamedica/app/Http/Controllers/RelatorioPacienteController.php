@@ -138,6 +138,12 @@ class RelatorioPacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$relatorioPaciente = $this->objRelatorioPaciente->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $relatorioPaciente->delete();
+          return redirect('relatoriopaciente');
+       //dd("deletando a consulta $id");
+
     }
 }

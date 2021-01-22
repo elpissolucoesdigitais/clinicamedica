@@ -141,6 +141,12 @@ class DespesaFinanceiraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$despesaFinanceira = $this->objDespesaFinanceira->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $despesaFinanceira->delete();
+          return redirect('despesafinanceira');
+       //dd("deletando a consulta $id");
+
     }
 }

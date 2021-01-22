@@ -122,6 +122,12 @@ class ExameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$exame = $this->objExame->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $exame->delete();
+          return redirect('exame');
+       //dd("deletando a consulta $id");
+
     }
 }

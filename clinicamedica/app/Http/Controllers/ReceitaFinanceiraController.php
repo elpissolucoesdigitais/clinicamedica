@@ -112,6 +112,12 @@ class ReceitaFinanceiraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$receitaFinanceira = $this->objReceitaFinanceira->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $receitaFinanceira->delete();
+          return redirect('receitafinanceira');
+       //dd("deletando a consulta $id");
+
     }
 }

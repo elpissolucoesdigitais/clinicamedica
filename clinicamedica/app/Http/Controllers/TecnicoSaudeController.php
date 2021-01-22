@@ -129,6 +129,12 @@ class TecnicoSaudeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$tecnicoSaude = $this->objTecnicoSaude->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $tecnicoSaude->delete();
+          return redirect('tecnicosaude');
+       //dd("deletando a consulta $id");
+
     }
 }

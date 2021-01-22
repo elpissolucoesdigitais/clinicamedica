@@ -117,6 +117,12 @@ class MedicamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$medicamento = $this->objMedicamento->where('id',$id)->first()){
+            return redirect()->back();  
+          }
+          $medicamento->delete();
+          return redirect('medicamento');
+       //dd("deletando a consulta $id");
+
     }
 }

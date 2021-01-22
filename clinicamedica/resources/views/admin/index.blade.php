@@ -85,9 +85,11 @@
                             <a href="{{url("admin/$admins->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="{{url("admin/$admins->id")}}" class="js-del">
-                                <button class="btn btn-danger">Deletar</button>
-                            </a>
+                            <form action="{{route('admin.destroy', $admins->id)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">Deletar</button>
+                          </form>
                         </td>
                       </tr>
                 @endforeach
