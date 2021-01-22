@@ -47,11 +47,13 @@
         value="{{$relatorioPaciente->fk_medicamento ?? ''}}">
       </div>
 
-      <div class="form-group col-md-6">
-        <label for="fk_medico">Medico</label>
-        <input type="text" class="form-control" id="fk_medico" placeholder="Medico" name="fk_medico"
-        value="{{$relatorioPaciente->fk_medico ?? ''}}">
-      </div>
+      <select class="form-control" type="text" name="nomeMedico" id="nomeMedico">
+        <option value="">Selecione</option>
+        @foreach ($medico as $medicos)
+          <option value="{{$medicos->id}}">{{$medicos->nome}}</option>
+        @endforeach
+
+      </select>
 
       <div class="form-group col-md-6">
         <label for="fk_tecnico_saude">Tecnico de Saude</label>

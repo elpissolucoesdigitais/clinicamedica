@@ -11,6 +11,11 @@
 |
 */
 
+
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,3 +40,6 @@ Route::resource('relatoriopaciente', 'RelatorioPacienteController');
 Route::resource('paciente', 'PacienteController');
 Route::resource('secretaria', 'SecretariaController');
 Route::resource('tecnicosaude', 'TecnicoSaudeController');
+
+
+//$this->get('one-to-one', 'OneToOneController@oneToOne');

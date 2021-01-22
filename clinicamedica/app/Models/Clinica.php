@@ -11,6 +11,14 @@ class Clinica extends Model
     
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (1,N) Secretaria
+    public function secretaria()
+    {
+        return $this->hasMany('App\Models\Secretaria', 'id', 'fk_clinica');
+    }
+
+
+
     //OK - CERTO
     public function getContatoAttribute()
     {

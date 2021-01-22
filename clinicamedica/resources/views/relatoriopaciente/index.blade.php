@@ -31,12 +31,14 @@
                     @php
                         //$relatorioPaciente=$relatorioPaciente->find($relatorioPaciente->id)->relrelatorioPaciente;
                         
+                        $medico=$relatorioPacientes->find($relatorioPacientes->id)->relMedico;
+                        
                     @endphp
                     <tr>
                         <th scope="row">{{$relatorioPacientes->id}}</th>
                         <td>{{$relatorioPacientes->nome}}</td>
                         <td>{{$relatorioPacientes->descricao}}</td>
-                        <td>{{$relatorioPacientes->fk_medico }}</td>
+                        <td>{{$medico->nome}}</td>
                         <td>{{$relatorioPacientes->fk_exame }}</td>
                         <td>
                             <a href="{{url("relatoriopaciente/$relatorioPacientes->id")}}">

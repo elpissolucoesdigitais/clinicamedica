@@ -11,6 +11,15 @@ class Medico extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (1,1) Relatorio Paciente
+    public function relRelatorio()
+    {
+        return $this->hasMany('App\Models\Relatorio', 'fk_medico');
+    }
+
+
+
+
     //OK - CERTO
     public function getCpfAttribute()
     {

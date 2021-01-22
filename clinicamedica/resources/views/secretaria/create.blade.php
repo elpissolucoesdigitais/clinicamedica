@@ -82,7 +82,7 @@
     </div>
     <div class="form-group col-md-6">
         <label for="fk_clinica">Clinica</label>
-        <input type="number" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$secretaria->fk_clinica ??''}}">
+        <input type="text" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$secretaria->fk_clinica ??''}}">
     </div>
     <div class="input-group is-invalid">
         <div class="custom-file">

@@ -4,12 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Secretaria extends Model
 {
     protected $table='secretarias';
     protected $fillable=['sexo', 'cidade', 'email', 'complemento', 'cpf', 'rg', 'nome', 'longradouro', 'contato', 'bairro', 'uf', 'cep', 'datanascimento', 'foto', 'salario','fk_clinica'];
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
+
+    //Retorna (1,1) Clinica
+    public function relClinica()
+    {
+        return $this->hasOne('App\Models\Clinica', 'fk_clinica');
+    }
+
 
     //OK - CERTO
     public function getCpfAttribute()

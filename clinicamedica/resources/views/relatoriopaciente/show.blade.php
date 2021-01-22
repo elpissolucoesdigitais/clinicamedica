@@ -33,8 +33,13 @@
             </div>
             
             <div class="form-group col-md-5">
+
+              @php
+                  $medico=$relatorioPaciente->find($relatorioPaciente->id)->relMedico;
+              @endphp
+
               <label for="fk_medico">Medico</label>
-              <input type="text" class="form-control" id="fk_medico" name="fk_medico" value="{{$relatorioPaciente->fk_medico}}">
+              <input type="text" class="form-control" id="fk_medico" name="fk_medico" value="{{$medico->nome}}">
             </div>
             
             
