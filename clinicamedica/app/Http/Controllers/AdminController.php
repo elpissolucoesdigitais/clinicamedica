@@ -91,7 +91,7 @@ class AdminController extends Controller
     public function create()
     {
         //19
-        $admin=$this->objAdmin->all();
+        $admins=$this->objAdmin->all();
         $administradora=$this->objAdministradora->all();
         $clinica=$this->objClinica->all();
         $consulta=$this->objConsulta->all();
@@ -110,7 +110,7 @@ class AdminController extends Controller
         $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
         $secretaria=$this->objSecretaria->all();
         $tecnicoSaude=$this->objTecnicoSaude->all();
-        return view('admin.create', compact('admin', 'administradora', 'clinica',
+        return view('admin.create', compact('admins', 'administradora', 'clinica',
     'consulta', 'convenio', 'despesaFinanceira', 'estoque', 'exame', 'medicamento',
     'medico', 'paciente', 'procedimento', 'procedimentoMedico', 'procedimentoTecnico',
     'receitaFinanceira', 'relatorio', 'relatorioFinanceiro', 'secretaria', 'tecnicoSaude'));
@@ -208,7 +208,27 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objAdmin->where(['id'=>$id])->update([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'datanascimento'=>$request->datanascimento,
+            'foto'=>$request->foto,
+            'crm'=>$request->crm,
+            'salario'=>$request->salario
+            
+        ]);
+            return redirect('admin');
+
     }
 
     /**
