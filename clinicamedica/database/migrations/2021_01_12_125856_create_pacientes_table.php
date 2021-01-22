@@ -37,6 +37,7 @@ class CreatePacientesTable extends Migration
             $table->string('complemento');
             $table->unsignedInteger('fk_convenio');
             $table->foreign('fk_convenio')->references('id')->on('convenios');
+            $table->string('senha');
             $table->timestamps();
         });
     }

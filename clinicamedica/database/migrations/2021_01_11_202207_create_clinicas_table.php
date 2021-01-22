@@ -29,6 +29,7 @@ class CreateClinicasTable extends Migration
             $table->string('bairro');
             $table->string('cnpj');
             $table->string('uf');
+            $table->string('senha');
             $table->timestamps();
             
 

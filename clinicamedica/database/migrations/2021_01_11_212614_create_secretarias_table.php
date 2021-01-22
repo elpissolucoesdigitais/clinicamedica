@@ -32,6 +32,7 @@ class CreateSecretariasTable extends Migration
             $table->double('salario',10,2);
             $table->unsignedInteger('fk_clinica');
             $table->foreign('fk_clinica')->references('id')->on('clinicas');
+            $table->string('senha');
             $table->timestamps();
         });
     }
