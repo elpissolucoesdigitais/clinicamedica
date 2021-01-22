@@ -21,10 +21,10 @@ class CreateExamesTable extends Migration
             $table->string('nome');
 
             $table->unsignedinteger('fk_paciente');
-            $table->foreign('fk_paciente')->references('id')->on('pacientes');
+            $table->foreign('fk_paciente')->references('id')->on('pacientes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_consulta');
-            $table->foreign('fk_consulta')->references('id')->on('consultas');
+            $table->foreign('fk_consulta')->references('id')->on('consultas')->onDelete('cascade')->onUpdate('cascade');
 
 
             $table->timestamps();

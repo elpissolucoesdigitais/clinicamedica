@@ -19,13 +19,13 @@ class CreateCadastrosTable extends Migration
             $table->increments('id');
 
             $table->unsignedinteger('fk_paciente');
-            $table->foreign('fk_paciente')->references('id')->on('pacientes');
+            $table->foreign('fk_paciente')->references('id')->on('pacientes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_secretaria');
-            $table->foreign('fk_secretaria')->references('id')->on('secretarias');
+            $table->foreign('fk_secretaria')->references('id')->on('secretarias')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_administradora');
-            $table->foreign('fk_administradora')->references('id')->on('administradoras');
+            $table->foreign('fk_administradora')->references('id')->on('administradoras')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
 

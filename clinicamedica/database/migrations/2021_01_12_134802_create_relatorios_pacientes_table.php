@@ -21,16 +21,16 @@ class CreateRelatoriosPacientesTable extends Migration
             $table->string('descricao');
 
             $table->unsignedinteger('fk_medicamento');
-            $table->foreign('fk_medicamento')->references('id')->on('medicamentos');
+            $table->foreign('fk_medicamento')->references('id')->on('medicamentos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_medico');
-            $table->foreign('fk_medico')->references('id')->on('medicos');
+            $table->foreign('fk_medico')->references('id')->on('medicos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_tecnico_saude');
-            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude');
+            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_exame');
-            $table->foreign('fk_exame')->references('id')->on('exames');
+            $table->foreign('fk_exame')->references('id')->on('exames')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

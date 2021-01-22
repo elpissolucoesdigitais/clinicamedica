@@ -20,7 +20,7 @@ class CreateProcedimentosTable extends Migration
             $table->double('valor',10,2);
             $table->string('nome');
             $table->unsignedInteger('fk_secretaria');
-            $table->foreign('fk_secretaria')->references('id')->on('secretarias');
+            $table->foreign('fk_secretaria')->references('id')->on('secretarias')->onDelete('cascade')->onUpdate('cascade')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

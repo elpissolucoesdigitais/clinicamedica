@@ -18,10 +18,10 @@ class CreateRelatoriosFinanceirosTable extends Migration
             $table->increments('id');
 
             $table->unsignedinteger('fk_despesa');
-            $table->foreign('fk_despesa')->references('id')->on('despesas_financeiras');
+            $table->foreign('fk_despesa')->references('id')->on('despesas_financeiras')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_administradora');
-            $table->foreign('fk_administradora')->references('id')->on('administradoras');
+            $table->foreign('fk_administradora')->references('id')->on('administradoras')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

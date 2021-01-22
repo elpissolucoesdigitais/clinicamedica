@@ -17,8 +17,8 @@ class CreateProcedimentosTemMedicosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('fk_procedimento');
             $table->unsignedInteger('fk_medico');
-            $table->foreign('fk_medico')->references('id')->on('medicos');
-            $table->foreign('fk_procedimento')->references('id')->on('procedimentos');
+            $table->foreign('fk_medico')->references('id')->on('medicos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('fk_procedimento')->references('id')->on('procedimentos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
