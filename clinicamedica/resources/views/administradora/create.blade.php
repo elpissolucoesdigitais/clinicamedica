@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 @if(isset($errors) && count($errors)>0)
     <div class="text-center mt-4 mb-4 p-2 alert-danger">
         @foreach ($errors->all() as $erro)
@@ -128,7 +126,7 @@
 
       <div class="form-group col-md-6">
         <label for="dataNascimento">Data de Nascimento</label>
-        <input type="text" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
+        <input type="date" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
         name="datanascimento" value="{{$administradora->datanascimento ?? ''}}">
       </div>
 
