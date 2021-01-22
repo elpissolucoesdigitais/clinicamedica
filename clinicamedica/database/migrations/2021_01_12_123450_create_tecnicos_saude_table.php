@@ -31,6 +31,7 @@ class CreateTecnicosSaudeTable extends Migration
             $table->string('complemento');
             $table->string('nome');
             $table->string('rg');
+            $table->string('senha');
 
             $table->timestamps();
 

@@ -30,6 +30,7 @@ class CreateAdministradorasTable extends Migration
             $table->string('cep');
             $table->string('datanascimento');
             $table->string('foto');
+            $table->string('senha');
             $table->timestamps();
         });
     }

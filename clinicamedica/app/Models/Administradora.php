@@ -9,15 +9,20 @@ class Administradora extends Model
     protected $table='administradoras';
     protected $fillable=['sexo', 'cidade', 'email', 'complemento', 'salario', 'cpf', 'rg', 'nome', 'longradouro', 'contato', 'bairro', 'uf', 'cep', 'datanascimento', 'foto'];
     
-
+    //OK
     public function getCpfAttribute()
     {
+        //$cpf=str_replace(".", "");
+        
+
         $cpf=$this->attributes['cpf'];
+        $cpf=str_replace('.', '', $cpf);
+        $cpf=str_replace('-', '', $cpf);
 
         return substr($cpf, 0, 3). '.' .substr($cpf, 3, 3). '.' .substr($cpf, 7, 3). '-' .substr($cpf, -2);
     }
 
-
+    //OK
     public function getContatoAttribute()
     {
         $contato=$this->attributes['contato'];
@@ -26,6 +31,7 @@ class Administradora extends Model
 
     }
 
+    //OK
     public function getCepAttribute()
     {
         $cep=$this->attributes['cep'];
@@ -34,11 +40,12 @@ class Administradora extends Model
 
     }
 
+    //OK
     public function getRgAttribute()
     {
         $rg=$this->attributes['rg'];
 
-        return substr($rg, 0, 3). '.' .substr($rg, 3, 3). '.' .substr($rg, 7, 3). '-' .substr($rg, -2);
+        return substr($rg, 0, 2). '.' .substr($rg, 2, 3). '.' .substr($rg, 7, 3). '-' .substr($rg, -2);
 
     }
 

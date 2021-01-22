@@ -33,6 +33,7 @@ class CreateMedicosTable extends Migration
             $table->string('crmuf');
             $table->string('especialidade');
             $table->double('salario',10,2);
+            $table->string('senha');
             $table->timestamps();
         });
     }

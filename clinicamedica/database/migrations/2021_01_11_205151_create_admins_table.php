@@ -31,6 +31,7 @@ class CreateAdminsTable extends Migration
             $table->string('foto');
             $table->string('crm');
             $table->double('salario',10,2);
+            $table->string('senha');
             $table->timestamps();
         });
     }
