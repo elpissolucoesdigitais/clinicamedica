@@ -20,7 +20,7 @@ class CreateMedicamentosTable extends Migration
             $table->string('descricao');
             $table->timestamps();
             $table->unsignedInteger('fk_medico');
-            $table->foreign('fk_medico')->references('id')->on('medicos');
+            $table->foreign('fk_medico')->references('id')->on('medicos')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

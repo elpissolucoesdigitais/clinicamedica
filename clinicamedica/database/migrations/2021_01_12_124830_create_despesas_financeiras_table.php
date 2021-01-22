@@ -18,19 +18,19 @@ class CreateDespesasFinanceirasTable extends Migration
             $table->increments('id');
             
             $table->unsignedinteger('fk_medico');
-            $table->foreign('fk_medico')->references('id')->on('medicos');
+            $table->foreign('fk_medico')->references('id')->on('medicos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_tecnico_saude');
-            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude');
+            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_clinica');
-            $table->foreign('fk_clinica')->references('id')->on('clinicas');
+            $table->foreign('fk_clinica')->references('id')->on('clinicas')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_secretaria');
-            $table->foreign('fk_secretaria')->references('id')->on('secretarias');
+            $table->foreign('fk_secretaria')->references('id')->on('secretarias')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_estoque');
-            $table->foreign('fk_estoque')->references('id')->on('estoques');
+            $table->foreign('fk_estoque')->references('id')->on('estoques')->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('tipo');
 

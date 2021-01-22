@@ -23,10 +23,10 @@ class CreateConsultasTable extends Migration
             $table->double('valor',10,2);
 
             $table->unsignedinteger('fk_procedimento');
-            $table->foreign('fk_procedimento')->references('id')->on('procedimentos');
+            $table->foreign('fk_procedimento')->references('id')->on('procedimentos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_medico');
-            $table->foreign('fk_medico')->references('id')->on('medicos');
+            $table->foreign('fk_medico')->references('id')->on('medicos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

@@ -18,10 +18,10 @@ class CreateReceitasFinanceirasTable extends Migration
             $table->increments('id');
 
             $table->unsignedinteger('fk_consulta');
-            $table->foreign('fk_consulta')->references('id')->on('consultas');
+            $table->foreign('fk_consulta')->references('id')->on('consultas')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedinteger('fk_administradora');
-            $table->foreign('fk_administradora')->references('id')->on('administradoras');
+            $table->foreign('fk_administradora')->references('id')->on('administradoras')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

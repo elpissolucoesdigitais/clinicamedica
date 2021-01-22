@@ -21,7 +21,7 @@ class CreateEstoquesTable extends Migration
             $table->string('tipo');
             $table->double('valor');
             $table->unsignedinteger('fk_administradora');
-            $table->foreign('fk_administradora')->references('id')->on('administradoras');
+            $table->foreign('fk_administradora')->references('id')->on('administradoras')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

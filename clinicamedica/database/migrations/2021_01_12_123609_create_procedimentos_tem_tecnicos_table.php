@@ -18,10 +18,10 @@ class CreateProcedimentosTemTecnicosTable extends Migration
             //3
             $table->increments('id');
             $table->unsignedinteger('fk_tecnico_saude');
-            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude');
+            $table->foreign('fk_tecnico_saude')->references('id')->on('tecnicos_saude')->onDelete('cascade')->onUpdate('cascade');
             
             $table->unsignedinteger('fk_procedimento');
-            $table->foreign('fk_procedimento')->references('id')->on('procedimentos');
+            $table->foreign('fk_procedimento')->references('id')->on('procedimentos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
 
