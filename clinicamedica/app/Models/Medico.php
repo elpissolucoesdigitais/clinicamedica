@@ -11,10 +11,16 @@ class Medico extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
-    //Retorna (1,1) Relatorio Paciente
+    //Retorna (0,N) Relatorio Paciente
     public function relRelatorio()
     {
         return $this->hasMany('App\Models\Relatorio', 'fk_medico');
+    }
+
+    //Retorna (1,N) Despesa Financeira
+    public function relDespesaFinanceira()
+    {
+        return $this->hasMany('App\Models\DespesaFinanceira', 'fk_medico');
     }
 
 

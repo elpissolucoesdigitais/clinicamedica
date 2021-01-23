@@ -54,9 +54,14 @@
 
 
       <div class="form-group col-md-7">
-        <label for="fk_administradora">Administradora</label>
-        <input type="integer" class="form-control" id="fk_administradora" placeholder="Administradora" name="fk_administradora"
-        value="{{$estoque->fk_administradora ?? ''}}">
+        <label for="nomeAdministradora">Administradora</label>
+      <select class="form-control" type="text" name="nomeAdministradora" id="nomeAdministradora">
+        <option value="{{$estoque->relAdministradora->id ?? ''}}">{{$estoque->relAdministradora->nome ?? 'Selecione'}}</option>
+        @foreach ($administradora as $administradoras)
+          <option value="{{$administradoras->id}}">{{$administradoras->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
       <div class="form-group col-md-4">

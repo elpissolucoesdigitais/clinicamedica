@@ -40,16 +40,26 @@
     </div>
 
     <div class="form-group col-md-6">
-        <label for="fk_paciente">Paciente</label>
-        <input type="text" class="form-control" id="fk_paciente" placeholder="Paciente" name="fk_paciente"
-        value="{{$exame->fk_paciente ?? ''}}">
+      <label for="nomepaciente">Paciente</label>
+      <select class="form-control" type="text" name="nomepaciente" id="nomepaciente">
+        <option value="{{$exame->relPaciente->id ?? ''}}">{{$exame->relPaciente->nome ?? 'Selecione'}}</option>
+        @foreach ($paciente as $pacientes)
+          <option value="{{$pacientes->id}}">{{$pacientes->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
 
       <div class="form-group col-md-6">
-        <label for="fk_consulta">Consulta</label>
-        <input type="text" class="form-control" id="fk_consulta" placeholder="Consulta" name="fk_consulta"
-        value="{{$exame->fk_consulta ?? ''}}">
+        <label for="nomeconsulta">Consulta</label>
+      <select class="form-control" type="text" name="nomeconsulta" id="nomeconsulta">
+        <option value="{{$exame->relConsulta->id ?? ''}}">{{$exame->relConsulta->data ?? 'Selecione'}}</option>
+        @foreach ($consulta as $consultas)
+          <option value="{{$consultas->id}}">{{$consultas->data}}</option>
+        @endforeach
+
+      </select>
       </div>
 
   </div>

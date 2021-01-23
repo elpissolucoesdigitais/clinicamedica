@@ -37,8 +37,12 @@
             <input type="text" class="form-control" id="valor" name="valor" value="{{$estoque->valor}}">
           </div>
           <div class="form-group ">
-            <label for="administradora ">Administradora</label>
-            <input type="text" class="form-control" id="administradora " name="administradora " value="{{$estoque->fk_administradora }}">
+            @php
+              $administradora=$estoque->find($estoque->id)->relAdministradora;
+            @endphp
+            
+            <label for="fk_administradora">Administradora</label>
+            <input type="text" class="form-control" id="fk_administradora" name="fk_administradora" value="{{$administradora->nome}}">
           </div>
           <div class="form-row">
         

@@ -31,6 +31,8 @@
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
                         
+                        $procedimento=$consultas->find($consultas->id)->relProcedimento;
+
                     @endphp
                     <tr>
                         
@@ -38,7 +40,7 @@
                         <td>{{$consultas->hora}}</td>
                         <td>{{$consultas->data}}</td>
                         <td>{{$consultas->valor}}</td>
-                        <td>{{$consultas->fk_procedimento}}</td>
+                        <td>{{$procedimento->nome}}</td>
                         <td>
                             <a href="{{url("consulta/$consultas->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

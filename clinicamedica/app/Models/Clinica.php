@@ -17,6 +17,12 @@ class Clinica extends Model
         return $this->hasMany('App\Models\Secretaria', 'id', 'fk_clinica');
     }
 
+    //Retorna (1,N) Despesa Financeira
+    public function relDespesaFinanceira()
+    {
+        return $this->hasMany('App\Models\DespesaFinanceira', 'fk_clinica');
+    }
+
 
 
     //OK - CERTO

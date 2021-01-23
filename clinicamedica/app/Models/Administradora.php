@@ -11,6 +11,12 @@ class Administradora extends Model
     
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (0,N) Estoque
+    public function relEstoque()
+    {
+        return $this->hasMany('App\Models\Estoque', 'fk_administradora');
+    }
+
     //OK - CERTO
     public function getCpfAttribute()
     {

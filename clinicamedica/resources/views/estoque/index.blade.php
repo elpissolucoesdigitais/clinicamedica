@@ -30,7 +30,7 @@
                 @foreach ($estoque as $estoques)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $administradora=$estoques->find($estoques->id)->relAdministradora;
                     @endphp
                     <tr>
                         
@@ -38,7 +38,7 @@
                         <td>{{$estoques->nome}}</td>
                         <td>{{$estoques->descricao}}</td>
                         <td>{{$estoques->valor}}</td>
-                        <td>{{$estoques->fk_administradora}}</td>
+                        <td>{{$administradora->nome}}</td>
                         <td>
                             <a href="{{url("estoque/$estoques->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

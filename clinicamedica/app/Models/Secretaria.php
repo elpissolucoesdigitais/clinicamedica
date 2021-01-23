@@ -18,6 +18,18 @@ class Secretaria extends Model
         return $this->hasOne('App\Models\Clinica', 'fk_clinica');
     }
 
+    //Retorna (0,N) Cadastro
+    public function relCadastro()
+    {
+        return $this->hasMany('App\Models\Cadastro', 'fk_secretaria');
+    }
+
+    //Retorna (1,N) Despesa Financeira
+    public function relDespesaFinanceira()
+    {
+        return $this->hasMany('App\Models\DespesaFinanceira', 'fk_secretaria');
+    }
+
 
     //OK - CERTO
     public function getCpfAttribute()

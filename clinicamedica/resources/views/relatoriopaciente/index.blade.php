@@ -32,6 +32,7 @@
                         //$relatorioPaciente=$relatorioPaciente->find($relatorioPaciente->id)->relrelatorioPaciente;
                         
                         $medico=$relatorioPacientes->find($relatorioPacientes->id)->relMedico;
+                        $exame=$relatorioPacientes->find($relatorioPacientes->id)->relExame;
                         
                     @endphp
                     <tr>
@@ -39,7 +40,7 @@
                         <td>{{$relatorioPacientes->nome}}</td>
                         <td>{{$relatorioPacientes->descricao}}</td>
                         <td>{{$medico->nome}}</td>
-                        <td>{{$relatorioPacientes->fk_exame }}</td>
+                        <td>{{$exame->nome }}</td>
                         <td>
                             <a href="{{url("relatoriopaciente/$relatorioPacientes->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

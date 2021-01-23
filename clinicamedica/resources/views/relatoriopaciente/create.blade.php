@@ -42,30 +42,50 @@
 
 
       <div class="form-group col-md-6">
-        <label for="fk_medicamento">Medicamento</label>
-        <input type="text" class="form-control" id="fk_medicamento" placeholder="Medicamento" name="fk_medicamento"
-        value="{{$relatorioPaciente->fk_medicamento ?? ''}}">
+        <label for="nomeMedicamento">Medicamento</label>
+      <select class="form-control" type="text" name="nomeMedicamento" id="nomeMedicamento">
+        <option value="{{$relatorioPaciente->relMedicamento->id ?? ''}}">{{$relatorioPaciente->relMedicamento->nome ?? 'Selecione'}}</option>
+        @foreach ($medicamento as $medicamentos)
+          <option value="{{$medicamentos->id}}">{{$medicamentos->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
+      <div class="form-group col-md-6">
+        <label for="nomeMedico">Medico</label>
       <select class="form-control" type="text" name="nomeMedico" id="nomeMedico">
-        <option value="">Selecione</option>
+        <option value="{{$relatorioPaciente->relMedico->id ?? ''}}">{{$relatorioPaciente->relMedico->nome ?? 'Selecione'}}</option>
         @foreach ($medico as $medicos)
           <option value="{{$medicos->id}}">{{$medicos->nome}}</option>
         @endforeach
 
       </select>
-
-      <div class="form-group col-md-6">
-        <label for="fk_tecnico_saude">Tecnico de Saude</label>
-        <input type="text" class="form-control" id="fk_tecnico_saude" placeholder="Tecnico de Saude" name="fk_tecnico_saude"
-        value="{{$relatorioPaciente->fk_tecnico_saude ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
-        <label for="fk_exame">Exame</label>
-        <input type="text" class="form-control" id="fk_exame" placeholder="Exame" name="fk_exame"
-        value="{{$relatorioPaciente->fk_exame ?? ''}}">
+        <label for="nomeTecnicoSaude">Tecnico de Saude</label>
+      <select class="form-control" type="text" name="nomeTecnicoSaude" id="nomeTecnicoSaude">
+        <option value="{{$relatorioPaciente->relTecnicoSaude->id ?? ''}}">{{$relatorioPaciente->relTecnicoSaude->nome ?? 'Selecione'}}</option>
+        @foreach ($tecnicoSaude as $tecnicoSaudes)
+          <option value="{{$tecnicoSaudes->id}}">{{$tecnicoSaudes->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
+
+      <div class="form-group col-md-6">
+      <label for="nomeExame">Exame</label>
+      <select class="form-control" type="text" name="nomeExame" id="nomeExame">
+        <option value="{{$relatorioPaciente->relExame->id ?? ''}}">{{$relatorioPaciente->relExame->nome ?? 'Selecione'}}</option>
+        @foreach ($exame as $exames)
+          <option value="{{$exames->id}}">{{$exames->nome}}</option>
+        @endforeach
+
+      </select>
+      </div>
+
+      
 
   </div>
 

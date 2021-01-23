@@ -8,5 +8,18 @@ class Cadastra extends Model
 {
     protected $table='cadastros';
     protected $fillable = ['fk_paciente','fk_secretaria','fk_administradora'];
+
+    //Retorna (0,1) Paciente
+    public function relPaciente()
+    {
+        return $this->hasOne('App\Models\Paciente', 'id', 'fk_paciente');
+    }
+
+    //Retorna (1,1) Secretaria
+    public function relSecretaria()
+    {
+        return $this->hasOne('App\Models\Secretaria', 'id', 'fk_secretaria');
+    }
+
 }
 
