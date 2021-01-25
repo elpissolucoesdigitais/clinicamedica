@@ -11,6 +11,8 @@ class Paciente extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //OBS: TENDO PROBLEMA NO "CADASTRA" DA PAGINA. REVISAR OS ATRIBUTOS E CHAVE ESTRANGEIRA
+
     //Retorna (0,N) Cadastra
     public function relCadastra()
     {
@@ -23,6 +25,11 @@ class Paciente extends Model
         return $this->hasMany('App\Models\Exame', 'fk_paciente');
     }
 
+    //Retorna (0,1) Convenio
+    public function relConvenio()
+    {
+        return $this->hasOne('App\Models\Convenio', 'id', 'fk_convenio');
+    }
 
     //OK - CERTO
     public function getCpfAttribute()

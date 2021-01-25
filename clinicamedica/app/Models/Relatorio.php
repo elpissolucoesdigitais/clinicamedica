@@ -34,4 +34,5 @@ class Relatorio extends Model
         return $this->hasOne('App\Models\TecnicoSaude', 'id', 'fk_tecnico_saude');
     }
 
+
 }

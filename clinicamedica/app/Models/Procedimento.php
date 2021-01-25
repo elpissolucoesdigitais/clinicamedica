@@ -15,4 +15,22 @@ class Procedimento extends Model
         return $this->hasMany('App\Models\Consulta', 'fk_procedimento');
     }
 
+    //Retorna (1,1) Secretaria
+    public function relSecretaria()
+    {
+        return $this->hasOne('App\Models\Secretaria', 'id', 'fk_secretaria');
+    }
+
+    //Retorna (1,N) ProcedimentoMedico
+    public function relProcedimentoMedico()
+    {
+        return $this->hasMany('App\Models\ProcedimentoMedico', 'fk_procedimento');
+    }
+
+    //Retorna (1,N) ProcedimentoTecnico
+    public function relProcedimentoTecnico()
+    {
+        return $this->hasMany('App\Models\ProcedimentoTecnico', 'fk_procedimento');
+    }
+
 }

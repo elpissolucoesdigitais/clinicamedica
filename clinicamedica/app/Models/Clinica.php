@@ -12,9 +12,9 @@ class Clinica extends Model
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
     //Retorna (1,N) Secretaria
-    public function secretaria()
+    public function relSecretaria()
     {
-        return $this->hasMany('App\Models\Secretaria', 'id', 'fk_clinica');
+        return $this->hasMany('App\Models\Secretaria', 'fk_clinica');
     }
 
     //Retorna (1,N) Despesa Financeira

@@ -17,6 +17,24 @@ class Administradora extends Model
         return $this->hasMany('App\Models\Estoque', 'fk_administradora');
     }
 
+    //Retorna (0,N) ReceitaFinanceira
+    public function relReceitaFinanceira()
+    {
+        return $this->hasMany('App\Models\ReceitaFinanceira', 'fk_administradora');
+    }
+
+    //Retorna (0,N) RelatorioFinanceiro
+    public function relRelatorioFinanceiro()
+    {
+        return $this->hasMany('App\Models\RelatorioFinanceiro', 'fk_administradora');
+    }
+
+    //Retorna (0,N) Cadastra
+    public function relCadastra()
+    {
+        return $this->hasMany('App\Models\Cadastra', 'fk_administradora');
+    }
+
     //OK - CERTO
     public function getCpfAttribute()
     {

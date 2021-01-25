@@ -29,8 +29,12 @@
               </div>
               
               <div class="form-group col-md-7">
-                  <label for="consulta">Médico</label>
-                  <input type="text" class="form-control" id="consulta" name="consulta" value="{{$medicamento->fk_medico}}">
+                @php
+                  $medico=$medicamento->find($medicamento->id)->relMedico;
+                @endphp
+            
+                <label for="nomemedico">Medico</label>
+                <input type="text" class="form-control" id="nomemedico" name="nomemedico" value="{{$medico->nome}}">
               </div>
           </div>
         

@@ -21,4 +21,16 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Exame', 'fk_consulta');
     }
 
+    //Retorna (1,N) ReceitaFinanceira
+    public function relReceitaFinanceira()
+    {
+        return $this->hasMany('App\Models\ReceitaFinanceira', 'fk_consulta');
+    }
+
+    //Retorna (1,1) Medico
+    public function relMedico()
+    {
+        return $this->hasOne('App\Models\Medico', 'id', 'fk_medico');
+    }
+
 }

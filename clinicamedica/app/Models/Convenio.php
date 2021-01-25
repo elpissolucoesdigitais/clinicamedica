@@ -11,6 +11,13 @@ class Convenio extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (0,N) Paciente
+    public function relPaciente()
+    {
+        return $this->hasMany('App\Models\Paciente', 'fk_convenio');
+    }
+
+
     //OK - CERTO
     public function getContatoAttribute()
     {

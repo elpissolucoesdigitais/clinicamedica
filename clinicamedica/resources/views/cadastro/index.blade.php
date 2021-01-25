@@ -32,6 +32,7 @@
                         
                         $paciente=$cadastros->find($cadastros->id)->relPaciente;
                         $secretaria=$cadastros->find($cadastros->id)->relSecretaria;
+                        $administradora=$cadastros->find($cadastros->id)->relAdministradora;
 
                     @endphp
                     <tr>
@@ -39,7 +40,7 @@
                         <td>{{$cadastros->id}}</td>
                         <td>{{$paciente->nome}}</td>
                         <td>{{$secretaria->nome}}</td>
-                        <td>{{$cadastros->fk_administradora}}</td>
+                        <td>{{$administradora->nome}}</td>
                         <td>
                             <a href="{{url("cadastro/$cadastros->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

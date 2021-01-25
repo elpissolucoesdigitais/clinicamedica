@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <!-- Página do crud  -->
     <div id="content" class="p-4 p-md-5 pt-5">
     <h1 class="text-center">Lista de Relatorios Financeiros Cadastrados</h1><hr>
@@ -30,13 +28,15 @@
                 @foreach ($relatorioFinanceiro as $relatorioFinanceiros)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $despesaFinanceira=$relatorioFinanceiros->find($relatorioFinanceiros->id)->relDespesaFinanceira;
+
+                        $administradora=$relatorioFinanceiros->find($relatorioFinanceiros->id)->relAdministradora;
                     @endphp
                     <tr>
                         
                         <td>{{$relatorioFinanceiros->id}}</td>
-                        <td>{{$relatorioFinanceiros->fk_despesa}}</td>
-                        <td>{{$relatorioFinanceiros->fk_administradora}}</td>
+                        <td>{{$despesaFinanceira->tipo}}</td>
+                        <td>{{$administradora->nome}}</td>
                         <td>
                             <a href="{{url("relatoriofinanceiro/$relatorioFinanceiros->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>
