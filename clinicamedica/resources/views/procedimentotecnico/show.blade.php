@@ -13,16 +13,24 @@
         <fieldset disabled>
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="fk_tecnico_saude">Tecnico de Saude</label>
-              <input type="text" class="form-control" id="fk_tecnico_saude" name="fk_tecnico_saude" value="{{$procedimentotecnico->fk_tecnico_saude}}">
+              @php
+                $tecnicoSaude=$procedimentotecnico->find($procedimentotecnico->id)->relTecnicoSaude;
+              @endphp
+            
+              <label for="nometecnicosaude">Tecnico de Saude</label>
+              <input type="text" class="form-control" id="nometecnicosaude" name="nometecnicosaude" value="{{$tecnicoSaude->nome}}">
             </div>
            
           </div>
           <div class="form-row">
               
               <div class="form-group">
-                  <label for="fk_procedimento">Procedimento</label>
-                  <input type="text" class="form-control" id="fk_procedimento" name="fk_procedimento" value="{{$procedimentotecnico->fk_procedimento}}">
+                @php
+                  $procedimento=$procedimentotecnico->find($procedimentotecnico->id)->relProcedimento;
+                @endphp
+            
+                <label for="nomeprocedimento">Procedimento</label>
+                <input type="text" class="form-control" id="nomeprocedimento" name="nomeprocedimento" value="{{$procedimento->nome}}">
               </div>
           </div>
           

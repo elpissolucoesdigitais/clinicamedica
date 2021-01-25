@@ -81,8 +81,14 @@
         <input type="text" class="form-control" id="datanascimento" name="datanascimento" value="{{$secretaria->datanascimento ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="fk_clinica">Clinica</label>
-        <input type="text" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$secretaria->fk_clinica ??''}}">
+        <label for="nomeclinica">Clinica</label>
+      <select class="form-control" type="text" name="nomeclinica" id="nomeclinica">
+        <option value="{{$secretaria->relClinica->id ?? ''}}">{{$secretaria->relClinica->nome ?? 'Selecione'}}</option>
+        @foreach ($clinica as $clinicas)
+          <option value="{{$clinicas->id}}">{{$clinicas->nome}}</option>
+        @endforeach
+
+      </select>
     </div>
     <div class="input-group is-invalid">
         <div class="custom-file">

@@ -110,8 +110,12 @@
           </div>
 
           <div class="form-group col-md-5">
-            <label for="fk_clinica">Clinica</label>
-            <input type="text" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$clinica->nome}}">
+            @php
+              $clinica=$secretaria->find($secretaria->id)->relClinica;
+            @endphp
+            
+            <label for="nomeclinica">Clinica</label>
+            <input type="text" class="form-control" id="nomeclinica" name="nomeclinica" value="{{$clinica->nome}}">
 
           </div>
 

@@ -1,53 +1,53 @@
 @extends('templates.template')
-@section('content')
-<div class="main-content">
-  <div class="main-content-title">
-    <h2>Perfil</h2>
-  </div>
-  <div class="perfil-parent">
-    <div class="perfil">
-      <div class="perfil-img">
-          <div class="img">
 
+@section('content')
+
+<!-- Página do crud  -->
+<div id="content" class="p-4 p-md-5 pt-5">
+  <h1 class="text-center">Procedimento Medico</h1><hr>
+  @php
+      //$paciente=$agenda->find($agenda->id)->relPacientes;
+  @endphp
+  <div class="col-8 m-auto">
+      <form>
+        <fieldset disabled>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              @php
+                $procedimento=$procedimentoMedico->find($procedimentoMedico->id)->relProcedimento;
+              @endphp
+            
+              <label for="nomeprocedimento">Procedimento</label>
+              <input type="text" class="form-control" id="nomeprocedimento" name="nomeprocedimento" value="{{$procedimento->nome}}">
+            </div>
+           
           </div>
-      </div>
-      <div class="perfil-form">
-        <form>
-          <div class="form-group">
-            <label for="nome">Nome completo</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome completo">
+          <div class="form-row">
+              
+              <div class="form-group">
+                @php
+                  $medico=$procedimentoMedico->find($procedimentoMedico->id)->relMedico;
+                @endphp
+            
+                <label for="nomemedico">Medico</label>
+                <input type="text" class="form-control" id="nomemedico" name="nomemedico" value="{{$medico->nome}}">
+              </div>
+          </div>
           
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email">
-          </div>
-          <div class="form-group">
-            <label for="idade">Idade</label>
-            <input type="number" class="form-control" id="idade">
-          </div>
-          <div class="form-group">
-            <label for="genero">Gênero</label>
-            <select class="form-control" id="genero">
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-             
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="senha">Senha</label>
-            <input type="password" class="form-control" id="senha" placeholder="senha">
-          </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose file</label>
-          </div>
-          <button type="submit" class="btn">Salvar</button>
+          
+            <div class="form-row">
+            <div class="form-group">
+              <label for="criado">Criado</label>
+              <input type="text" class="form-control" id="criado" name="criado" value="{{$procedimentoMedico->created_at}}">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="updated_at">Ultima Atualização</label>
+                <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{$procedimentoMedico->updated_at}}">
+              </div>
+            </div>         
+        
+
+        </fieldset>  
         </form>
-      </div>
-    </div>
   </div>
-</div>
-</main>
-</div>
-@endsection
+  @endsection

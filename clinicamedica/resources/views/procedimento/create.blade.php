@@ -33,8 +33,14 @@
           <input type="text" class="form-control" id="descricao" name="descricao" value="{{$procedimento->descricao ?? ''}}">
         </div>
         <div class="form-group col-md-6">
-          <label for="fk_secretaria">Secretaria</label>
-          <input type="text" class="form-control" id="fk_secretaria" name="fk_secretaria" value="{{$procedimento->fk_secretaria ?? ''}}">
+          <label for="nomesecretaria">Secretaria</label>
+      <select class="form-control" type="text" name="nomesecretaria" id="nomesecretaria">
+        <option value="{{$procedimento->relSecretaria->id ?? ''}}">{{$procedimento->relSecretaria->nome ?? 'Selecione'}}</option>
+        @foreach ($secretaria as $secretarias)
+          <option value="{{$secretarias->id}}">{{$secretarias->nome}}</option>
+        @endforeach
+
+      </select>
         </div>
       </div>
     </div>
