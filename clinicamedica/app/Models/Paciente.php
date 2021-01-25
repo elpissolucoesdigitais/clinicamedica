@@ -11,6 +11,19 @@ class Paciente extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (0,N) Cadastra
+    public function relCadastra()
+    {
+        return $this->hasMany('App\Models\Cadastra', 'fk_paciente');
+    }
+
+    //Retorna (0,N) Exame
+    public function relExame()
+    {
+        return $this->hasMany('App\Models\Exame', 'fk_paciente');
+    }
+
+
     //OK - CERTO
     public function getCpfAttribute()
     {

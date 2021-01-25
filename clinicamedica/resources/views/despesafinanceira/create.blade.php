@@ -23,9 +23,14 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-        <label for="fk_medico">Medico</label>
-        <input type="text" class="form-control" id="fk_medico" placeholder="Medico" name="fk_medico"
-        value="{{$despesaFinanceira->fk_medico ?? ''}}">
+      <label for="nomeMedico">Medico</label>
+      <select class="form-control" type="text" name="nomeMedico" id="nomeMedico">
+        <option value="{{$despesaFinanceira->relMedico->id ?? ''}}">{{$despesaFinanceira->relMedico->nome ?? 'Selecione'}}</option>
+        @foreach ($medico as $medicos)
+          <option value="{{$medicos->id}}">{{$medicos->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
     
   </div>
@@ -34,29 +39,49 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="fk_tecnico_saude">Tecnico Saude</label>
-      <input type="text" class="form-control" id="fk_tecnico_saude" placeholder="Tecnico Saude" name="fk_tecnico_saude"
-      value="{{$despesaFinanceira->fk_tecnico_saude ?? ''}}">
+      <label for="nomeTecnicoSaude">Tecnico de Saude</label>
+      <select class="form-control" type="text" name="nomeTecnicoSaude" id="nomeTecnicoSaude">
+        <option value="{{$despesaFinanceira->relTecnicoSaude->id ?? ''}}">{{$despesaFinanceira->relTecnicoSaude->nome ?? 'Selecione'}}</option>
+        @foreach ($tecnicoSaude as $tecnicoSaudes)
+          <option value="{{$tecnicoSaudes->id}}">{{$tecnicoSaudes->nome}}</option>
+        @endforeach
+
+      </select>
     </div>
 
     <div class="form-group col-md-6">
-        <label for="fk_clinica">Clinica</label>
-        <input type="text" class="form-control" id="fk_clinica" placeholder="Clinica" name="fk_clinica"
-        value="{{$despesaFinanceira->fk_clinica ?? ''}}">
+      <label for="nomeClinica">Clinica</label>
+      <select class="form-control" type="text" name="nomeClinica" id="nomeClinica">
+        <option value="{{$despesaFinanceira->relClinica->id ?? ''}}">{{$despesaFinanceira->relClinica->nome ?? 'Selecione'}}</option>
+        @foreach ($clinica as $clinicas)
+          <option value="{{$clinicas->id}}">{{$clinicas->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
 
       <div class="form-group col-md-6">
-        <label for="fk_secretaria">Secretaria</label>
-        <input type="text" class="form-control" id="fk_secretaria" placeholder="Secretaria" name="fk_secretaria"
-        value="{{$despesaFinanceira->fk_secretaria ?? ''}}">
+        <label for="nomeSecretaria">Secretaria</label>
+      <select class="form-control" type="text" name="nomeSecretaria" id="nomeSecretaria">
+        <option value="{{$despesaFinanceira->relSecretaria->id ?? ''}}">{{$despesaFinanceira->relSecretaria->nome ?? 'Selecione'}}</option>
+        @foreach ($secretaria as $secretarias)
+          <option value="{{$secretarias->id}}">{{$secretarias->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
 
       <div class="form-group col-md-7">
-        <label for="fk_estoque">Estoque</label>
-        <input type="text" class="form-control" id="fk_estoque" placeholder="Estoque" name="fk_estoque"
-        value="{{$despesaFinanceira->fk_estoque ?? ''}}">
+        <label for="nomeEstoque">Estoque</label>
+      <select class="form-control" type="text" name="nomeEstoque" id="nomeEstoque">
+        <option value="{{$despesaFinanceira->relEstoque->id ?? ''}}">{{$despesaFinanceira->relEstoque->nome ?? 'Selecione'}}</option>
+        @foreach ($estoque as $estoques)
+          <option value="{{$estoques->id}}">{{$estoques->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
       <div class="form-group col-md-4">

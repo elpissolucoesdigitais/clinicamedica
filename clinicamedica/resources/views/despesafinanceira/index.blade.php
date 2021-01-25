@@ -30,15 +30,18 @@
                 @foreach ($despesaFinanceira as $despesasFinanceiras)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $medico=$despesasFinanceiras->find($despesasFinanceiras->id)->relMedico;
+                        $clinica=$despesasFinanceiras->find($despesasFinanceiras->id)->relClinica;
+                        $secretaria=$despesasFinanceiras->find($despesasFinanceiras->id)->relSecretaria;
+                        $estoque=$despesasFinanceiras->find($despesasFinanceiras->id)->relEstoque;
                     @endphp
                     <tr>
                         
                         <td>{{$despesasFinanceiras->id}}</td>
-                        <td>{{$despesasFinanceiras->fk_medico}}</td>
-                        <td>{{$despesasFinanceiras->fk_clinica}}</td>
-                        <td>{{$despesasFinanceiras->fk_secretaria}}</td>
-                        <td>{{$despesasFinanceiras->fk_estoque}}</td>
+                        <td>{{$medico->nome}}</td>
+                        <td>{{$clinica->nome}}</td>
+                        <td>{{$secretaria->nome}}</td>
+                        <td>{{$estoque->nome}}</td>
                         <td>
                             <a href="{{url("despesafinanceira/$despesasFinanceiras->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

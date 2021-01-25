@@ -30,12 +30,15 @@
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
                         
+                        $paciente=$cadastros->find($cadastros->id)->relPaciente;
+                        $secretaria=$cadastros->find($cadastros->id)->relSecretaria;
+
                     @endphp
                     <tr>
                         
                         <td>{{$cadastros->id}}</td>
-                        <td>{{$cadastros->fk_paciente}}</td>
-                        <td>{{$cadastros->fk_secretaria}}</td>
+                        <td>{{$paciente->nome}}</td>
+                        <td>{{$secretaria->nome}}</td>
                         <td>{{$cadastros->fk_administradora}}</td>
                         <td>
                             <a href="{{url("cadastro/$cadastros->id")}}">

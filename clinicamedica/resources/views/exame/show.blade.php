@@ -12,8 +12,12 @@
       <form>
         <fieldset disabled>
             <div class="form-group col-md-12">
-                <label for="nomepaciente">Nome do paciente(a)</label>
-                <input type="text" class="form-control" id="nomepaciente" name="nomepaciente" value="{{$exame->fk_paciente}}">
+              @php
+              $paciente=$exame->find($exame->id)->relPaciente;
+            @endphp
+            
+            <label for="fk_paciente">Paciente</label>
+            <input type="text" class="form-control" id="fk_paciente" name="fk_paciente" value="{{$paciente->nome}}">
             </div>
           <div class="form-row">
             <div class="form-group col-md-12">
@@ -29,8 +33,12 @@
               </div>
               
               <div class="form-group col-md-7">
-                  <label for="consulta">Consulta</label>
-                  <input type="text" class="form-control" id="consulta" name="consulta" value="{{$exame->fk_consulta}}">
+                @php
+                  $consulta=$exame->find($exame->id)->relConsulta;
+              @endphp
+              
+              <label for="fk_consulta">Consulta</label>
+              <input type="text" class="form-control" id="fk_consulta" name="fk_consulta" value="{{$consulta->data}}">
               </div>
           </div>
         

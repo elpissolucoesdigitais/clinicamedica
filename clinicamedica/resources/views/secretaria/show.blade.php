@@ -108,14 +108,15 @@
             <label for="salario">Salario</label>
             <input type="text" class="form-control" id="salario" name="salario" value="{{$secretaria->salario}}">
           </div>
+
           <div class="form-group col-md-5">
             <label for="fk_clinica">Clinica</label>
-            <input type="text" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$secretaria->fk_clinica}}">
+            <input type="text" class="form-control" id="fk_clinica" name="fk_clinica" value="{{$clinica->nome}}">
+
           </div>
+
+          
         </div>
-          
-          
-          
 
         </fieldset>  
         </form>

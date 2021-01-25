@@ -30,15 +30,16 @@
                 @foreach ($exame as $exames)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $paciente=$exames->find($exames->id)->relPaciente;
+                        $consulta=$exames->find($exames->id)->relConsulta;
                     @endphp
                     <tr>
                         
                         <td>{{$exames->id}}</td>
                         <td>{{$exames->nome}}</td>
                         <td>{{$exames->descricao}}</td>
-                        <td>{{$exames->fk_paciente}}</td>
-                        <td>{{$exames->fk_consulta}}</td>
+                        <td>{{$paciente->nome}}</td>
+                        <td>{{$consulta->data}}</td>
                         <td>
                             <a href="{{url("exame/$exames->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

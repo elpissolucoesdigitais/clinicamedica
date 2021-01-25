@@ -11,6 +11,19 @@ class TecnicoSaude extends Model
 
     //OBS: NÃO TEM MAIS NENHUMA MASCARA PARA COLOCAR
 
+    //Retorna (0,N) Relatorio Paciente
+    public function relRelatorio()
+    {
+        return $this->hasMany('App\Models\Relatorio', 'fk_tecnico_saude');
+    }
+
+    //Retorna (1,N) Despesa Financeira
+    public function relDespesaFinanceira()
+    {
+        return $this->hasMany('App\Models\DespesaFinanceira', 'fk_tecnico_saude');
+    }
+
+
     //OK - CERTO
     public function getCpfAttribute()
     {

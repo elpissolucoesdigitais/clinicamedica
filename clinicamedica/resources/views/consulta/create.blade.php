@@ -45,8 +45,14 @@
 
    
     <div class="form-group col-md-6">
-        <label for="fk_procedimento">Procedimento</label>
-        <input type="text" class="form-control" id="fk_procedimento" placeholder="Procedimento" name="fk_procedimento" value="{{$consulta->fk_procedimento ?? ''}}">
+      <label for="nomeProcedimento">Procedimento</label>
+      <select class="form-control" type="text" name="nomeProcedimento" id="nomeProcedimento">
+        <option value="{{$consulta->relProcedimento->id ?? ''}}">{{$consulta->relProcedimento->nome ?? 'Selecione'}}</option>
+        @foreach ($procedimento as $procedimentos)
+          <option value="{{$procedimentos->id}}">{{$procedimentos->nome}}</option>
+        @endforeach
+
+      </select>
       </div>
 
 

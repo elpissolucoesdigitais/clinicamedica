@@ -17,8 +17,12 @@
                     </div>    
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                        <label for="procedimento ">Procedimento</label>
-                        <input type="text" class="form-control" id="procedimento " name="procedimento" value="{{$consulta->fk_procedimento}}">
+                            @php
+                            $procedimento=$consulta->find($consulta->id)->relProcedimento;
+                        @endphp
+            
+                        <label for="fk_procedimento">Procedimento</label>
+                        <input type="text" class="form-control" id="fk_procedimento" name="fk_procedimento" value="{{$procedimento->nome}}">
                     </div>
                 
         </div>

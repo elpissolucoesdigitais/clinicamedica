@@ -24,9 +24,14 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="fk_paciente">Paciente</label>
-      <input type="integer" class="form-control" id="fk_paciente" placeholder="Paciente"
-      name="fk_paciente" value="{{$cadastro->fk_paciente ?? ''}}">
+      <label for="nomePaciente">Paciente</label>
+      <select class="form-control" type="text" name="nomePaciente" id="nomePaciente">
+        <option value="{{$cadastro->relPaciente->id ?? ''}}">{{$cadastro->relPaciente->nome ?? 'Selecione'}}</option>
+        @foreach ($paciente as $pacientes)
+          <option value="{{$pacientes->id}}">{{$pacientes->nome}}</option>
+        @endforeach
+
+      </select>
     </div>
     <div class="form-group col-md-6">
       <label for="fk_secretaria">Secretaria</label>

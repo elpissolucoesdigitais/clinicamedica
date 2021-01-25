@@ -2,44 +2,6 @@
 
 @section('content')
 
-<div class="wrapper d-flex align-items-stretch">
-  <nav id="sidebar">
-    <div class="custom-menu">
-      <button type="button" id="sidebarCollapse" class="btn btn-primary">
-      </button>
-    </div>
-    <div class="img bg-wrap text-center py-4" style="background-image: url(../assets/images/bg_1.jpg);">
-      <div class="user-logo">
-        <div class="img" style="background-image: url(../assets/images/logo.jpg);"></div>
-        <h3>Admin</h3>
-      </div>
-    </div>
-    <ul class="list-unstyled components mb-5">
-      <li class="active">
-        <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
-      </li>
-      <li>
-          <a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span>Cadastro</a>
-      </li>
-      <li>
-        <a href="#"><span class="fa fa-gift mr-3"></span>Relatório</a>
-      </li>
-      <li>
-        <a href="#"><span class="fa fa-trophy mr-3"></span>Medicamento</a>
-      </li>
-      <li>
-        <a href="#"><span class="fa fa-cog mr-3"></span>Exame</a>
-      </li>
-      <li>
-        <a href="#"><span class="fa fa-support mr-3"></span>Suporte</a>
-      </li>
-      <li>
-        <a href="#"><span class="fa fa-sign-out mr-3"></span>Sair</a>
-      </li>
-    </ul>
-
-  </nav>
-
 <!-- Página do crud  -->
 <div id="content" class="p-4 p-md-5 pt-5">
   <h1 class="text-center">Cadastro</h1><hr>
@@ -51,15 +13,23 @@
         <fieldset disabled>
           <div class="form-row">
             <div class="form-group col-md-12">
+              @php
+                  $paciente=$cadastro->find($cadastro->id)->relPaciente;
+              @endphp
+
               <label for="fk_paciente">Paciente</label>
-              <input type="text" class="form-control" id="fk_paciente" name="fk_paciente" value="{{$cadastro->fk_paciente}}">
+              <input type="text" class="form-control" id="fk_paciente" name="fk_paciente" value="{{$paciente->nome}}">
             </div>
            
           </div>
           <div class="form-row">
               <div class="form-group ">
-              <label for="fk_secretaria">Secretaria</label>
-              <input type="text" class="form-control" id="fk_secretaria" name="fk_secretaria" value="{{$cadastro->fk_secretaria}}">
+                @php
+                $secretaria=$cadastro->find($cadastro->id)->relSecretaria;
+            @endphp
+
+            <label for="fk_secretaria">Secretaria</label>
+            <input type="text" class="form-control" id="fk_secretaria" name="fk_secretaria" value="{{$secretaria->nome}}">
               </div>
               <div class="form-group col-md-2">
                   <label for="fk_administradora">Administradora</label>
