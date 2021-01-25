@@ -7,7 +7,7 @@
     <h1 class="text-center">Lista de Receitas Financeiras Cadastrados</h1><hr>
 
     <div class="text-center">
-        <a href="{{'receitaFinanceira/create'}}">
+        <a href="{{'receitafinanceira/create'}}">
             <button class="btn btn-success mt-3 mb-4">Cadastrar Receita Financeira</button>
         </a>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Wemersonrv\InputMask\InputMask;
 
 class Administradora extends Model
 {
@@ -83,6 +84,7 @@ class Administradora extends Model
         return substr($rg, 0, 2). '.' .substr($rg, 2, 3). '.' .substr($rg, 5, 3). '-' .substr($rg, -2);
 
     }
+
 
 
 }
