@@ -23,6 +23,23 @@ class Medico extends Model
         return $this->hasMany('App\Models\DespesaFinanceira', 'fk_medico');
     }
 
+    //Retorna (0,N) Medicamento
+    public function relMedicamento()
+    {
+        return $this->hasMany('App\Models\Medicamento', 'fk_medico');
+    }
+
+    //Retorna (1,N) ProcedimentoMedico
+    public function relProcedimentoMedico()
+    {
+        return $this->hasMany('App\Models\ProcedimentoMedico', 'fk_medico');
+    }
+
+    //Retorna (0,N) Consulta
+    public function relConsulta()
+    {
+        return $this->hasMany('App\Models\Consulta', 'fk_medico');
+    }
 
 
 

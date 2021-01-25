@@ -31,9 +31,14 @@
             <label for="fk_secretaria">Secretaria</label>
             <input type="text" class="form-control" id="fk_secretaria" name="fk_secretaria" value="{{$secretaria->nome}}">
               </div>
-              <div class="form-group col-md-2">
-                  <label for="fk_administradora">Administradora</label>
-                  <input type="text" class="form-control" id="fk_administradora" name="fk_administradora" value="{{$cadastro->fk_administradora}}">
+
+              <div class="form-group col-md-8">
+                @php
+                  $administradora=$cadastro->find($cadastro->id)->relAdministradora;
+                @endphp
+
+                <label for="nomeadministradora">Administradora</label>
+                <input type="text" class="form-control" id="nomeadministradora" name="nomeadministradora" value="{{$administradora->nome}}">
               </div>
               
           </div>

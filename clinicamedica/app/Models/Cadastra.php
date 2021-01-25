@@ -21,5 +21,11 @@ class Cadastra extends Model
         return $this->hasOne('App\Models\Secretaria', 'id', 'fk_secretaria');
     }
 
+    //Retorna (1,1) Administradora
+    public function relAdministradora()
+    {
+        return $this->hasOne('App\Models\Administradora', 'id', 'fk_administradora');
+    }
+
 }
 

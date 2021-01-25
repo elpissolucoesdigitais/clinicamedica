@@ -16,4 +16,10 @@ class Medicamento extends Model
         return $this->hasMany('App\Models\Relatorio', 'fk_medicamento');
     }
 
+    //Retorna (1,1) Medico
+    public function relMedico()
+    {
+        return $this->hasOne('App\Models\Medico', 'id', 'fk_medico');
+    }
+
 }

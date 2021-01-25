@@ -29,13 +29,15 @@
                 @foreach ($procedimentoMedico as $procedimentoMedicos)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $procedimento=$procedimentoMedicos->find($procedimentoMedicos->id)->relProcedimento;
+
+                        $medico=$procedimentoMedicos->find($procedimentoMedicos->id)->relMedico;
                     @endphp
                     <tr>
                         
                         <td>{{$procedimentoMedicos->id}}</td>
-                        <td>{{$procedimentoMedicos->fk_procedimento}}</td>
-                        <td>{{$procedimentoMedicos->fk_medico}}</td>
+                        <td>{{$procedimento->nome}}</td>
+                        <td>{{$medico->nome}}</td>
                         <td>
                             <a href="{{url("procedimentomedico/$procedimentoMedicos->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

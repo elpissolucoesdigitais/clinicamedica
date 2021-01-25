@@ -9,6 +9,8 @@ class DespesaFinanceira extends Model
     protected $table='despesas_financeiras';
     protected $fillable=['fk_medico', 'fk_tecnico_saude', 'fk_clinica', 'fk_secretaria', 'fk_estoque', 'tipo'];
 
+    //OBS: TENDO PROBLEMA PARA APARECER A PAGINA
+
     //Retorna (1,1) Medico
     public function relMedico()
     {
@@ -37,6 +39,12 @@ class DespesaFinanceira extends Model
     public function relEstoque()
     {
         return $this->hasOne('App\Models\Estoque', 'id', 'fk_estoque');
+    }
+
+    //Retorna (1,N) RelatorioFinanceiro
+    public function relRelatorioFinanceiro()
+    {
+        return $this->hasMany('App\Models\RelatorioFinanceiro', 'fk_despesa');
     }
 
 }

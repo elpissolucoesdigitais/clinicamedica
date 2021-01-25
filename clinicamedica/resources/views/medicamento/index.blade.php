@@ -30,7 +30,7 @@
                 @foreach ($medicamento as $medicamentos)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        
+                        $medico=$medicamentos->find($medicamentos->id)->relMedico;
                     @endphp
                     <tr>
                         
@@ -38,7 +38,7 @@
                         <td>{{$medicamentos->nome}}</td>
                         <td>{{$medicamentos->dose}}</td>
                         <td>{{$medicamentos->descricao}}</td>
-                        <td>{{$medicamentos->fk_medico}}</td>
+                        <td>{{$medico->nome}}</td>
                         <td>
                             <a href="{{url("medicamento/$medicamentos->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>

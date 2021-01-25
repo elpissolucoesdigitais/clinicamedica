@@ -15,7 +15,7 @@ class Secretaria extends Model
     //Retorna (1,1) Clinica
     public function relClinica()
     {
-        return $this->hasOne('App\Models\Clinica', 'fk_clinica');
+        return $this->hasOne('App\Models\Clinica', 'id', 'fk_clinica');
     }
 
     //Retorna (0,N) Cadastro
@@ -28,6 +28,12 @@ class Secretaria extends Model
     public function relDespesaFinanceira()
     {
         return $this->hasMany('App\Models\DespesaFinanceira', 'fk_secretaria');
+    }
+
+    //Retorna (0,N) Procedimento
+    public function relProcedimento()
+    {
+        return $this->hasMany('App\Models\Procedimento', 'fk_secretaria');
     }
 
 

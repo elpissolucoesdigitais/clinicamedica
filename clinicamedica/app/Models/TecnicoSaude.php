@@ -23,6 +23,12 @@ class TecnicoSaude extends Model
         return $this->hasMany('App\Models\DespesaFinanceira', 'fk_tecnico_saude');
     }
 
+    //Retorna (1,N) ProcedimentoTecnico
+    public function relProcedimentoTecnico()
+    {
+        return $this->hasMany('App\Models\ProcedimentoTecnico', 'fk_tecnico');
+    }
+
 
     //OK - CERTO
     public function getCpfAttribute()
