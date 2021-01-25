@@ -2,10 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 70724ed787246c2f470ab81b3dc1900496a5f493
 <!-- Página do crud  -->
     <div id="content" class="p-4 p-md-5 pt-5">
     <h1 class="text-center">Lista de Receitas Financeiras Cadastrados</h1><hr>
