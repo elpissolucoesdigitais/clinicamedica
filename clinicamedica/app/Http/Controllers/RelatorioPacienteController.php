@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\RelatorioPacienteRequest;
 use App\Models\Relatorio;
 use App\Models\Medicamento;
 use App\Models\Medico;
@@ -60,7 +60,7 @@ class RelatorioPacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RelatorioPacienteRequest $request)
     {
         $cad=$this->objRelatorio->create([
             'nome'=>$request->nome,
@@ -115,7 +115,7 @@ class RelatorioPacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RelatorioPacienteRequest $request, $id)
     {
         $this->objRelatorio->where(['id'=>$id])->update([
             'nome'=>$request->nome,

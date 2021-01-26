@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ConsultaRequest;
 use App\Models\Consulta;
 use App\Models\Procedimento;
 use App\Models\Medico;
@@ -49,7 +49,7 @@ class ConsultaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConsultaRequest $request)
     {
         $cad=$this->objConsulta->create([
             'hora'=>$request->hora,
@@ -102,7 +102,7 @@ class ConsultaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ConsultaRequest $request, $id)
     {
         $this->objConsulta->where(['id'=>$id])->update([
             'hora'=>$request->hora,

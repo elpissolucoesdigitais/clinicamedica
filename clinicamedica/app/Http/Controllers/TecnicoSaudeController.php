@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TecnicoSaudeRequest;
 use App\Models\TecnicoSaude;
 
 class TecnicoSaudeController extends Controller
@@ -42,7 +42,7 @@ class TecnicoSaudeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TecnicoSaudeRequest $request)
     {
         $cad=$this->objTecnicoSaude->create([
             'cpf'=>$request->cpf,
@@ -98,7 +98,7 @@ class TecnicoSaudeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TecnicoSaudeRequest $request, $id)
     {
         $this->objTecnicoSaude->where(['id'=>$id])->update([
             'cpf'=>$request->nome,
