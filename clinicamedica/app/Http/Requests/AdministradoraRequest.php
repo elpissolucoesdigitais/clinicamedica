@@ -24,12 +24,24 @@ class AdministradoraRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'required',
-            'senha'=>'required',
-            'longradouro'=>'required',
-            'bairro'=>'required',
-            'cep'=>'required|numeric'
+            //OBS: Verificar a validação da Data de Nascimento, Foto, Senha e Salario
             
+            'sexo'=>'required|string',
+            'cidade'=>'required|string',
+            'email'=>'required|email:rfc,dns',
+            'complemento'=>'required|string',
+            'cpf'=>'required|numeric|min:11|max:11',
+            'rg'=>'required|numeric|min:10|max:10',
+            'nome'=>'required|string',
+            'longradouro'=>'required|string',
+            'contato'=>'required|numeric|min:10|max:10',
+            'bairro'=>'required|string',
+            'uf'=>'required|string',
+            'cep'=>'required|numeric|min:5|max:5',
+            'datanascimento'=>'required',
+            'foto'=>'required',
+            'salario'=>'required|numeric',
+            'senha'=>'required'
             
         ];
     }

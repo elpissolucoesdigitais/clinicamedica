@@ -24,19 +24,10 @@
   
 
   <div class="form-row">
-
-    @if (isset($errors) && count($errors)>0)
-      <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach($errors->all() as $erro)
-          {{$erro}}
-        @endforeach
-      </div>
-    @endif
-
-
     <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+
+        <input type="text" class="form-control" id="email" placeholder="Email" name="email"
         value="{{$administradora->email ?? ''}}">
       </div>
     <div class="form-group col-md-6">
@@ -49,14 +40,6 @@
 
 
   <div class="form-row">
-
-    @if (isset($errors) && count($errors)>0)
-      <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach($errors->all() as $erro)
-          {{$erro}}
-        @endforeach
-      </div>
-    @endif
 
     <div class="form-group col-md-6">
       <label for="longradouro">Longradouro</label>
@@ -77,7 +60,8 @@
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
-        <input type="number" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
+
+          <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
 
       
