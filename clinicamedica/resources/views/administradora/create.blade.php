@@ -26,8 +26,9 @@
   <div class="form-row">
     <div class="form-group col-md-6">
         <label for="email">Email</label>
+
         <input type="text" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{$administradora->email ?? ''}}" request>
+        value="{{$administradora->email ?? ''}}">
       </div>
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
@@ -59,7 +60,8 @@
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
-        <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
+
+          <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
 
       
