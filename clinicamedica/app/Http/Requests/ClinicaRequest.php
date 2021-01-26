@@ -13,7 +13,7 @@ class ClinicaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class ClinicaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
+            'responsaveltecnico'=>'required|string',
+            'numero'=>'required|numeric',
+            'cidade'=>'required|string',
+            'email'=>'required|email:rfc,dns',
+            'complemento'=>'required|string',
+            'nome'=>'required|string',
+            'logradouro'=>'required|string',
+            'contato'=>'required|numeric|min:10|max:10',
+            'bairro'=>'required|string',
+            'uf'=>'required|string',
+            'cep'=>'required|numeric|min:5|max:5',
+            'foto'=>'required',
+            'cnpj'=>'required|numeric'
+
         ];
     }
 }
