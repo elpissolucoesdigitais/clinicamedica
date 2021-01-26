@@ -24,25 +24,15 @@
   
 
   <div class="form-row">
-
-    @if (isset($errors) && count($errors)>0)
-      <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach($errors->all() as $erro)
-          {{$erro}}
-        @endforeach
-      </div>
-    @endif
-
-
     <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{$administradora->email ?? ''}}" required>
+        <input type="text" class="form-control" id="email" placeholder="Email" name="email"
+        value="{{$administradora->email ?? ''}}" request>
       </div>
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
-      value="{{$administradora->senha ?? ''}}" required>
+      value="{{$administradora->senha ?? ''}}">
     </div>
   </div>
   
@@ -50,18 +40,10 @@
 
   <div class="form-row">
 
-    @if (isset($errors) && count($errors)>0)
-      <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach($errors->all() as $erro)
-          {{$erro}}
-        @endforeach
-      </div>
-    @endif
-
     <div class="form-group col-md-6">
       <label for="longradouro">Longradouro</label>
       <input type="text" class="form-control" id="longradouro" placeholder="Longradouro"
-      name="longradouro" value="{{$administradora->longradouro ?? ''}}" required>
+      name="longradouro" value="{{$administradora->longradouro ?? ''}}">
     </div>
 
     
@@ -69,7 +51,7 @@
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro" placeholder="Bairro"
-        name="bairro" value="{{$administradora->bairro ?? ''}}" required>
+        name="bairro" value="{{$administradora->bairro ?? ''}}">
       </div>
 
       
@@ -77,7 +59,7 @@
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
-        <input type="number" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}" required>
+        <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
       </div>
 
       
@@ -85,7 +67,7 @@
 
       <div class="form-group col-md-4">
         <label for="uf">UF</label>
-        <select id="uf" name="uf" class="form-control" required>
+        <select id="uf" name="uf" class="form-control">
           <option selected>{{$administradora->uf ??''}}</option>
           <option value="RO">RO</option>
           <option value="AC">AC</option>
@@ -121,13 +103,13 @@
     <div class="form-group col-md-12">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome"
-        name="nome" value="{{$administradora->nome ?? ''}}" required>
+        name="nome" value="{{$administradora->nome ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-4">
         <label for="sexo">Sexo</label>
-        <select id="sexo" name="sexo" class="form-control" required>
+        <select id="sexo" name="sexo" class="form-control">
           <option selected>{{$administradora->sexo ??''}}</option>
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
@@ -138,24 +120,24 @@
       <div class="form-group col-md-7">
         <label for="cpf">CPF</label>
         <input type="cpf" class="form-control" id="cpf" placeholder="CPF"
-        name="cpf" value="{{$administradora->cpf ?? ''}}" required>
+        name="cpf" value="{{$administradora->cpf ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="rg">RG</label>
         <input type="text" class="form-control" id="rg" placeholder="RG"
-        name="rg" value="{{$administradora->rg ?? ''}}" required>
+        name="rg" value="{{$administradora->rg ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
-        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}" required>
+        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}">
       </div>
 
       <div class="form-group col-md-4">
         <label for="cidade">Cidade</label>
-        <select id="cidade" name="cidade" class="form-control" required>
+        <select id="cidade" name="cidade" class="form-control">
           <option selected>{{$administradora->cidade ??''}}</option>
           <option value="Rio Branco">Rio Branco</option>
           <option value="Maceió">Maceió</option>
@@ -190,26 +172,26 @@
       <div class="form-group col-md-8">
         <label for="contato">Contato</label>
         <input type="text" class="form-control" id="contato" placeholder="Contato"
-        name="contato" value="{{$administradora->contato ?? ''}}" required>
+        name="contato" value="{{$administradora->contato ?? ''}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento" placeholder="Complemento"
-        name="complemento" value="{{$administradora->complemento ?? ''}}" required>
+        name="complemento" value="{{$administradora->complemento ?? ''}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="salario">Salario</label>
         <input type="double" class="form-control" id="salario" placeholder="Salario"
-        name="salario" value="{{$administradora->salario ?? ''}}" required>
+        name="salario" value="{{$administradora->salario ?? ''}}">
       </div>
 
   </div>
   
   <div class="input-group is-invalid">
     <div class="custom-file">
-      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto" required>
+      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto">
       <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
     </div>
 
