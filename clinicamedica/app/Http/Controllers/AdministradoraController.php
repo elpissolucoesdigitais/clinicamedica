@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\AdministradoraRequest;
+use App\Http\Requests\AdministradoraRequest;
 use App\Models\Administradora;
 class AdministradoraController extends Controller
 {
