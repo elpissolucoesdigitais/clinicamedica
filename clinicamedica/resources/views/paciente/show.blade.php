@@ -41,7 +41,36 @@
           <div class="form-row">
             <div class="form-group ">
               <label for="cidade">Cidade</label>
-              <input type="text" class="form-control" id="cidade" name="cidade" value="{{$paciente->cidade}}">
+                <select id="cidade" name="cidade" class="form-control">
+                  <option selected>{{$paciente->cidade ??''}}</option>
+                  <option value="Rio Branco">Rio Branco</option>
+                  <option value="Maceió">Maceió</option>
+                  <option value="Macapá">Macapá</option>
+                  <option value="Manaus">Manaus</option>
+                  <option value="Salvador">Salvador</option>
+                  <option value="Fortaleza">Fortaleza</option>
+                  <option value="Brasília">Brasília</option>
+                  <option value="Vitória">Vitória</option>
+                  <option value="Goiânia">Goiânia</option>
+                  <option value="São Luís">São Luís</option>
+                  <option value="Cuiabá">Cuiabá</option>
+                  <option value="Campo Grande">Campo Grande</option>
+                  <option value="Belo Horizonte">Belo Horizonte</option>
+                  <option value="Belém">Belém</option>
+                  <option value="João Pessoa">João Pessoa</option>
+                  <option value="Curitiba">Curitiba</option>
+                  <option value="Recife">Recife</option>
+                  <option value="Teresina">Teresina</option>
+                  <option value="Rio de Janeiro">Rio de Janeiro</option>
+                  <option value="Natal">Natal</option>
+                  <option value="Porto Alegre">Porto Alegre</option>
+                  <option value="Porto Velho">Porto Velho</option>
+                  <option value="Boa Vista">Boa Vista</option>
+                  <option value="Florianópolis">Florianópolis</option>
+                  <option value="São Paulo">São Paulo</option>
+                  <option value="Aracaju">Aracaju</option>
+                  <option value="Palmas">Palmas</option>
+                </select>
             </div>
             
             <div class="form-group col-md-2">
@@ -118,8 +147,12 @@
           </div>
 
           <div class="form-group">
-            <label for="fk_convenio">Convenio</label>
-            <input type="text" class="form-control" id="fk_convenio" name="fk_convenio" value="{{$paciente->fk_convenio}}">
+            @php
+                $convenio=$paciente->find($paciente->id)->relConvenio;
+            @endphp
+            
+            <label for="nomeconvenio">Convenio</label>
+            <input type="text" class="form-control" id="nomeconvenio" name="nomeconvenio" value="{{$convenio->nome}}">
           </div>
 
           <div class="form-group">

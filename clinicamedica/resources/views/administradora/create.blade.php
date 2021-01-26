@@ -21,26 +21,47 @@
 <form class="col-6 m-auto">
   <h1 class="text-center">@if(isset($administradora))Editar @else Cadastrar @endif</h1><hr>
 
+  
+
   <div class="form-row">
+
+    @if (isset($errors) && count($errors)>0)
+      <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach($errors->all() as $erro)
+          {{$erro}}
+        @endforeach
+      </div>
+    @endif
+
+
     <div class="form-group col-md-6">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{$administradora->email ?? ''}}">
+        value="{{$administradora->email ?? ''}}" required>
       </div>
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
-      value="{{$administradora->senha ?? ''}}">
+      value="{{$administradora->senha ?? ''}}" required>
     </div>
   </div>
   
 
 
   <div class="form-row">
+
+    @if (isset($errors) && count($errors)>0)
+      <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach($errors->all() as $erro)
+          {{$erro}}
+        @endforeach
+      </div>
+    @endif
+
     <div class="form-group col-md-6">
       <label for="longradouro">Longradouro</label>
       <input type="text" class="form-control" id="longradouro" placeholder="Longradouro"
-      name="longradouro" value="{{$administradora->longradouro ?? ''}}">
+      name="longradouro" value="{{$administradora->longradouro ?? ''}}" required>
     </div>
 
     
@@ -48,7 +69,7 @@
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro" placeholder="Bairro"
-        name="bairro" value="{{$administradora->bairro ?? ''}}">
+        name="bairro" value="{{$administradora->bairro ?? ''}}" required>
       </div>
 
       
@@ -56,7 +77,7 @@
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
-        <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
+        <input type="number" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}" required>
       </div>
 
       
@@ -64,8 +85,9 @@
 
       <div class="form-group col-md-4">
         <label for="uf">UF</label>
-        <select id="uf" name="uf" class="form-control">
-          <option selected value="RO">RO</option>
+        <select id="uf" name="uf" class="form-control" required>
+          <option selected>{{$administradora->uf ??''}}</option>
+          <option value="RO">RO</option>
           <option value="AC">AC</option>
           <option value="AM">AM</option>
           <option value="RR">RR</option>
@@ -99,14 +121,15 @@
     <div class="form-group col-md-12">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome"
-        name="nome" value="{{$administradora->nome ?? ''}}">
+        name="nome" value="{{$administradora->nome ?? ''}}" required>
       </div>
 
 
       <div class="form-group col-md-4">
         <label for="sexo">Sexo</label>
-        <select id="sexo" name="sexo" class="form-control">
-          <option selected value="Masculino">Masculino</option>
+        <select id="sexo" name="sexo" class="form-control" required>
+          <option selected>{{$administradora->sexo ??''}}</option>
+          <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
       </div>
@@ -115,25 +138,26 @@
       <div class="form-group col-md-7">
         <label for="cpf">CPF</label>
         <input type="cpf" class="form-control" id="cpf" placeholder="CPF"
-        name="cpf" value="{{$administradora->cpf ?? ''}}">
+        name="cpf" value="{{$administradora->cpf ?? ''}}" required>
       </div>
 
       <div class="form-group col-md-6">
         <label for="rg">RG</label>
         <input type="text" class="form-control" id="rg" placeholder="RG"
-        name="rg" value="{{$administradora->rg ?? ''}}">
+        name="rg" value="{{$administradora->rg ?? ''}}" required>
       </div>
 
       <div class="form-group col-md-6">
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
-        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}">
+        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}" required>
       </div>
 
       <div class="form-group col-md-4">
         <label for="cidade">Cidade</label>
-        <select id="cidade" name="cidade" class="form-control">
-          <option selected value="Rio Branco">Rio Branco</option>
+        <select id="cidade" name="cidade" class="form-control" required>
+          <option selected>{{$administradora->cidade ??''}}</option>
+          <option value="Rio Branco">Rio Branco</option>
           <option value="Maceió">Maceió</option>
           <option value="Macapá">Macapá</option>
           <option value="Manaus">Manaus</option>
@@ -166,19 +190,19 @@
       <div class="form-group col-md-8">
         <label for="contato">Contato</label>
         <input type="text" class="form-control" id="contato" placeholder="Contato"
-        name="contato" value="{{$administradora->contato ?? ''}}">
+        name="contato" value="{{$administradora->contato ?? ''}}" required>
       </div>
 
       <div class="form-group col-md-12">
         <label for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento" placeholder="Complemento"
-        name="complemento" value="{{$administradora->complemento ?? ''}}">
+        name="complemento" value="{{$administradora->complemento ?? ''}}" required>
       </div>
 
       <div class="form-group col-md-12">
         <label for="salario">Salario</label>
         <input type="double" class="form-control" id="salario" placeholder="Salario"
-        name="salario" value="{{$administradora->salario ?? ''}}">
+        name="salario" value="{{$administradora->salario ?? ''}}" required>
       </div>
 
   </div>

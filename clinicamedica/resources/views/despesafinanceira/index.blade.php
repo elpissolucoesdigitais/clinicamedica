@@ -27,26 +27,26 @@
             </thead>
             <tbody>
                 
-                @foreach ($despesaFinanceira as $despesasFinanceiras)
+                @foreach ($despesaFinanceira as $despesaFinanceiras)
                     @php
                         //$paciente=$pacientes->find($pacientes->id)->relPacientes;
-                        $medico=$despesasFinanceiras->find($despesasFinanceiras->id)->relMedico;
-                        $clinica=$despesasFinanceiras->find($despesasFinanceiras->id)->relClinica;
-                        $secretaria=$despesasFinanceiras->find($despesasFinanceiras->id)->relSecretaria;
-                        $estoque=$despesasFinanceiras->find($despesasFinanceiras->id)->relEstoque;
+                        $medico=$despesaFinanceiras->find($despesaFinanceiras->id)->relMedico;
+                        $clinica=$despesaFinanceiras->find($despesaFinanceiras->id)->relClinica;
+                        $secretaria=$despesaFinanceiras->find($despesaFinanceiras->id)->relSecretaria;
+                        $estoque=$despesaFinanceiras->find($despesaFinanceiras->id)->relEstoque;
                     @endphp
                     <tr>
                         
-                        <td>{{$despesasFinanceiras->id}}</td>
+                        <td>{{$despesaFinanceiras->id}}</td>
                         <td>{{$medico->nome}}</td>
                         <td>{{$clinica->nome}}</td>
                         <td>{{$secretaria->nome}}</td>
                         <td>{{$estoque->nome}}</td>
                         <td>
-                            <a href="{{url("despesafinanceira/$despesasFinanceiras->id")}}">
+                            <a href="{{url("despesafinanceira/$despesaFinanceiras->id")}}">
                                 <button class="btn btn-dark">Visualizar</button>
                             </a>
-                            <a href="{{url("despesafinanceira/$despesasFinanceiras->id/edit")}}">
+                            <a href="{{url("despesafinanceira/$despesaFinanceiras->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
                             <form action="{{route('despesafinanceira.destroy', $despesaFinanceiras->id)}}" method="POST">
