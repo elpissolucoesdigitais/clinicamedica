@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Request\AdministradoraRequest;
 use App\Models\Administradora;
 class AdministradoraController extends Controller
 {
@@ -42,7 +42,7 @@ class AdministradoraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdministradoraRequest $request)
     {
         $cad=$this->objAdministradora->create([
             'sexo'=>$request->sexo,
@@ -101,7 +101,7 @@ class AdministradoraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdministradoraRequest $request, $id)
     {
         $this->objAdministradora->where(['id'=>$id])->update([
             'sexo'=>$request->sexo,
