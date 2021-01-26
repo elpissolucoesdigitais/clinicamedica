@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\DespesaFinanceiraRequest;
 use App\Models\DespesaFinanceira;
 use App\Models\Medico;
 use App\Models\TecnicoSaude;
@@ -62,7 +62,7 @@ class DespesaFinanceiraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DespesaFinanceiraRequest $request)
     {
         $cad=$this->objDespesaFinanceira->create([
             'fk_medico'=>$request->fk_medico,
@@ -118,7 +118,7 @@ class DespesaFinanceiraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DespesaFinanceiraRequest $request, $id)
     {
         $this->objDespesaFinanceira->where(['id'=>$id])->update([
             'fk_medico'=>$request->fk_medico,

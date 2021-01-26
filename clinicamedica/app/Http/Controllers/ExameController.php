@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ExameRequest;
 use App\Models\Exame;
 use App\Models\Paciente;
 use App\Models\Consulta;
@@ -51,7 +51,7 @@ class ExameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ExameRequest $request)
     {
         $cad=$this->objExame->create([
             'descricao'=>$request->descricao,
@@ -101,7 +101,7 @@ class ExameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ExameRequest $request, $id)
     {
         $this->objExame->where(['id'=>$id])->update([
             'descricao'=>$request->descricao,

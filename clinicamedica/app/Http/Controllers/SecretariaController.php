@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SecretariaRequest;
 use App\Models\Secretaria;
 use App\Models\Clinica;
 class SecretariaController extends Controller
@@ -46,7 +46,7 @@ class SecretariaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SecretariaRequest $request)
     {
         $cad=$this->objSecretaria->create([
             'sexo'=>$request->sexo,
@@ -107,7 +107,7 @@ class SecretariaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SecretariaRequest $request, $id)
     {
         $this->objSecretaria->where(['id'=>$id])->update([
             'sexo'=>$request->sexo,

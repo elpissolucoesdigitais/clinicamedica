@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClinicaRequest extends FormRequest
+class ConvenioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,29 +25,20 @@ class ClinicaRequest extends FormRequest
     {
         return [
             
-            'responsaveltecnico'=>'required|string',
-            'numero'=>'required|numeric',
-            'cidade'=>'required|string',
+            'status'=>'required|string',
             'email'=>'required|email:rfc,dns',
-            'complemento'=>'required|string',
             'nome'=>'required|string',
-            'logradouro'=>'required|string',
 
             'contato'=>'required|numeric',
             'contato'=>'required|min:10|max:10',
 
-            'bairro'=>'required|string',
-            'uf'=>'required|string',
-
-            'cep'=>'required|numeric',
-            'cep'=>'required|min:5|max:5',
-
-            'foto'=>'required',
+            'descricao'=>'required|string',
+            'validade'=>'required',
 
             'cnpj'=>'required|numeric',
             'cnpj'=>'required|min:14|max:14',
 
-            'senha'=>'required'
+            'valor'=>'required|numeric',
 
         ];
     }

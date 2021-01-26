@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use App\Models\Convenio;
 class PacienteController extends Controller
@@ -46,7 +46,7 @@ class PacienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PacienteRequest $request)
     {
         $cad=$this->objPaciente->create([
             //21
@@ -112,9 +112,34 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PacienteRequest $request, $id)
     {
-        //
+        $this->objPaciente->where(['id'=>$id])->update([
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'email'=>$request->email,
+            'complemento'=>$request->complemento,
+            'cpf'=>$request->cpf,
+            'rg'=>$request->rg,
+            'nome'=>$request->nome,
+            'longradouro'=>$request->longradouro,
+            'contato'=>$request->contato,
+            'bairro'=>$request->bairro,
+            'uf'=>$request->uf,
+            'cep'=>$request->cep,
+            'data_nascimento'=>$request->data_nascimento,
+            'foto'=>$request->foto,
+            'altura'=>$request->altura,
+            'pressao'=>$request->pressao,
+            'numero'=>$request->numero,
+            'peso'=>$request->peso,
+            'nomepai'=>$request->nomepai,
+            'nomemae'=>$request->nomemae,
+            'fk_convenio'=>$request->fk_convenio
+            
+        ]);
+            return redirect('paciente');
+
     }
 
     /**
