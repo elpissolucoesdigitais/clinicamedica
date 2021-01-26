@@ -2,13 +2,7 @@
 
 @section('content')
 
-@if(isset($errors) && count($errors)>0)
-    <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach ($errors->all() as $erro)
-          {{$erro}}<br>
-        @endforeach
-    </div>
-  @endif
+
   @if (isset($administradora))
   <form class="col-6 m-auto" action="{{url("administradora/$administradora->id")}}" name="formEdit" id="formEdit" method="POST">
       @method('PUT')
@@ -21,7 +15,13 @@
 <form class="col-6 m-auto">
   <h1 class="text-center">@if(isset($administradora))Editar @else Cadastrar @endif</h1><hr>
 
-  
+  @if(isset($errors) && count($errors)>0)
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach ($errors->all() as $erro)
+          {{$erro}}<br>
+        @endforeach
+    </div>
+  @endif
 
   <div class="form-row">
     <div class="form-group col-md-6">
