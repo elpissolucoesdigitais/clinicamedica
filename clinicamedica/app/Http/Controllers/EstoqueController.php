@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\EstoqueRequest;
 use App\Models\Estoque;
 use App\Models\Administradora;
 class EstoqueController extends Controller
@@ -45,7 +45,7 @@ class EstoqueController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EstoqueRequest $request)
     {
         $cad=$this->objEstoque->create([
             'nome'=>$request->nome,
@@ -96,7 +96,7 @@ class EstoqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EstoqueRequest $request, $id)
     {
         $this->objEstoque->where(['id'=>$id])->update([
             'nome'=>$request->nome,

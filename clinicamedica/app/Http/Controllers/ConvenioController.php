@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ConvenioRequest;
 use App\Models\Convenio;
 class ConvenioController extends Controller
 {
@@ -43,7 +43,7 @@ class ConvenioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConvenioRequest $request)
     {
         $cad=$this->objConvenio->create([
             'status'=>$request->status,
@@ -95,7 +95,7 @@ class ConvenioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ConvenioRequest $request, $id)
     {
         $this->objConvenio->where(['id'=>$id])->update([
             'status'=>$request->status,

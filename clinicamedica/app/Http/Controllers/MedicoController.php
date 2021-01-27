@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\MedicoRequest;
 use App\Models\Medico;
 
 class MedicoController extends Controller
@@ -41,7 +41,7 @@ class MedicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MedicoRequest $request)
     {
         $cad=$this->objMedico->create([
             'sexo'=>$request->sexo,
@@ -52,7 +52,7 @@ class MedicoController extends Controller
             'complemento'=>$request->especialidade,
             'cep'=>$request->cep,
             'contato'=>$request->contato,
-            'email'=>$request->email,
+            //'email'=>$request->email,
             'foto'=>$request->foto,
             'nome'=>$request->nome,
             'rg'=>$request->rg,
@@ -106,7 +106,7 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MedicoRequest $request, $id)
     {
         $this->objMedico->where(['id'=>$id])->update([
             'sexo'=>$request->sexo,

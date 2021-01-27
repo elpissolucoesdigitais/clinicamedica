@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\MedicamentoRequest;
 use App\Models\Medicamento;
 use App\Models\Medico;
 class MedicamentoController extends Controller
@@ -47,7 +47,7 @@ class MedicamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MedicamentoRequest $request)
     {
         $cad=$this->objMedicamento->create([
             'nome'=>$request->nome,
@@ -96,7 +96,7 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MedicamentoRequest $request, $id)
     {
         $this->objMedicamento->where(['id'=>$id])->update([
             'nome'=>$request->nome,
