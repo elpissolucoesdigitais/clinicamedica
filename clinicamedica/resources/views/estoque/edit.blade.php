@@ -25,7 +25,7 @@
     <div class="form-group col-md-6">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"
-        value="{{old('nome')}}">
+        value="{{$estoque->nome ?? ''}}">
       </div>
     
   </div>
@@ -36,20 +36,20 @@
     <div class="form-group col-md-6">
       <label for="descricao">Descrição</label>
       <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="descricao"
-      value="{{old('descricao')}}">
+      value="{{$estoque->descricao ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">
         <label for="quantidade">Quantidade</label>
         <input type="number" class="form-control" id="quantidade" placeholder="Quantidade" name="quantidade"
-        value="{{old('quantidade')}}">
+        value="{{$estoque->quantidade ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-6">
         <label for="valor">Valor</label>
         <input type="double" class="form-control" id="valor" placeholder="Valor" name="valor"
-        value="{{old('valor')}}">
+        value="{{$estoque->valor ?? ''}}">
       </div>
 
 
@@ -67,8 +67,7 @@
       <div class="form-group col-md-4">
         <label for="tipo">Tipo</label>
         <select id="tipo" name="tipo" class="form-control">
-          <option selected>{{old('tipo')}}</option>
-          <option value="Tipo 1">Tipo 1</option>
+          <option selected value="Tipo 1">Tipo 1</option>
           <option value="Tipo 2">Tipo 2</option>
           <option value="Tipo 3">Tipo 3</option>
         </select>

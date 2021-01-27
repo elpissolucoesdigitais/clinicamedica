@@ -101,7 +101,7 @@ class PacienteController extends Controller
     {
         $paciente=$this->objPaciente->find($id);
         $convenio=$this->objConvenio->all();
-        return view('paciente.create', compact('paciente', 'convenio'));
+        return view('paciente.edit', compact('paciente', 'convenio'));
 
     }
 

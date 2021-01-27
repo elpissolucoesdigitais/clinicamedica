@@ -25,7 +25,7 @@
     <div class="form-group col-md-6">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{old('email')}}">
+        value="{{$convenio->email ?? ''}}">
       </div>
     
   </div>
@@ -36,20 +36,19 @@
     <div class="form-group col-md-6">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" placeholder="nome" name="nome"
-      value="{{old('nome')}}">
+      value="{{$convenio->nome ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">
         <label for="descricao">Descricao</label>
         <input type="text" class="form-control" id="descricao" placeholder="descricao" name="descricao"
-        value="{{old('descricao')}}">
+        value="{{$convenio->descricao ?? ''}}">
       </div>
 
       <div class="form-group col-md-4">
         <label for="status">Status</label>
         <select id="status" name="status" class="form-control">
-          <option selected>{{old('status')}}</option>
-          <option value="Ativo">Ativo</option>
+          <option selected value="Ativo">Ativo</option>
           <option value="Inativo">Inativo</option>
         </select>
         
@@ -59,26 +58,26 @@
       <div class="form-group col-md-6">
         <label for="validade">Validade</label>
         <input type="date" class="form-control" id="validade" placeholder="validade" name="validade"
-        value="{{old('validade')}}">
+        value="{{$convenio->validade ?? ''}}">
       </div>
 
 
       <div class="form-group col-md-7">
         <label for="cnpj">CNPJ</label>
         <input type="text" class="form-control" id="cnpj" placeholder="CNPJ" name="cnpj"
-        value="{{old('cnpj')}}">
+        value="{{$convenio->cnpj ?? ''}}">
       </div>
 
       <div class="form-group col-md-8">
         <label for="contato">Contato</label>
         <input type="text" class="form-control" id="contato" placeholder="Contato"
-        name="contato" value="{{old('contato')}}">
+        name="contato" value="{{$convenio->contato ?? ''}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="valor">Valor</label>
         <input type="double" class="form-control" id="valor" placeholder="Valor"
-        name="valor" value="{{old('valor')}}">
+        name="valor" value="{{$convenio->valor ?? ''}}">
       </div>
   
   </div>

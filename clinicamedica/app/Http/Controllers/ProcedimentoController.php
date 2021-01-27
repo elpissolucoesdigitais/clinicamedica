@@ -84,7 +84,7 @@ class ProcedimentoController extends Controller
     {
         $procedimento=$this->objProcedimento->find($id);
         $secretaria=$this->objSecretaria->all();
-        return view('procedimento.create',compact('secretaria','procedimento'));
+        return view('procedimento.edit',compact('secretaria','procedimento'));
     }
 
     /**

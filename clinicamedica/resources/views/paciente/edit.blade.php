@@ -23,66 +23,66 @@
 
       <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{old('email')}}">
+        <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{$paciente->email ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="senha">Senha</label>
-        <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" value="{{old('senha')}}">
+        <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" value="{{$paciente->senha ?? ''}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{old('nome')}}">
+        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{$paciente->nome ?? ''}}">
       </div>
       <div class="form-group col-md-6">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{old('cpf')}}">
+        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{$paciente->cpf?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="rg">RG</label>
-        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{old('rg')}}">
+        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{$paciente->rg ?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="altura">Altura</label>
-        <input type="double" class="form-control" placeholder="Altura" id="altura" name="altura" value="{{old('altura')}}">
+        <input type="double" class="form-control" placeholder="Altura" id="altura" name="altura" value="{{$paciente->altura ?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="pressao">Pressão Arterial</label>
-        <input type="double" class="form-control" placeholder="Pressão" id="pressao" name="pressao" value="{{old('pressao')}}">
+        <input type="double" class="form-control" placeholder="Pressão" id="pressao" name="pressao" value="{{$paciente->pressao ?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="peso">Peso</label>
-        <input type="double" class="form-control" placeholder="Peso" id="peso" name="peso" value="{{old('peso')}}">
+        <input type="double" class="form-control" placeholder="Peso" id="peso" name="peso" value="{{$paciente->peso ?? ''}}">
     </div>
     <div class="form-group col-md-8">
         <label for="contato">Contato</label>
-        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{old('contato')}}">
+        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{$paciente->contato ?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="nomepai">Nome do Pai</label>
-        <input type="text" class="form-control" placeholder="Nome do Pai" id="nomepai" name="nomepai" value="{{old('nomepai')}}">
+        <input type="text" class="form-control" placeholder="Nome do Pai" id="nomepai" name="nomepai" value="{{$paciente->nomepai ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">
       <label for="nomemae">Nome da Mãe</label>
-      <input type="text" class="form-control" placeholder="Nome da Mãe" id="nomemae" name="nomemae" value="{{old('nomemae')}}">
+      <input type="text" class="form-control" placeholder="Nome da Mãe" id="nomemae" name="nomemae" value="{{$paciente->nomemae ?? ''}}">
     </div>
     
     <div class="form-group col-md-6">
         <label for="complemento">Complemento</label>
-        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{old('complemento')}}">
+        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{$paciente->complemento ?? ''}}">
     </div>
     
     
     <div class="form-group col-md-6">
         <label for="cep">Cep</label>
-        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{old('cep')}}">
+        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{$paciente->cep ?? ''}}">
     </div>
     <div class="form-group col-md-6">
       <label for="cidade">Cidade</label>
       <select id="cidade" name="cidade" class="form-control">
-        <option selected>{{old('cidade')}}</option>
+        <option selected>{{$paciente->cidade ??''}}</option>
         <option value="Rio Branco">Rio Branco</option>
         <option value="Maceió">Maceió</option>
         <option value="Macapá">Macapá</option>
@@ -114,22 +114,22 @@
     </div>
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{old('bairro')}}">
+        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{$paciente->bairro ?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="longradouro">Logradouro</label>
-        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{old('longradouro')}}">
+        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{$paciente->longradouro ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">
       <label for="numero">Numero</label>
-      <input type="number" class="form-control" placeholder="Numero" id="numero" name="numero" value="{{old('numero')}}">
+      <input type="number" class="form-control" placeholder="Numero" id="numero" name="numero" value="{{$paciente->numero ??''}}">
   </div>
     
     <div class="form-group col-md-6">
       <label for="uf">UF</label>
       <select id="uf" name="uf" class="form-control">
-        <option selected>{{old('uf')}}</option>
+        <option selected>{{$paciente->uf ??''}}</option>
         <option value="RO">RO</option>
         <option value="AC">AC</option>
         <option value="AM">AM</option>
@@ -161,12 +161,12 @@
     </div>
     <div class="form-group col-md-6">
         <label for="datanascimento">Data Nascimento</label>
-        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{old('datanascimento')}}">
+        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{$paciente->data_nascimento ??''}}">
     </div>
     <div class="form-group col-md-4">
         <label for="sexo">Sexo</label>
         <select id="sexo" name="sexo" class="form-control">
-          <option selected>{{old('sexo')}}</option>
+          <option selected>{{$paciente->sexo ??''}}</option>
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
@@ -186,7 +186,7 @@
 
     <div class="input-group is-invalid">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="foto"  name="foto" value="{{old('foto')}}">
+          <input type="file" class="custom-file-input" id="foto"  name="foto" >
           <label class="custom-file-label" for="foto">Envie uma foto</label>
         </div><br>
     

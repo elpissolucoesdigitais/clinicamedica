@@ -9,80 +9,67 @@
         @endforeach
     </div>
   @endif
-  @if (isset($paciente))
-  <form class="col-6 m-auto" action="{{url("paciente/$paciente->id")}}" name="formEdit" id="formEdit" method="POST">
+  @if (isset($medico))
+  <form class="col-6 m-auto" action="{{url("medico/$medico->id")}}" name="formEdit" id="formEdit" method="POST">
       @method('PUT')
   @else
-  <form class="col-6 m-auto" action="{{url('paciente')}}" name="formCad" id="formCad" method="POST">
+  <form class="col-6 m-auto" action="{{url('medico')}}" name="formCad" id="formCad" method="POST">
 
   @endif
   @csrf
-  <h1 class="text-center">@if(isset($paciente))Editar @else Cadastrar @endif</h1><hr>
+  <h1 class="text-center">@if(isset($medico))Editar @else Cadastrar @endif</h1><hr>
   <p>Dados Pessoais:</p>
     <div class="form-row">
-
-      <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{old('email')}}">
-      </div>
-
-      <div class="form-group col-md-6">
-        <label for="senha">Senha</label>
-        <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" value="{{old('senha')}}">
-      </div>
-
       <div class="form-group col-md-6">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{old('nome')}}">
+        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{$medico->nome ?? ''}}">
       </div>
       <div class="form-group col-md-6">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{old('cpf')}}">
+        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{$medico->cpf?? ''}}">
     </div>
     <div class="form-group col-md-6">
         <label for="rg">RG</label>
-        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{old('rg')}}">
+        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{$medico->rg ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="altura">Altura</label>
-        <input type="double" class="form-control" placeholder="Altura" id="altura" name="altura" value="{{old('altura')}}">
+        <label for="especialidade">especialidade</label>
+        <input type="text" class="form-control" placeholder="Especialidade" id="especialidade" name="especialidade" value="{{$medico->especialidade ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="pressao">Pressão Arterial</label>
-        <input type="double" class="form-control" placeholder="Pressão" id="pressao" name="pressao" value="{{old('pressao')}}">
+        <label for="crm">CRM</label>
+        <input type="text" class="form-control" placeholder="CRM" id="crm" name="crm" value="{{$medico->crm ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="peso">Peso</label>
-        <input type="double" class="form-control" placeholder="Peso" id="peso" name="peso" value="{{old('peso')}}">
-    </div>
-    <div class="form-group col-md-8">
-        <label for="contato">Contato</label>
-        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{old('contato')}}">
+        <label for="crmuf">CRM/UF</label>
+        <input type="text" class="form-control" placeholder="CRM/UF" id="crmuf" name="crmuf" value="{{$medico->crmuf ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="nomepai">Nome do Pai</label>
-        <input type="text" class="form-control" placeholder="Nome do Pai" id="nomepai" name="nomepai" value="{{old('nomepai')}}">
+        <label for="contato">contato</label>
+        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{$medico->contato ?? ''}}">
     </div>
-
     <div class="form-group col-md-6">
-      <label for="nomemae">Nome da Mãe</label>
-      <input type="text" class="form-control" placeholder="Nome da Mãe" id="nomemae" name="nomemae" value="{{old('nomemae')}}">
+        <label for="salario">Salario</label>
+        <input type="text" class="form-control" placeholder="Salario" id="salario" name="salario" value="{{$medico->salario ?? ''}}">
+    </div>
+    
+    <div class="form-group col-md-6">
+        <label for="complemento">E-mail</label>
+        <input type="text" class="form-control" placeholder="Email" id="email" name="email" value="{{$medico->email ?? ''}}">
     </div>
     
     <div class="form-group col-md-6">
         <label for="complemento">Complemento</label>
-        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{old('complemento')}}">
+        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{$medico->complemento ?? ''}}">
     </div>
-    
-    
     <div class="form-group col-md-6">
         <label for="cep">Cep</label>
-        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{old('cep')}}">
+        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{$medico->cep ?? ''}}">
     </div>
     <div class="form-group col-md-6">
       <label for="cidade">Cidade</label>
       <select id="cidade" name="cidade" class="form-control">
-        <option selected>{{old('cidade')}}</option>
+        <option selected>{{$medico->cidade ??''}}</option>
         <option value="Rio Branco">Rio Branco</option>
         <option value="Maceió">Maceió</option>
         <option value="Macapá">Macapá</option>
@@ -114,22 +101,17 @@
     </div>
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{old('bairro')}}">
+        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{$medico->bairro ?? ''}}">
     </div>
     <div class="form-group col-md-6">
-        <label for="longradouro">Logradouro</label>
-        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{old('longradouro')}}">
+        <label for="longradouro">Longradouro</label>
+        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{$medico->longradouro ?? ''}}">
     </div>
-
-    <div class="form-group col-md-6">
-      <label for="numero">Numero</label>
-      <input type="number" class="form-control" placeholder="Numero" id="numero" name="numero" value="{{old('numero')}}">
-  </div>
     
     <div class="form-group col-md-6">
       <label for="uf">UF</label>
       <select id="uf" name="uf" class="form-control">
-        <option selected>{{old('uf')}}</option>
+        <option selected>{{$medico->uf ??''}}</option>
         <option value="RO">RO</option>
         <option value="AC">AC</option>
         <option value="AM">AM</option>
@@ -161,38 +143,25 @@
     </div>
     <div class="form-group col-md-6">
         <label for="datanascimento">Data Nascimento</label>
-        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{old('datanascimento')}}">
+        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{$medico->datanascimento ??''}}">
     </div>
     <div class="form-group col-md-4">
         <label for="sexo">Sexo</label>
         <select id="sexo" name="sexo" class="form-control">
-          <option selected>{{old('sexo')}}</option>
+          <option selected>{{$medico->sexo ??''}}</option>
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
       </div>
-
-      <div class="form-group col-md-6">
-        <label for="nomeconvenio">Convenio</label>
-        <select class="form-control" type="text" name="nomeconvenio" id="nomeconvenio">
-          <option value="{{$paciente->relConvenio->id ?? ''}}">{{$paciente->relConvenio->nome ?? ''}}</option>
-          @foreach ($convenio as $convenios)
-            <option value="{{$convenios->id}}">{{$convenios->nome}}</option>
-          @endforeach
-  
-        </select>
-        </div>
-
-
     <div class="input-group is-invalid">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="foto"  name="foto" value="{{old('foto')}}">
+          <input type="file" class="custom-file-input" id="foto"  name="foto" >
           <label class="custom-file-label" for="foto">Envie uma foto</label>
         </div><br>
     
-    <input class="btn btn-primary" type="submit" value="@if(isset($paciente))Editar @else Cadastrar @endif"> 
+    <input class="btn btn-primary" type="submit" value="@if(isset($medico))Editar @else Cadastrar @endif"> 
   </form>
-  <a href="{{url('paciente')}}">
+  <a href="{{url('medico')}}">
     <button class="btn btn-primary">Voltar</button>
 </a>
   @endsection
