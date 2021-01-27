@@ -18,9 +18,9 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Fk_Paciente</th></th></th>
-                <th scope="col">Fk_Secretaria</th>
-                <th scope="col">Fk_Administradora</th>
+                <th scope="col">Paciente</th></th></th>
+                <th scope="col">Secretaria</th>
+                <th scope="col">Administradora</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
