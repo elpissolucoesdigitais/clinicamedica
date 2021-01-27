@@ -47,11 +47,12 @@
     <div class="form-group col-md-6">
       <label for="fk_procedimento">Procedimento</label>
       <select id="fk_procedimento" type="text" name="fk_procedimento" class="form-control">
-        <option select>{{old('fk_procedimento')}}</option>
+        <option selected>{{old('fk_procedimento')}}
+        <option value="{{$consulta->relProcedimento->id ?? ''}}">{{$consulta->relProcedimento->nome ?? ''}}</option>
         @foreach ($procedimento as $procedimentos)
-          <option>{{$procedimentos->nome}}</option>
+          <option value="{{$procedimentos->id}}">{{$procedimentos->nome}}</option>
         @endforeach
-      
+      </option>
 
       </select>
       </div>
@@ -60,9 +61,9 @@
       <div class="form-group col-md-6">
         <label for="fk_medico">Medico</label>
       <select class="form-control" type="text" name="fk_medico" id="fk_medico">
-        <option select>{{old('fk_medico')}}</option>
+        <option  value="{{$consulta->relMedico->id ?? ''}}">{{old('fk_medico')}}</option>
         @foreach ($medico as $medicos)
-          <option>{{$medicos->nome}}</option>
+          <option value="{{$medicos->id}}">{{$medicos->nome}}</option>
         @endforeach
 
       </select>
