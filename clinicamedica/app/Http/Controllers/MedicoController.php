@@ -95,7 +95,7 @@ class MedicoController extends Controller
     public function edit($id)
     {
         $medico=$this->objMedico->find($id);
-        return view('medico.create',compact('medico'));
+        return view('medico.edit',compact('medico'));
 
     }
 

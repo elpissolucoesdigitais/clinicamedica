@@ -21,17 +21,16 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome" value="{{old('nome')}}">
+        <input type="text" class="form-control" id="nome" name="nome" value="{{$procedimento->nome ?? ''}}">
       </div>
-      
       <div class="form-group col-md-6">
         <label for="valor">valor</label>
-        <input type="text" class="form-control" id="valor" name="valor" value="{{old('valor')}}">
+        <input type="text" class="form-control" id="valor" name="valor" value="{{$procedimento->valor ?? ''}}">
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="descricao">Descrição</label>
-          <input type="text" class="form-control" id="descricao" name="descricao" value="{{old('descricao')}}">
+          <input type="text" class="form-control" id="descricao" name="descricao" value="{{$procedimento->descricao ?? ''}}">
         </div>
         <div class="form-group col-md-6">
           <label for="nomesecretaria">Secretaria</label>

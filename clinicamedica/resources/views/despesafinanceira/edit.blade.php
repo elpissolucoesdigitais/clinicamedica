@@ -87,8 +87,7 @@
       <div class="form-group col-md-4">
         <label for="tipo">Tipo</label>
         <select id="tipo" name="tipo" class="form-control">
-          <option selected>{{old('tipo')}}</option>
-          <option value="Variável">Variável</option>
+          <option selected value="Variável">Variável</option>
           <option value="Fixa">Fixa</option>
         </select>
         

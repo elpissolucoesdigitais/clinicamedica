@@ -25,7 +25,7 @@
     <div class="form-group col-md-6">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"
-        value="{{old('nome')}}">
+        value="{{$exame->nome ?? ''}}">
       </div>
     
   </div>
@@ -36,7 +36,7 @@
     <div class="form-group col-md-6">
       <label for="descricao">Descrição</label>
       <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="descricao"
-      value="{{old('descricao')}}">
+      value="{{$exame->descricao ?? ''}}">
     </div>
 
     <div class="form-group col-md-6">

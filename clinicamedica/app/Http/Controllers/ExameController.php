@@ -90,7 +90,7 @@ class ExameController extends Controller
         $exame=$this->objExame->find($id);
         $paciente=$this->objPaciente->all();
         $consulta=$this->objConsulta->all();
-        return view('exame.create', compact('exame', 'paciente', 'consulta'));
+        return view('exame.edit', compact('exame', 'paciente', 'consulta'));
 
     }
 
