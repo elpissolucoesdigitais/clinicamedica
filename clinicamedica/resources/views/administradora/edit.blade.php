@@ -28,7 +28,7 @@
         <label for="email">Email</label>
 
         <input type="text" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{old('email')}}">
+        value="{{$administradora->email ?? ''}}">
       </div>
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
