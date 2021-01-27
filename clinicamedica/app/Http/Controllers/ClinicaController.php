@@ -50,7 +50,7 @@ class ClinicaController extends Controller
             'email'=>$request->email,
             'complemento'=>$request->complemento,
             'nome'=>$request->nome,
-            'logradouro'=>$request->longradouro,
+            'logradouro'=>$request->logradouro,
             'contato'=>$request->contato,
             'bairro'=>$request->bairro,
             'uf'=>$request->uf,
@@ -86,7 +86,7 @@ class ClinicaController extends Controller
     public function edit($id)
     {
         $clinica=$this->objClinica->find($id);
-        return view('clinica.create', compact('clinica'));
+        return view('clinica.edit', compact('clinica'));
 
     }
 
@@ -106,7 +106,7 @@ class ClinicaController extends Controller
             'email'=>$request->email,
             'complemento'=>$request->complemento,
             'nome'=>$request->nome,
-            'logradouro'=>$request->longradouro,
+            'logradouro'=>$request->logradouro,
             'contato'=>$request->contato,
             'bairro'=>$request->bairro,
             'uf'=>$request->uf,

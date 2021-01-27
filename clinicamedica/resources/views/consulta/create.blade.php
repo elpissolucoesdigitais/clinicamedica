@@ -25,12 +25,12 @@
     <div class="form-group col-md-6">
         <label for="hora">Hora</label>
         <input type="time" class="form-control" id="hora" placeholder="hora" name="hora"
-        value="{{$consulta->hora ?? ''}}">
+        value="{{old('hora')}}">
       </div>
     <div class="form-group col-md-6">
       <label for="data">Data</label>
       <input type="date" class="form-control" id="data" placeholder="data" name="data"
-      value="{{$consulta->data ?? ''}}">
+      value="{{old('data')}}">
     </div>
   </div>
   
@@ -40,28 +40,29 @@
     <div class="form-group col-md-6">
       <label for="valor">Valor</label>
       <input type="text" class="form-control" id="valor" placeholder="Valor" name="valor"
-      value="{{$consulta->valor ?? ''}}">
+      value="{{old('valor')}}">
     </div>
 
    
     <div class="form-group col-md-6">
-      <label for="nomeProcedimento">Procedimento</label>
-      <select class="form-control" type="text" name="nomeProcedimento" id="nomeProcedimento">
-        <option value="{{$consulta->relProcedimento->id ?? ''}}">{{$consulta->relProcedimento->nome ?? 'Selecione'}}</option>
+      <label for="fk_procedimento">Procedimento</label>
+      <select id="fk_procedimento" type="text" name="fk_procedimento" class="form-control">
+        <option select>{{old('fk_procedimento')}}</option>
         @foreach ($procedimento as $procedimentos)
-          <option value="{{$procedimentos->id}}">{{$procedimentos->nome}}</option>
+          <option>{{$procedimentos->nome}}</option>
         @endforeach
+      
 
       </select>
       </div>
 
 
       <div class="form-group col-md-6">
-        <label for="nomemedico">Medico</label>
-      <select class="form-control" type="text" name="nomemedico" id="nomemedico">
-        <option value="{{$consulta->relMedico->id ?? ''}}">{{$consulta->relMedico->nome ?? 'Selecione'}}</option>
+        <label for="fk_medico">Medico</label>
+      <select class="form-control" type="text" name="fk_medico" id="fk_medico">
+        <option select>{{old('fk_medico')}}</option>
         @foreach ($medico as $medicos)
-          <option value="{{$medicos->id}}">{{$medicos->nome}}</option>
+          <option>{{$medicos->nome}}</option>
         @endforeach
 
       </select>
@@ -70,7 +71,8 @@
     <div class="form-group col-md-4">
       <label for="status">Status</label>
       <select id="status" name="status" class="form-control">
-        <option selected value="Ativo">Ativo</option>
+        <option selected>{{old('status')}}</option>
+        <option value="Ativo">Ativo</option>
         <option value="Inativo">Inativo</option>
       </select>
       
