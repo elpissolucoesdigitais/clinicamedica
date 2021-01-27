@@ -22,20 +22,20 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{$secretaria->nome ?? ''}}">
+        <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" value="{{old('nome')}}">
       </div>
       <div class="form-group col-md-6">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{$secretaria->cpf ?? ''}}">
+        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" value="{{old('cpf')}}">
     </div>
     <div class="form-group col-md-6">
         <label for="rg">RG</label>
-        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{$secretaria->rg ?? ''}}">
+        <input type="text" class="form-control" placeholder="RG" id="rg" name="rg" value="{{old('rg')}}">
     </div>
     <div class="form-group col-md-6">
       <label for="sexo">Sexo</label>
       <select id="sexo" name="sexo" class="form-control">
-        <option selected>{{$secretaria->sexo ??''}}</option>
+        <option selected>{{old('sexo')}}</option>
         <option value="Masculino">Masculino</option>
         <option value="Feminino">Feminino</option>
       </select>
@@ -43,30 +43,30 @@
     
     <div class="form-group col-md-6">
         <label for="contato">Contato</label>
-        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{$secretaria->contato ?? ''}}">
+        <input type="text" class="form-control" placeholder="Contato" id="contato" name="contato" value="{{old('contato')}}">
     </div>
     <div class="form-group col-md-6">
         <label for="salario">Salario</label>
-        <input type="text" class="form-control" placeholder="Salario" id="salario" name="salario" value="{{$secretaria->salario ?? ''}}">
+        <input type="text" class="form-control" placeholder="Salario" id="salario" name="salario" value="{{old('salario')}}">
     </div>
     
     <div class="form-group col-md-6">
-        <label for="complemento">E-mail</label>
-        <input type="text" class="form-control" placeholder="Email" id="email" name="email" value="{{$secretaria->email ?? ''}}">
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" placeholder="Email" id="email" name="email" value="{{old('email')}}">
     </div>
     
     <div class="form-group col-md-6">
         <label for="complemento">Complemento</label>
-        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{$secretaria->complemento ?? ''}}">
+        <input type="text" class="form-control" placeholder="Complemento" id="complemento" name="complemento" value="{{old('complemento')}}">
     </div>
     <div class="form-group col-md-6">
         <label for="cep">Cep</label>
-        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{$secretaria->cep ?? ''}}">
+        <input type="text" class="form-control" placeholder="CEP" id="cep" name="cep" value="{{old('cep')}}">
     </div>
     <div class="form-group col-md-6">
       <label for="cidade">Cidade</label>
       <select id="cidade" name="cidade" class="form-control">
-        <option selected>{{$secretaria->cidade ??''}}</option>
+        <option selected>{{old('cidade')}}</option>
         <option value="Rio Branco">Rio Branco</option>
         <option value="Maceió">Maceió</option>
         <option value="Macapá">Macapá</option>
@@ -98,17 +98,17 @@
     </div>
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{$secretaria->bairro ?? ''}}">
+        <input type="text" class="form-control" placeholder="Bairro" id="bairro" name="bairro" value="{{old('bairro')}}">
     </div>
     <div class="form-group col-md-6">
         <label for="longradouro">Longradouro</label>
-        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{$secretaria->longradouro ?? ''}}">
+        <input type="text" class="form-control" placeholder="Logradouro" id="longradouro" name="longradouro" value="{{old('longradouro')}}">
     </div>
     <!--Error: não envia para o banco-->
     <div class="form-group col-md-6">
       <label for="uf">UF</label>
       <select id="uf" name="uf" class="form-control">
-        <option selected>{{$secretaria->uf ??''}}</option>
+        <option selected>{{old('uf')}}</option>
         <option value="RO">RO</option>
         <option value="AC">AC</option>
         <option value="AM">AM</option>
@@ -140,7 +140,7 @@
     </div>
     <div class="form-group col-md-6">
         <label for="datanascimento">Data Nascimento</label>
-        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{$secretaria->datanascimento ?? ''}}">
+        <input type="date" class="form-control" id="datanascimento" name="datanascimento" value="{{old('datanascimento')}}">
     </div>
     <div class="form-group col-md-6">
         <label for="nomeclinica">Clinica</label>
@@ -154,7 +154,7 @@
     </div>
     <div class="input-group is-invalid">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="foto"  name="foto" >
+          <input type="file" class="custom-file-input" id="foto"  name="foto" value="{{old('foto')}}">
           <label class="custom-file-label" for="foto">Envie uma foto</label>
         </div><br>
     

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 //19
-use Illuminate\Http\Request;
+use App\Http\Requests\AdminRequest;
 use App\Models\Admin;
 use App\Models\Administradora;
 use App\Models\Clinica;
@@ -124,7 +124,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         $cad=$this->objAdmin->create([
             'sexo'=>$request->sexo,
@@ -192,7 +192,7 @@ class AdminController extends Controller
         $relatorioFinanceiro=$this->objRelatorioFinanceiro->all();
         $secretaria=$this->objSecretaria->all();
         $tecnicoSaude=$this->objTecnicoSaude->all();
-        return view('admin.create', compact('admin', 'administradora', 'clinica',
+        return view('admin.edit', compact('admin', 'administradora', 'clinica',
     'consulta', 'convenio', 'despesaFinanceira', 'estoque', 'exame', 'medicamento',
     'medico', 'paciente', 'procedimento', 'procedimentoMedico', 'procedimentoTecnico',
     'receitaFinanceira', 'relatorio', 'relatorioFinanceiro', 'secretaria', 'tecnicoSaude'));
@@ -206,7 +206,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         $this->objAdmin->where(['id'=>$id])->update([
             'sexo'=>$request->sexo,

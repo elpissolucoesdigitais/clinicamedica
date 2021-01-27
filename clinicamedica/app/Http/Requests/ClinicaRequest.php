@@ -32,21 +32,12 @@ class ClinicaRequest extends FormRequest
             'complemento'=>'required|string',
             'nome'=>'required|string',
             'logradouro'=>'required|string',
-
             'contato'=>'required|numeric',
-            'contato'=>'required|min:10|max:10',
-
             'bairro'=>'required|string',
             'uf'=>'required|string',
-
             'cep'=>'required|numeric',
-            'cep'=>'required|min:5|max:5',
-
             'foto'=>'required',
-
             'cnpj'=>'required|numeric',
-            'cnpj'=>'required|min:14|max:14',
-
             'senha'=>'required'
 
         ];
