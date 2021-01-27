@@ -24,13 +24,13 @@
   <div class="form-row">
     <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{$clinica->email ?? ''}}">
+        <input type="text" class="form-control" id="email" placeholder="Email" name="email"
+        value="{{old('email')}}">
       </div>
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
-      value="{{$clinica->senha ?? ''}}">
+      value="{{old('senha')}}">
     </div>
   </div>
   
@@ -38,28 +38,29 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="longradouro">Longradouro</label>
-      <input type="text" class="form-control" id="longradouro" placeholder="Longradouro" name="longradouro"
-      value="{{$clinica->logradouro ?? ''}}">
+      <label for="logradouro">Logradouro</label>
+      <input type="text" class="form-control" id="logradouro" placeholder="Logradouro" name="logradouro"
+      value="{{old('logradouro')}}">
     </div>
 
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro" placeholder="Bairro" name="bairro"
-        value="{{$clinica->bairro ?? ''}}">
+        value="{{old('bairro')}}">
       </div>
 
 
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
         <input type="integer" class="form-control" id="cep" placeholder="CEP" name="cep"
-        value="{{$clinica->cep ?? ''}}">
+        value="{{old('cep')}}">
       </div>
 
     <div class="form-group col-md-4">
       <label for="uf">UF</label>
       <select id="uf"  name="uf" class="form-control">
-        <option selected value="RO">RO</option>
+        <option selected>{{old('uf')}}</option>
+        <option value="RO">RO</option>
         <option value="AC">AC</option>
         <option value="AM">AM</option>
         <option value="RR">RR</option>
@@ -93,31 +94,32 @@
     <div class="form-group col-md-12">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"
-        value="{{$clinica->nome ?? ''}}">
+        value="{{old('nome')}}">
       </div>
 
       <div class="form-group col-md-7">
         <label for="cnpj">CNPJ</label>
         <input type="text" class="form-control" id="cnpj" placeholder="CNPJ" name="cnpj"
-        value="{{$clinica->cnpj ?? ''}}">
+        value="{{old('cnpj')}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="numero">Numero</label>
         <input type="integer" class="form-control" id="numero" placeholder="Numero" name="numero"
-        value="{{$clinica->numero ?? ''}}">
+        value="{{old('numero')}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="responsavelTecnico">Responsavel Tecnico</label>
         <input type="text" class="form-control" id="responsaveltecnico" placeholder="Responsavel Tecnico"
-        name="responsaveltecnico" value="{{$clinica->responsaveltecnico ?? ''}}">
+        name="responsaveltecnico" value="{{old('responsaveltecnico')}}">
       </div>
 
       <div class="form-group col-md-4">
         <label for="cidade">Cidade</label>
         <select id="cidade" name="cidade" class="form-control">
-          <option selected value="Rio Branco">Rio Branco</option>
+          <option selected>{{old('cidade')}}</option>
+          <option value="Rio Branco">Rio Branco</option>
           <option value="Maceió">Maceió</option>
           <option value="Macapá">Macapá</option>
           <option value="Manaus">Manaus</option>
@@ -150,25 +152,29 @@
       <div class="form-group col-md-8">
         <label for="contato">Contato</label>
         <input type="text" class="form-control" id="contato" placeholder="Contato"
-        name="contato" value="{{$clinica->contato ?? ''}}">
+        name="contato" value="{{old('contato')}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento" placeholder="Complemento"
-        name="complemento" value="{{$clinica->complemento ?? ''}}">
+        name="complemento" value="{{old('complemento')}}">
       </div>
 
       <div class="input-group is-invalid">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto" required>
+          <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto">
           <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
         </div>
 
   </div>
   
+  </div>
+  
   
   <input class="btn btn-primary" type="submit" value="@if(isset($clinica))Editar @else Cadastrar @endif">
+
+
 
 </form>
 

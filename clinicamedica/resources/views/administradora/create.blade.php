@@ -33,7 +33,7 @@
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
-      value="{{$administradora->senha ?? ''}}">
+      value="{{old('senha')}}">
     </div>
   </div>
   
@@ -44,7 +44,7 @@
     <div class="form-group col-md-6">
       <label for="longradouro">Longradouro</label>
       <input type="text" class="form-control" id="longradouro" placeholder="Longradouro"
-      name="longradouro" value="{{$administradora->longradouro ?? ''}}">
+      name="longradouro" value="{{old('longradouro')}}">
     </div>
 
     
@@ -52,7 +52,7 @@
     <div class="form-group col-md-6">
         <label for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro" placeholder="Bairro"
-        name="bairro" value="{{$administradora->bairro ?? ''}}">
+        name="bairro" value="{{old('bairro')}}">
       </div>
 
       
@@ -61,7 +61,7 @@
       <div class="form-group col-md-6">
         <label for="cep">CEP</label>
 
-          <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{$administradora->cep ?? ''}}">
+          <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" value="{{old('cep')}}">
       </div>
 
       
@@ -70,7 +70,7 @@
       <div class="form-group col-md-4">
         <label for="uf">UF</label>
         <select id="uf" name="uf" class="form-control">
-          <option selected>{{$administradora->uf ??''}}</option>
+          <option selected>{{old('uf')}}</option>
           <option value="RO">RO</option>
           <option value="AC">AC</option>
           <option value="AM">AM</option>
@@ -105,14 +105,14 @@
     <div class="form-group col-md-12">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" id="nome" placeholder="Nome"
-        name="nome" value="{{$administradora->nome ?? ''}}">
+        name="nome" value="{{old('nome')}}">
       </div>
 
 
       <div class="form-group col-md-4">
         <label for="sexo">Sexo</label>
         <select id="sexo" name="sexo" class="form-control">
-          <option selected>{{$administradora->sexo ??''}}</option>
+          <option selected>{{old('sexo')}}</option>
           <option value="Masculino">Masculino</option>
           <option value="Feminino">Feminino</option>
         </select>
@@ -122,25 +122,25 @@
       <div class="form-group col-md-7">
         <label for="cpf">CPF</label>
         <input type="cpf" class="form-control" id="cpf" placeholder="CPF"
-        name="cpf" value="{{$administradora->cpf ?? ''}}">
+        name="cpf" value="{{old('cpf')}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="rg">RG</label>
         <input type="text" class="form-control" id="rg" placeholder="RG"
-        name="rg" value="{{$administradora->rg ?? ''}}">
+        name="rg" value="{{old('rg')}}">
       </div>
 
       <div class="form-group col-md-6">
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" class="form-control" id="datanascimento" placeholder="Data de Nascimento"
-        name="datanascimento" value="{{$administradora->datanascimento ?? ''}}">
+        name="datanascimento" value="{{old('datanascimento')}}">
       </div>
 
       <div class="form-group col-md-4">
         <label for="cidade">Cidade</label>
         <select id="cidade" name="cidade" class="form-control">
-          <option selected>{{$administradora->cidade ??''}}</option>
+          <option selected>{{old('cidade')}}</option>
           <option value="Rio Branco">Rio Branco</option>
           <option value="Maceió">Maceió</option>
           <option value="Macapá">Macapá</option>
@@ -174,19 +174,19 @@
       <div class="form-group col-md-8">
         <label for="contato">Contato</label>
         <input type="text" class="form-control" id="contato" placeholder="Contato"
-        name="contato" value="{{$administradora->contato ?? ''}}">
+        name="contato" value="{{old('contato')}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento" placeholder="Complemento"
-        name="complemento" value="{{$administradora->complemento ?? ''}}">
+        name="complemento" value="{{old('complemento')}}">
       </div>
 
       <div class="form-group col-md-12">
         <label for="salario">Salario</label>
         <input type="double" class="form-control" id="salario" placeholder="Salario"
-        name="salario" value="{{$administradora->salario ?? ''}}">
+        name="salario" value="{{old('salario')}}">
       </div>
 
   </div>

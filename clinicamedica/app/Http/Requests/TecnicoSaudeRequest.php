@@ -25,6 +25,8 @@ class TecnicoSaudeRequest extends FormRequest
     {
         return [
             
+            //OBS: Falta fazer o REQUEST de ADMIN
+
             'cpf'=>'required|numeric',
             'cpf'=>'required|min:11|max:11',
 
