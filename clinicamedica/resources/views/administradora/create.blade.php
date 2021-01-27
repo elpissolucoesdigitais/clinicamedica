@@ -26,10 +26,10 @@
   <div class="form-row">
     <div class="form-group col-md-6">
         <label for="email">Email</label>
-
-        <input type="text" class="form-control" id="email" placeholder="Email" name="email"
-        value="{{old('email')}}">
+        
+        <input type="text" class="form-control" id="email" placeholder="Email" name="email"   value="{{old('email')}}">
       </div>
+     
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha"
