@@ -29,25 +29,14 @@ class SecretariaRequest extends FormRequest
             'cidade'=>'required|string',
             'email'=>'required|email:rfc,dns',
             'complemento'=>'required|string',
-
             'cpf'=>'required|numeric',
-            'cpf'=>'required|min:11|max:11',
-
             'rg'=>'required|numeric',
-            'rg'=>'required|min:10|max:10',
-
             'nome'=>'required|string',
             'longradouro'=>'required|string',
-
             'contato'=>'required|numeric',
-            'contato'=>'required|min:10|max:10',
-
             'bairro'=>'required|string',
             'uf'=>'required|string',
-
             'cep'=>'required|numeric',
-            'cep'=>'required|min:5|max:5',
-
             'datanascimento'=>'required',
             'foto'=>'required',
             'salario'=>'required|numeric',
