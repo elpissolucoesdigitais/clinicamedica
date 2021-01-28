@@ -28,16 +28,10 @@ class ConvenioRequest extends FormRequest
             'status'=>'required|string',
             'email'=>'required|email:rfc,dns',
             'nome'=>'required|string',
-
             'contato'=>'required|numeric',
-            'contato'=>'required|min:10|max:10',
-
             'descricao'=>'required|string',
             'validade'=>'required',
-
             'cnpj'=>'required|numeric',
-            'cnpj'=>'required|min:14|max:14',
-
             'valor'=>'required|numeric',
 
         ];

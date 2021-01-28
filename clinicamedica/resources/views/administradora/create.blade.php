@@ -193,7 +193,7 @@
   
   <div class="input-group is-invalid">
     <div class="custom-file">
-      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto">
+      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile"  name="foto" value="{{old('foto')}}">
       <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
     </div>
 

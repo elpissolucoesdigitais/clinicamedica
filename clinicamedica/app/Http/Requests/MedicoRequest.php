@@ -33,34 +33,18 @@ class MedicoRequest extends FormRequest
             'bairro'=>'required|string',
             'salario'=>'required|numeric',
             'complemento'=>'required|string',
-
             'cep'=>'required|numeric',
-            'cep'=>'required|min:5|max:5',
-
             'contato'=>'required|numeric',
-            'contato'=>'required|min:10|max:10',
-
             'foto'=>'required',
             'nome'=>'required|string',
-
             'rg'=>'required|numeric',
-            'rg'=>'required|min:10|max:10',
-
             'cpf'=>'required|numeric',
-            'cpf'=>'required|min:11|max:11',
-
             'longradouro'=>'required|string',
             'uf	'=>'required|string',
             'datanascimento'=>'required',
-
             'crm'=>'required|numeric',
-            'crm'=>'required|min:7|max:7',
-
             'crmuf'=>'required|string',
-            'crmuf'=>'required|min:11|max:11',
-
             'especialidade'=>'required|string',
-
             'senha'=>'required'
 
         ];

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PacienteRequest extends FormRequest
+class AdminRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -37,15 +37,10 @@ class PacienteRequest extends FormRequest
             'bairro'=>'required|string',
             'uf'=>'required|string',
             'cep'=>'required|numeric',
-            'data_nascimento'=>'required',
+            'datanascimento'=>'required',
             'foto'=>'required',
-            'altura'=>'required|numeric',
-            'pressao'=>'required|numeric',
-            'numero'=>'required|numeric',
-            'peso'=>'required|numeric',
-            'nomepai'=>'required|string',
-            'nomemae'=>'required|string',
-            'fk_convenio'=>'required|string',
+            'crm'=>'required|numeric',
+            'salario'=>'required|numeric',
             'senha'=>'required'
 
         ];

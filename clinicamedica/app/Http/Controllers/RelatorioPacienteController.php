@@ -103,7 +103,7 @@ class RelatorioPacienteController extends Controller
         $medico=$this->objMedico->all();
         $tecnicoSaude=$this->objTecnicoSaude->all();
         $exame=$this->objExame->all();
-        return view('relatoriopaciente.create', compact('relatorioPaciente',
+        return view('relatoriopaciente.edit', compact('relatorioPaciente',
     'medicamento', 'medico', 'tecnicoSaude', 'exame')); 
 
     }
