@@ -43,10 +43,10 @@
                 <a href="#"><span class="fa fa-trophy mr-3"></span>Medicamento</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-cog mr-3"></span>Exame</a>
+                <a href="#"><span class="fas fa-file-medical mr-3"></span>Exame</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-support mr-3"></span>Suporte</a>
+                <a href="#"><span class="fas fa-cog mr-3"></span>Suporte</a>
               </li>
               <li>
                 <a href="#"><span class="fa fa-sign-out mr-3"></span>Sair</a>
