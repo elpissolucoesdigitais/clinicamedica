@@ -34,26 +34,26 @@
                   </div>
             <ul class="list-unstyled components mb-5">
               <li class="active">
-                <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+                <a href="/home"><span class="fa fa-home mr-3"></span>Home</a>
               </li>
               <li>
                 <!--reenviar no git-->
-                  <a href="#"><span class="fas fa-calendar-plus mr-3"></span>Cadastro</a>
+                  <a href="/cadastro"><span class="fas fa-calendar-plus mr-3"></span>Cadastro</a>
               </li>
               <li>
-                <a href="#"><span class="fas fa-clipboard-list mr-3"></span>Relatório</a>
+                <a href="/relatorio"><span class="fas fa-clipboard-list mr-3"></span>Relatório</a>
               </li>
               <li>
-                <a href="#"><span class="fas fa-first-aid mr-3"></span>Medicamento</a>
+                <a href="/medicamento"><span class="fas fa-first-aid mr-3"></span>Medicamento</a>
               </li>
               <li>
-                <a href="#"><span class="fas fa-file-medical mr-3"></span>Exame</a>
+                <a href="/exame"><span class="fas fa-file-medical mr-3"></span>Exame</a>
               </li>
               <li>
-                <a href="#"><span class="fas fa-cog mr-3"></span>Suporte</a>
+                <a href="/suporte"><span class="fas fa-cog mr-3"></span>Suporte</a>
               </li>
               <li>
-                <a href="#"><span class="fas fa-sign-out-alt mr-3"></span>Sair</a>
+                <a href="/sair"><span class="fas fa-sign-out-alt mr-3"></span>Sair</a>
               </li>
             </ul>
     
