@@ -38,22 +38,22 @@
               </li>
               <li>
                 <!--reenviar no git-->
-                  <a href="#"><span class="far fa-save mr-3"></span>Cadastro</a>
+                  <a href="#"><span class="fas fa-calendar-plus mr-3"></span>Cadastro</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-gift mr-3"></span>Relatório</a>
+                <a href="#"><span class="fas fa-clipboard-list mr-3"></span>Relatório</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-trophy mr-3"></span>Medicamento</a>
+                <a href="#"><span class="fas fa-first-aid mr-3"></span>Medicamento</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-cog mr-3"></span>Exame</a>
+                <a href="#"><span class="fas fa-file-medical mr-3"></span>Exame</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-support mr-3"></span>Suporte</a>
+                <a href="#"><span class="fas fa-cog mr-3"></span>Suporte</a>
               </li>
               <li>
-                <a href="#"><span class="fa fa-sign-out mr-3"></span>Sair</a>
+                <a href="#"><span class="fas fa-sign-out-alt mr-3"></span>Sair</a>
               </li>
             </ul>
     
