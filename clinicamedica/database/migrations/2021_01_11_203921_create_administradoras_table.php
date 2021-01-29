@@ -33,6 +33,11 @@ class CreateAdministradorasTable extends Migration
             $table->string('senha');
             $table->timestamps();
         });
+
+
+        
+
+
     }
 
     /**
@@ -42,6 +47,9 @@ class CreateAdministradorasTable extends Migration
      */
     public function down()
     {
+
+        
+
         Schema::dropIfExists('administradoras');
     }
 }
