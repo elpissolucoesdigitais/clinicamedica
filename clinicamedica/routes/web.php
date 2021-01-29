@@ -13,9 +13,6 @@
 
 
 
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,4 +39,9 @@ Route::resource('secretaria', 'SecretariaController');
 Route::resource('tecnicosaude', 'TecnicoSaudeController');
 
 
-//$this->get('one-to-one', 'OneToOneController@oneToOne');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
